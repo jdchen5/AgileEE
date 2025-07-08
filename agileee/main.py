@@ -24,6 +24,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+import warnings
+warnings.filterwarnings("ignore", message=".*not in index.*")
+logging.getLogger().setLevel(logging.ERROR)
+
 def main():
     """Main entry point - delegates to ui.py main function"""
     try:

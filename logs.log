@@ -5471,3 +5471,1384 @@ This will raise in a future version.
 2025-07-08 18:21:13,591:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\scikitplot\plotters.py:33: DeprecationWarning: This module was deprecated in version 0.3.0 and its functions are spread throughout different modules. Please check the documentation and update your function calls as soon as possible. This module will be removed in 0.4.0
   warnings.warn("This module was deprecated in version 0.3.0 and its functions "
 
+2025-07-08 19:09:02,315:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:09:02,315:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:09:02,315:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:09:02,315:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:09:03,067:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-08 19:25:39,857:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:25:39,857:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:25:39,857:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:25:39,857:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:25:40,651:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-08 19:41:01,551:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:41:01,551:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:41:01,551:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:41:01,551:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:41:02,318:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-08 19:46:20,416:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:46:20,416:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:46:20,416:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:46:20,416:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:46:21,170:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-08 19:48:34,678:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:48:34,678:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:48:34,678:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:48:34,678:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:48:35,462:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-08 19:54:34,561:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\yellowbrick\style\colors.py:35: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  mpl_ge_150 = LooseVersion(mpl.__version__) >= "1.5.0"
+
+2025-07-08 19:54:34,561:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\setuptools\_distutils\version.py:336: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  other = LooseVersion(other)
+
+2025-07-08 19:54:34,561:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\yellowbrick\style\rcmod.py:31: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  mpl_ge_150 = LooseVersion(mpl.__version__) >= "1.5.0"
+
+2025-07-08 19:54:34,561:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\setuptools\_distutils\version.py:336: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  other = LooseVersion(other)
+
+2025-07-08 19:54:34,996:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:34,998:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,014:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,028:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,029:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,044:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,059:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,060:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,076:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,092:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,092:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,092:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,092:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,092:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,107:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,107:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,107:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,107:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,114:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,114:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,114:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,114:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,123:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,123:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,123:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,123:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,123:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,123:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,139:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,139:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,139:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,139:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,139:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,153:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,155:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,155:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,155:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,155:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,155:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,155:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,170:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,170:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,170:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,186:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,186:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,186:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,186:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,202:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,202:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,202:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,215:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,215:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,218:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,234:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,234:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,234:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,234:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,234:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,247:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,250:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,265:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,265:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,265:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,265:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,278:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,278:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,278:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,282:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,282:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,282:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,282:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,297:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,309:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,309:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,314:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,329:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,344:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,360:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,360:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,360:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,360:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,360:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,360:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,376:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,376:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,376:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,376:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,376:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,392:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,408:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,408:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,408:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,408:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,414:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,414:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,424:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,440:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,456:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,456:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,456:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,456:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,456:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,465:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,468:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,470:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,471:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,474:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,475:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,476:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,478:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,481:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,482:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,486:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,488:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,490:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,492:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,493:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,495:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,497:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,513:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,513:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,514:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,514:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,514:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,514:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,528:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,543:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,559:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,575:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,590:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,606:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,606:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,606:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,606:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,614:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,614:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,614:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,614:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,621:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,637:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,653:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,669:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,684:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,700:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,715:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,716:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,732:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,732:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,732:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,732:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,732:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,732:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,748:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,763:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,779:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,779:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,779:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,779:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,779:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,795:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,795:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,795:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,795:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,811:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,815:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,815:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,815:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,827:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,827:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,827:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,827:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,840:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,843:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,843:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,843:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,843:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,843:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,859:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,859:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,859:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,859:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,871:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,874:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,874:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,874:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,874:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,874:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,874:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,890:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,890:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,890:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,906:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,906:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,906:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,915:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,922:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,934:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,934:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,937:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,937:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,953:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,953:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,953:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,965:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,965:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,970:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,986:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,986:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,986:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,997:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,998:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:35,999:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:36,001:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:36,002:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:36,003:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:36,005:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\pycaret\utils\_dependencies.py:60: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  ver = LooseVersion(dist.metadata["Version"])
+
+2025-07-08 19:54:36,006:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:54:36,006:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:54:36,006:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:54:36,006:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-08 19:54:36,028:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\scikitplot\plotters.py:33: DeprecationWarning: This module was deprecated in version 0.3.0 and its functions are spread throughout different modules. Please check the documentation and update your function calls as soon as possible. This module will be removed in 0.4.0
+  warnings.warn("This module was deprecated in version 0.3.0 and its functions "
+
