@@ -122,6 +122,7 @@ def initialize_session_state():
         'current_shap_values': None,
         'current_model_explainer': None,
         'last_prediction_inputs': None,
+        'current_prediction_results': None
     }
     for key, default in defaults.items():
         if key not in st.session_state:
