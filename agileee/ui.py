@@ -156,12 +156,12 @@ def get_field_options(field_name):
     if field_name == "project_prf_relative_size":
         # List of dicts style
         if isinstance(raw_opts, list) and raw_opts and isinstance(raw_opts[0], dict):
-            opts = [v['label'] for v in raw_opts]
+            opts = [v['label'] for v in raw_opts]  # Result: ["Small", "Medium"] - shown in dropdown
             # Save mappings in session state for later lookups
-            st.session_state.prf_size_label2code = {v['label']: v['code'] for v in raw_opts}
-            st.session_state.prf_size_code2mid = {v['code']: v['midpoint'] for v in raw_opts}
+            st.session_state.prf_size_label2code = {v['label']: v['code'] for v in raw_opts}  # Result: {"Small": "S", "Medium": "M"}
+            st.session_state.prf_size_code2mid = {v['code']: v['midpoint'] for v in raw_opts}  # Result: {"S": 75, "M": 300}
             # Save the entire option by code for future needs (e.g., min/max hour lookups)
-            st.session_state.prf_size_code2full = {v.get('code', ''): v for v in raw_opts}
+            st.session_state.prf_size_code2full = {v.get('code', ''): v for v in raw_opts}  # Result: {"S": {full S dict}, "M": {full M dict}}
             print(f"DEBUG: relative size options = {opts}")
             return opts
         else:
@@ -390,7 +390,7 @@ def show_prediction(prediction, model_name, user_inputs=None):
     # Dynamic thresholds based on selected relative size
     if user_inputs is not None and "project_prf_relative_size" in user_inputs:
         rel_code = user_inputs["project_prf_relative_size"]
-        size_info = st.session_state.prf_size_code2full.get(rel_code, {})
+        size_info = st.session_state["prf_size_code2full"].get(rel_code, {})
         min_hour = size_info.get("minimumhour", 0)
         max_hour = size_info.get("maximumhour", None)
 
@@ -460,7 +460,7 @@ def display_instance_specific_shap(user_inputs, model_name):
 
 def show_prediction_history():
     """Display prediction history"""
-    if not st.session_state.prediction_history:
+    if not st.session_state['prediction_history']:
         return
     
     st.subheader("📈 Prediction History")
@@ -475,14 +475,10 @@ def show_prediction_history():
                 model_technical = entry.get('model', 'Unknown Model')
             
             # Get display name with fallback
-            try:
-                from models import get_model_display_name_from_config
-                model_display = get_model_display_name_from_config(model_technical)
-            except Exception as e:
-                model_display = entry.get('model', model_technical)
-                if not model_display:
-                    model_display = model_technical
-            
+            model_display = entry.get('model', model_technical)
+            if not model_display:
+                model_display = model_technical
+
             # Build history entry
             history_entry = {
                 'Timestamp': entry.get('timestamp', 'Unknown'),
