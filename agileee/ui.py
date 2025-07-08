@@ -276,8 +276,8 @@ def sidebar_inputs():
                     )
                     selected_model = model_options[selected_display_name]
                     
-                    if st.session_state.prediction_history:
-                        st.info(f"📊 {len(st.session_state.prediction_history)} predictions made so far")
+                    if st.session_state["prediction_history"]:
+                        st.info(f"📊 {len(st.session_state['prediction_history'])} predictions made so far")
                 else:
                     st.warning("⚠️ No trained models found")
             else:
@@ -480,7 +480,7 @@ def show_prediction_history():
     history_data = []
     
     try:
-        for entry in st.session_state.prediction_history:
+        for entry in st.session_state["prediction_history"]:
             # Safely extract model information
             model_technical = entry.get('model_technical', '')
             if not model_technical:
@@ -511,7 +511,7 @@ def show_prediction_history():
         st.error(f"Error displaying prediction history: {str(e)}")
 def show_prediction_comparison_table():
     """Show comparison table if multiple predictions exist"""
-    if len(st.session_state.prediction_history) <= 1:
+    if len(st.session_state["prediction_history"]) <= 1:
         return
     
     st.subheader("🔍 Prediction Comparison")
@@ -520,7 +520,7 @@ def show_prediction_comparison_table():
         predictions = []
         models = []
         
-        for entry in st.session_state.prediction_history:
+        for entry in st.session_state["prediction_history"]:
             # Extract prediction safely
             prediction_hours = entry.get('prediction_hours', 0)
             predictions.append(prediction_hours)
@@ -587,7 +587,7 @@ def add_prediction_to_history(user_inputs, model_name, prediction):
             'inputs': user_inputs.copy() if user_inputs else {}
         }
         
-        st.session_state.prediction_history.append(history_entry)
+        st.session_state["prediction_history"].append(history_entry)
         
     except Exception as e:
         st.error(f"Error adding prediction to history: {str(e)}")
@@ -596,7 +596,7 @@ def display_model_comparison():
     """Display model comparison analysis"""
     st.header("🤖 Model Comparison")
     
-    if len(st.session_state.prediction_history) < 2:
+    if len(st.session_state["prediction_history"]) < 2:
         st.warning("⚠️ Please make predictions with at least 2 different models to enable comparison.")
         return
     
@@ -604,7 +604,7 @@ def display_model_comparison():
         # Group predictions by model
         model_predictions = {}
         
-        for entry in st.session_state.prediction_history:
+        for entry in st.session_state["prediction_history"]:
             # Use technical name for grouping to avoid display name inconsistencies
             model_name = entry.get('model_technical', entry.get('model', 'Unknown'))
             prediction_hours = entry.get('prediction_hours', 0)
@@ -639,7 +639,7 @@ def display_model_comparison():
                 comparison_df = pd.DataFrame(comparison_data)
                 
                 # Create box plot using plotly
-                fig = px.box(comparison_df, x='Model', y='Prediction (Hours)',
+                fig = px.box(data_frame=comparison_df, x='Model', y='Prediction (Hours)',
                             title="Distribution of Predictions by Model")
                 st.plotly_chart(fig, use_container_width=True)
         
@@ -788,11 +788,11 @@ def main():
             st.header("Instance-Specific SHAP Analysis")
             
             # Check if we have a recent prediction to analyze
-            if not st.session_state.prediction_history:
+            if not st.session_state["prediction_history"]:
                 st.warning("Please make at least one prediction first to enable SHAP analysis.")
             else:
                 # Get the most recent prediction for analysis
-                latest_prediction = st.session_state.prediction_history[-1]
+                latest_prediction = st.session_state["prediction_history"][-1]
                 user_inputs = latest_prediction.get('inputs', {})
                 model_name = latest_prediction.get('model_technical')
                 
