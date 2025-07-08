@@ -320,8 +320,20 @@ def sidebar_inputs():
                 use_container_width=True,
                 help="Show detailed prediction history"
             )
+
+        # Handle clear button
+        if clear_results:
+            st.session_state['prediction_history'] = []
+            st.session_state['current_prediction_results'] = None
+            st.rerun()
+
+        # Handle show all button
+        if show_history:
+            st.session_state['show_detailed_history'] = True    
+                
         user_inputs["selected_model"] = selected_model
         user_inputs["submit"] = predict_button
+        user_inputs["show_history"] = show_history
 
         return user_inputs
 
@@ -710,6 +722,10 @@ def main():
     
     # Initialize session state
     initialize_session_state()
+
+    # Initialize prediction results in session state
+    if 'current_prediction_results' not in st.session_state:
+        st.session_state.current_prediction_results = None
     
     # Main header
     st.title("🔮 ML Agile Software Project Effort Estimator")
@@ -723,37 +739,47 @@ def main():
         main_tabs = st.tabs(["🔮 Estimator", "📊 Visualisations & Analysis", "🤖 Model Comparison", "📈 Static SHAP Analysis", "❓ Help"])
 
         with main_tabs[0]:  # Estimator tab
+
+            # Check if show_history button was clicked
+            if user_inputs.get('show_history', False):
+                st.header("📊 Detailed Prediction History")
+                show_prediction_history()
+                show_prediction_comparison_table()
+                return  # Exit early to show only history
+    
             if user_inputs.get('submit', False):
                 selected_model = user_inputs.get('selected_model')
                 
                 if selected_model:
-                    # Display input summary
-                    display_inputs(user_inputs, selected_model)
-                    st.divider()
-                    
-                    # Run prediction
+                    # Run prediction and store in session state
                     with st.spinner("Calculating estimation..."):
                         try:
                             prediction = predict_man_hours(user_inputs, selected_model)
-                            st.session_state['latest_prediction'] = prediction
                             
-                            # Show current prediction
-                            show_prediction(prediction, selected_model, user_inputs)
-                            # Add to history
+                            # Store complete results in session state
+                            st.session_state['current_prediction_results'] = {
+                                'prediction': prediction,
+                                'model': selected_model,
+                                'inputs': user_inputs.copy()
+                            }
+                            
                             add_prediction_to_history(user_inputs, selected_model, prediction)
-                            
-                            # Show history
-                            show_prediction_history()
-                            
-                            # Show feature importance
-                            st.divider()
-                            show_feature_importance(selected_model, user_inputs)
                             
                         except Exception as e:
                             st.error(f"Error during prediction: {e}")
-                
+                            st.session_state['current_prediction_results'] = None
                 else:
                     st.warning("Please select a model to make predictions")
+            
+            # Display results from session state (persists across model changes)
+            if st.session_state.get('current_prediction_results'):
+                results = st.session_state['current_prediction_results']
+                display_inputs(results['inputs'], results['model'])
+                st.divider()
+                show_prediction(results['prediction'], results['model'], results['inputs'])
+                show_prediction_history()
+                st.divider()
+                show_feature_importance(results['model'], results['inputs'])
             else:
                 # Welcome screen
                 st.info("**Get Started:** Fill in the project parameters in the sidebar and click 'Predict Effort' to get your estimate.")

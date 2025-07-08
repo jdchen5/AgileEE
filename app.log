@@ -106,3 +106,329 @@
 2025-07-08 17:30:15,522 - INFO - Aligning 26 features to 81 model features
 2025-07-08 17:30:15,746 - INFO - Prediction successful: 1323.8875601904683
 2025-07-08 17:30:15,790 - INFO - Model top_model_2_GradientBoostingRegressor loaded successfully using PyCaret
+2025-07-08 18:01:27,763 - INFO - Pipeline module loaded successfully
+2025-07-08 18:01:29,129 - INFO - Loaded 27 model display names from config
+2025-07-08 18:01:47,775 - INFO - Starting prediction with model: top_model_1_LGBMRegressor
+2025-07-08 18:01:47,775 - INFO - Starting sequential feature preparation for 24 input features
+2025-07-08 18:01:47,776 - INFO - Cleaned features: 22 features after removing UI keys
+2025-07-08 18:01:47,783 - INFO - STEP 1: Applying custom pipeline transformation...
+2025-07-08 18:01:47,828 - INFO - Created dynamic pipeline for prediction
+2025-07-08 18:01:47,875 - INFO - Converted feature dict to DataFrame with shape (1, 26) and columns: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:01:47,876 - INFO - DataFrameValidator.fit() CALLED
+2025-07-08 18:01:47,876 - INFO - Processing DataFrame with shape: (1, 26)
+2025-07-08 18:01:47,895 - INFO - ColumnNameStandardizer.fit() CALLED
+2025-07-08 18:01:47,896 - INFO - Standardized 0 column names
+2025-07-08 18:01:47,898 - INFO - MissingValueAnalyzer.fit() CALLED
+2025-07-08 18:01:47,900 - INFO - Missing value analysis: >50%: 0, >70%: 0
+2025-07-08 18:01:47,909 - INFO - Data shape after missing value handling: (1, 26)
+2025-07-08 18:01:47,911 - INFO - CategoricalValueCleaner.fit() CALLED
+2025-07-08 18:01:47,932 - INFO - SemicolonProcessor.fit() CALLED
+2025-07-08 18:01:47,942 - INFO - Found 0 columns with semicolons: []
+2025-07-08 18:01:47,943 - INFO - CategoricalValueStandardizer.fit() CALLED
+2025-07-08 18:01:47,956 - INFO - Single-value categorical columns selected for mapping: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:01:47,978 - INFO - Encoding 0 multi-value columns: []
+2025-07-08 18:01:47,979 - INFO - CategoricalEncoder.fit() CALLED
+2025-07-08 18:01:47,994 - INFO - One-hot encoding 18 categorical columns: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:01:48,005 - INFO - ColumnNameFixer.fit() CALLED
+2025-07-08 18:01:48,006 - INFO - Fixed 1 column names for compatibility
+2025-07-08 18:01:48,007 - INFO - === Final Data Validation ===
+2025-07-08 18:01:48,007 - INFO - Final shape: (1, 26)
+2025-07-08 18:01:48,007 - INFO - Target column: None
+2025-07-08 18:01:48,008 - INFO - Total missing values: 0
+2025-07-08 18:01:48,009 - INFO - Total infinite values: 0
+2025-07-08 18:01:48,010 - INFO - Numeric columns: 6
+2025-07-08 18:01:48,010 - INFO - Categorical columns: 0
+2025-07-08 18:01:48,011 - ERROR - SchemaAligner: Could not load schema file config\full_model_features.json: [Errno 2] No such file or directory: 'config\\full_model_features.json'
+2025-07-08 18:01:48,013 - WARNING - SchemaAligner: No expected features loaded, returning original data
+2025-07-08 18:01:48,013 - INFO - Successfully processed features: shape (1, 26)
+2025-07-08 18:01:48,014 - INFO - Custom pipeline successful: (1, 26)
+2025-07-08 18:01:48,015 - INFO - Custom pipeline features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'external_eef_industry_sector_missing', 'external_eef_organisation_type_missing']...
+2025-07-08 18:01:48,015 - INFO - STEP 2: Attempting PyCaret pipeline transformation...
+2025-07-08 18:01:48,016 - INFO - Attempting to load pipeline from: config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:01:48,871 - INFO - Pipeline loaded successfully from config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:01:48,871 - INFO - Pipeline type: Pipeline
+2025-07-08 18:01:48,871 - INFO - Pipeline has 4 steps
+2025-07-08 18:01:48,871 - INFO - Pipeline expects 72 input features
+2025-07-08 18:01:48,871 - INFO - PyCaret pipeline loaded successfully
+2025-07-08 18:01:48,871 - INFO - Pipeline expects 72 input features
+2025-07-08 18:01:48,871 - WARNING - PyCaret pipeline failed: "['external_eef_organisation_type_amusement_game_center', 'external_eef_organisation_type_banking', 'external_eef_organisation_type_banking_insurance_stock', 'external_eef_organisation_type_credit_card_processor', 'external_eef_organisation_type_financial', 'external_eef_organisation_type_financial_property_and_business_services', 'external_eef_organisation_type_insurance', 'external_eef_organisation_type_revenue', 'external_eef_organisation_type_revenue_collection'] not in index"
+2025-07-08 18:01:48,871 - INFO - Using custom pipeline output as fallback...
+2025-07-08 18:01:48,889 - INFO - Fallback pipeline complete:
+2025-07-08 18:01:48,889 - INFO -    - Final shape: (1, 26)
+2025-07-08 18:01:48,889 - INFO -    - Features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used']...
+2025-07-08 18:01:48,904 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:01:48,904 - INFO - Aligning 26 features to 81 model features
+2025-07-08 18:01:49,200 - INFO - Prediction successful: 851.6698577445283
+2025-07-08 18:01:49,200 - INFO - Pipeline module loaded successfully
+2025-07-08 18:01:49,235 - INFO - Loaded 27 model display names from config
+2025-07-08 18:01:49,282 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:01:54,741 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:02:00,756 - INFO - Starting prediction with model: top_model_2_GradientBoostingRegressor
+2025-07-08 18:02:00,757 - INFO - Starting sequential feature preparation for 24 input features
+2025-07-08 18:02:00,757 - INFO - Cleaned features: 22 features after removing UI keys
+2025-07-08 18:02:00,758 - INFO - STEP 1: Applying custom pipeline transformation...
+2025-07-08 18:02:00,808 - INFO - Created dynamic pipeline for prediction
+2025-07-08 18:02:00,867 - INFO - Converted feature dict to DataFrame with shape (1, 26) and columns: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:02:00,868 - INFO - DataFrameValidator.fit() CALLED
+2025-07-08 18:02:00,868 - INFO - Processing DataFrame with shape: (1, 26)
+2025-07-08 18:02:00,881 - INFO - ColumnNameStandardizer.fit() CALLED
+2025-07-08 18:02:00,882 - INFO - Standardized 0 column names
+2025-07-08 18:02:00,883 - INFO - MissingValueAnalyzer.fit() CALLED
+2025-07-08 18:02:00,885 - INFO - Missing value analysis: >50%: 0, >70%: 0
+2025-07-08 18:02:00,898 - INFO - Data shape after missing value handling: (1, 26)
+2025-07-08 18:02:00,898 - INFO - CategoricalValueCleaner.fit() CALLED
+2025-07-08 18:02:00,905 - INFO - SemicolonProcessor.fit() CALLED
+2025-07-08 18:02:00,929 - INFO - Found 0 columns with semicolons: []
+2025-07-08 18:02:00,929 - INFO - CategoricalValueStandardizer.fit() CALLED
+2025-07-08 18:02:00,937 - INFO - Single-value categorical columns selected for mapping: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:02:00,959 - INFO - Encoding 0 multi-value columns: []
+2025-07-08 18:02:00,959 - INFO - CategoricalEncoder.fit() CALLED
+2025-07-08 18:02:00,976 - INFO - One-hot encoding 18 categorical columns: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:02:00,992 - INFO - ColumnNameFixer.fit() CALLED
+2025-07-08 18:02:00,994 - INFO - Fixed 1 column names for compatibility
+2025-07-08 18:02:00,994 - INFO - === Final Data Validation ===
+2025-07-08 18:02:00,994 - INFO - Final shape: (1, 26)
+2025-07-08 18:02:00,995 - INFO - Target column: None
+2025-07-08 18:02:00,996 - INFO - Total missing values: 0
+2025-07-08 18:02:00,997 - INFO - Total infinite values: 0
+2025-07-08 18:02:00,997 - INFO - Numeric columns: 6
+2025-07-08 18:02:00,998 - INFO - Categorical columns: 0
+2025-07-08 18:02:00,998 - ERROR - SchemaAligner: Could not load schema file config\full_model_features.json: [Errno 2] No such file or directory: 'config\\full_model_features.json'
+2025-07-08 18:02:00,999 - WARNING - SchemaAligner: No expected features loaded, returning original data
+2025-07-08 18:02:00,999 - INFO - Successfully processed features: shape (1, 26)
+2025-07-08 18:02:00,999 - INFO - Custom pipeline successful: (1, 26)
+2025-07-08 18:02:01,000 - INFO - Custom pipeline features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'external_eef_industry_sector_missing', 'external_eef_organisation_type_missing']...
+2025-07-08 18:02:01,000 - INFO - STEP 2: Attempting PyCaret pipeline transformation...
+2025-07-08 18:02:01,000 - INFO - Attempting to load pipeline from: config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:02:01,004 - INFO - Pipeline loaded successfully from config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:02:01,005 - INFO - Pipeline type: Pipeline
+2025-07-08 18:02:01,005 - INFO - Pipeline has 4 steps
+2025-07-08 18:02:01,005 - INFO - Pipeline expects 72 input features
+2025-07-08 18:02:01,005 - INFO - PyCaret pipeline loaded successfully
+2025-07-08 18:02:01,006 - INFO - Pipeline expects 72 input features
+2025-07-08 18:02:01,007 - WARNING - PyCaret pipeline failed: "['external_eef_organisation_type_amusement_game_center', 'external_eef_organisation_type_banking', 'external_eef_organisation_type_banking_insurance_stock', 'external_eef_organisation_type_credit_card_processor', 'external_eef_organisation_type_financial', 'external_eef_organisation_type_financial_property_and_business_services', 'external_eef_organisation_type_insurance', 'external_eef_organisation_type_revenue', 'external_eef_organisation_type_revenue_collection'] not in index"
+2025-07-08 18:02:01,008 - INFO - Using custom pipeline output as fallback...
+2025-07-08 18:02:01,014 - INFO - Fallback pipeline complete:
+2025-07-08 18:02:01,015 - INFO -    - Final shape: (1, 26)
+2025-07-08 18:02:01,016 - INFO -    - Features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used']...
+2025-07-08 18:02:01,023 - INFO - Model top_model_2_GradientBoostingRegressor loaded successfully using PyCaret
+2025-07-08 18:02:01,023 - INFO - Aligning 26 features to 81 model features
+2025-07-08 18:02:01,270 - INFO - Prediction successful: 952.5388373725336
+2025-07-08 18:02:01,318 - INFO - Model top_model_2_GradientBoostingRegressor loaded successfully using PyCaret
+2025-07-08 18:02:05,500 - INFO - Model top_model_2_GradientBoostingRegressor loaded successfully using PyCaret
+2025-07-08 18:02:09,207 - INFO - Starting prediction with model: top_model_3_LassoLars
+2025-07-08 18:02:09,207 - INFO - Starting sequential feature preparation for 24 input features
+2025-07-08 18:02:09,208 - INFO - Cleaned features: 22 features after removing UI keys
+2025-07-08 18:02:09,208 - INFO - STEP 1: Applying custom pipeline transformation...
+2025-07-08 18:02:09,302 - INFO - Created dynamic pipeline for prediction
+2025-07-08 18:02:09,355 - INFO - Converted feature dict to DataFrame with shape (1, 26) and columns: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:02:09,358 - INFO - DataFrameValidator.fit() CALLED
+2025-07-08 18:02:09,358 - INFO - Processing DataFrame with shape: (1, 26)
+2025-07-08 18:02:09,381 - INFO - ColumnNameStandardizer.fit() CALLED
+2025-07-08 18:02:09,381 - INFO - Standardized 0 column names
+2025-07-08 18:02:09,381 - INFO - MissingValueAnalyzer.fit() CALLED
+2025-07-08 18:02:09,381 - INFO - Missing value analysis: >50%: 0, >70%: 0
+2025-07-08 18:02:09,393 - INFO - Data shape after missing value handling: (1, 26)
+2025-07-08 18:02:09,394 - INFO - CategoricalValueCleaner.fit() CALLED
+2025-07-08 18:02:09,408 - INFO - SemicolonProcessor.fit() CALLED
+2025-07-08 18:02:09,426 - INFO - Found 0 columns with semicolons: []
+2025-07-08 18:02:09,427 - INFO - CategoricalValueStandardizer.fit() CALLED
+2025-07-08 18:02:09,433 - INFO - Single-value categorical columns selected for mapping: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:02:09,458 - INFO - Encoding 0 multi-value columns: []
+2025-07-08 18:02:09,458 - INFO - CategoricalEncoder.fit() CALLED
+2025-07-08 18:02:09,466 - INFO - One-hot encoding 18 categorical columns: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:02:09,490 - INFO - ColumnNameFixer.fit() CALLED
+2025-07-08 18:02:09,491 - INFO - Fixed 1 column names for compatibility
+2025-07-08 18:02:09,491 - INFO - === Final Data Validation ===
+2025-07-08 18:02:09,492 - INFO - Final shape: (1, 26)
+2025-07-08 18:02:09,492 - INFO - Target column: None
+2025-07-08 18:02:09,492 - INFO - Total missing values: 0
+2025-07-08 18:02:09,492 - INFO - Total infinite values: 0
+2025-07-08 18:02:09,492 - INFO - Numeric columns: 6
+2025-07-08 18:02:09,492 - INFO - Categorical columns: 0
+2025-07-08 18:02:09,492 - ERROR - SchemaAligner: Could not load schema file config\full_model_features.json: [Errno 2] No such file or directory: 'config\\full_model_features.json'
+2025-07-08 18:02:09,492 - WARNING - SchemaAligner: No expected features loaded, returning original data
+2025-07-08 18:02:09,496 - INFO - Successfully processed features: shape (1, 26)
+2025-07-08 18:02:09,496 - INFO - Custom pipeline successful: (1, 26)
+2025-07-08 18:02:09,496 - INFO - Custom pipeline features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'external_eef_industry_sector_missing', 'external_eef_organisation_type_missing']...
+2025-07-08 18:02:09,496 - INFO - STEP 2: Attempting PyCaret pipeline transformation...
+2025-07-08 18:02:09,497 - INFO - Attempting to load pipeline from: config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:02:09,500 - INFO - Pipeline loaded successfully from config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:02:09,500 - INFO - Pipeline type: Pipeline
+2025-07-08 18:02:09,500 - INFO - Pipeline has 4 steps
+2025-07-08 18:02:09,500 - INFO - Pipeline expects 72 input features
+2025-07-08 18:02:09,500 - INFO - PyCaret pipeline loaded successfully
+2025-07-08 18:02:09,500 - INFO - Pipeline expects 72 input features
+2025-07-08 18:02:09,500 - WARNING - PyCaret pipeline failed: "['external_eef_organisation_type_amusement_game_center', 'external_eef_organisation_type_banking', 'external_eef_organisation_type_banking_insurance_stock', 'external_eef_organisation_type_credit_card_processor', 'external_eef_organisation_type_financial', 'external_eef_organisation_type_financial_property_and_business_services', 'external_eef_organisation_type_insurance', 'external_eef_organisation_type_revenue', 'external_eef_organisation_type_revenue_collection'] not in index"
+2025-07-08 18:02:09,500 - INFO - Using custom pipeline output as fallback...
+2025-07-08 18:02:09,500 - INFO - Fallback pipeline complete:
+2025-07-08 18:02:09,500 - INFO -    - Final shape: (1, 26)
+2025-07-08 18:02:09,500 - INFO -    - Features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used']...
+2025-07-08 18:02:09,549 - INFO - Model top_model_3_LassoLars loaded successfully using PyCaret
+2025-07-08 18:02:09,549 - INFO - Aligning 26 features to 81 model features
+2025-07-08 18:02:09,755 - INFO - Prediction successful: 2524.5030588966297
+2025-07-08 18:02:09,785 - INFO - Model top_model_3_LassoLars loaded successfully using PyCaret
+2025-07-08 18:02:21,383 - INFO - Model top_model_3_LassoLars loaded successfully using PyCaret
+2025-07-08 18:03:10,558 - INFO - Model top_model_3_LassoLars loaded successfully using PyCaret
+2025-07-08 18:03:15,718 - INFO - Model top_model_3_LassoLars loaded successfully using PyCaret
+2025-07-08 18:12:47,001 - INFO - Pipeline module loaded successfully
+2025-07-08 18:12:48,678 - INFO - Loaded 27 model display names from config
+2025-07-08 18:13:09,059 - INFO - Starting prediction with model: top_model_1_LGBMRegressor
+2025-07-08 18:13:09,060 - INFO - Starting sequential feature preparation for 25 input features
+2025-07-08 18:13:09,060 - INFO - Cleaned features: 22 features after removing UI keys
+2025-07-08 18:13:09,064 - INFO - STEP 1: Applying custom pipeline transformation...
+2025-07-08 18:13:09,108 - INFO - Created dynamic pipeline for prediction
+2025-07-08 18:13:09,161 - INFO - Converted feature dict to DataFrame with shape (1, 26) and columns: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:09,163 - INFO - DataFrameValidator.fit() CALLED
+2025-07-08 18:13:09,163 - INFO - Processing DataFrame with shape: (1, 26)
+2025-07-08 18:13:09,182 - INFO - ColumnNameStandardizer.fit() CALLED
+2025-07-08 18:13:09,184 - INFO - Standardized 0 column names
+2025-07-08 18:13:09,185 - INFO - MissingValueAnalyzer.fit() CALLED
+2025-07-08 18:13:09,187 - INFO - Missing value analysis: >50%: 0, >70%: 0
+2025-07-08 18:13:09,196 - INFO - Data shape after missing value handling: (1, 26)
+2025-07-08 18:13:09,196 - INFO - CategoricalValueCleaner.fit() CALLED
+2025-07-08 18:13:09,216 - INFO - SemicolonProcessor.fit() CALLED
+2025-07-08 18:13:09,226 - INFO - Found 0 columns with semicolons: []
+2025-07-08 18:13:09,227 - INFO - CategoricalValueStandardizer.fit() CALLED
+2025-07-08 18:13:09,239 - INFO - Single-value categorical columns selected for mapping: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:09,264 - INFO - Encoding 0 multi-value columns: []
+2025-07-08 18:13:09,268 - INFO - CategoricalEncoder.fit() CALLED
+2025-07-08 18:13:09,272 - INFO - One-hot encoding 18 categorical columns: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:09,285 - INFO - ColumnNameFixer.fit() CALLED
+2025-07-08 18:13:09,291 - INFO - Fixed 1 column names for compatibility
+2025-07-08 18:13:09,291 - INFO - === Final Data Validation ===
+2025-07-08 18:13:09,291 - INFO - Final shape: (1, 26)
+2025-07-08 18:13:09,292 - INFO - Target column: None
+2025-07-08 18:13:09,293 - INFO - Total missing values: 0
+2025-07-08 18:13:09,295 - INFO - Total infinite values: 0
+2025-07-08 18:13:09,296 - INFO - Numeric columns: 6
+2025-07-08 18:13:09,296 - INFO - Categorical columns: 0
+2025-07-08 18:13:09,296 - ERROR - SchemaAligner: Could not load schema file config\full_model_features.json: [Errno 2] No such file or directory: 'config\\full_model_features.json'
+2025-07-08 18:13:09,299 - WARNING - SchemaAligner: No expected features loaded, returning original data
+2025-07-08 18:13:09,299 - INFO - Successfully processed features: shape (1, 26)
+2025-07-08 18:13:09,299 - INFO - Custom pipeline successful: (1, 26)
+2025-07-08 18:13:09,300 - INFO - Custom pipeline features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'external_eef_industry_sector_missing', 'external_eef_organisation_type_missing']...
+2025-07-08 18:13:09,300 - INFO - STEP 2: Attempting PyCaret pipeline transformation...
+2025-07-08 18:13:09,300 - INFO - Attempting to load pipeline from: config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:13:10,185 - INFO - Pipeline loaded successfully from config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:13:10,185 - INFO - Pipeline type: Pipeline
+2025-07-08 18:13:10,185 - INFO - Pipeline has 4 steps
+2025-07-08 18:13:10,185 - INFO - Pipeline expects 72 input features
+2025-07-08 18:13:10,185 - INFO - PyCaret pipeline loaded successfully
+2025-07-08 18:13:10,185 - INFO - Pipeline expects 72 input features
+2025-07-08 18:13:10,185 - WARNING - PyCaret pipeline failed: "['external_eef_organisation_type_amusement_game_center', 'external_eef_organisation_type_banking', 'external_eef_organisation_type_banking_insurance_stock', 'external_eef_organisation_type_credit_card_processor', 'external_eef_organisation_type_financial', 'external_eef_organisation_type_financial_property_and_business_services', 'external_eef_organisation_type_insurance', 'external_eef_organisation_type_revenue', 'external_eef_organisation_type_revenue_collection'] not in index"
+2025-07-08 18:13:10,185 - INFO - Using custom pipeline output as fallback...
+2025-07-08 18:13:10,185 - INFO - Fallback pipeline complete:
+2025-07-08 18:13:10,185 - INFO -    - Final shape: (1, 26)
+2025-07-08 18:13:10,185 - INFO -    - Features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used']...
+2025-07-08 18:13:10,208 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:13:10,208 - INFO - Aligning 26 features to 81 model features
+2025-07-08 18:13:10,534 - INFO - Prediction successful: 1219.5455303227827
+2025-07-08 18:13:10,537 - INFO - Pipeline module loaded successfully
+2025-07-08 18:13:10,573 - INFO - Loaded 27 model display names from config
+2025-07-08 18:13:10,614 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:13:16,814 - INFO - Starting prediction with model: top_model_1_LGBMRegressor
+2025-07-08 18:13:16,815 - INFO - Starting sequential feature preparation for 25 input features
+2025-07-08 18:13:16,815 - INFO - Cleaned features: 22 features after removing UI keys
+2025-07-08 18:13:16,816 - INFO - STEP 1: Applying custom pipeline transformation...
+2025-07-08 18:13:16,859 - INFO - Created dynamic pipeline for prediction
+2025-07-08 18:13:16,917 - INFO - Converted feature dict to DataFrame with shape (1, 26) and columns: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:16,918 - INFO - DataFrameValidator.fit() CALLED
+2025-07-08 18:13:16,919 - INFO - Processing DataFrame with shape: (1, 26)
+2025-07-08 18:13:16,934 - INFO - ColumnNameStandardizer.fit() CALLED
+2025-07-08 18:13:16,935 - INFO - Standardized 0 column names
+2025-07-08 18:13:16,936 - INFO - MissingValueAnalyzer.fit() CALLED
+2025-07-08 18:13:16,938 - INFO - Missing value analysis: >50%: 0, >70%: 0
+2025-07-08 18:13:16,943 - INFO - Data shape after missing value handling: (1, 26)
+2025-07-08 18:13:16,943 - INFO - CategoricalValueCleaner.fit() CALLED
+2025-07-08 18:13:16,965 - INFO - SemicolonProcessor.fit() CALLED
+2025-07-08 18:13:16,972 - INFO - Found 0 columns with semicolons: []
+2025-07-08 18:13:16,972 - INFO - CategoricalValueStandardizer.fit() CALLED
+2025-07-08 18:13:16,986 - INFO - Single-value categorical columns selected for mapping: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:17,009 - INFO - Encoding 0 multi-value columns: []
+2025-07-08 18:13:17,012 - INFO - CategoricalEncoder.fit() CALLED
+2025-07-08 18:13:17,022 - INFO - One-hot encoding 18 categorical columns: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:17,041 - INFO - ColumnNameFixer.fit() CALLED
+2025-07-08 18:13:17,042 - INFO - Fixed 1 column names for compatibility
+2025-07-08 18:13:17,042 - INFO - === Final Data Validation ===
+2025-07-08 18:13:17,043 - INFO - Final shape: (1, 26)
+2025-07-08 18:13:17,045 - INFO - Target column: None
+2025-07-08 18:13:17,046 - INFO - Total missing values: 0
+2025-07-08 18:13:17,048 - INFO - Total infinite values: 0
+2025-07-08 18:13:17,049 - INFO - Numeric columns: 6
+2025-07-08 18:13:17,050 - INFO - Categorical columns: 0
+2025-07-08 18:13:17,050 - ERROR - SchemaAligner: Could not load schema file config\full_model_features.json: [Errno 2] No such file or directory: 'config\\full_model_features.json'
+2025-07-08 18:13:17,050 - WARNING - SchemaAligner: No expected features loaded, returning original data
+2025-07-08 18:13:17,051 - INFO - Successfully processed features: shape (1, 26)
+2025-07-08 18:13:17,051 - INFO - Custom pipeline successful: (1, 26)
+2025-07-08 18:13:17,051 - INFO - Custom pipeline features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'external_eef_industry_sector_missing', 'external_eef_organisation_type_missing']...
+2025-07-08 18:13:17,052 - INFO - STEP 2: Attempting PyCaret pipeline transformation...
+2025-07-08 18:13:17,052 - INFO - Attempting to load pipeline from: config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:13:17,053 - INFO - Pipeline loaded successfully from config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:13:17,053 - INFO - Pipeline type: Pipeline
+2025-07-08 18:13:17,053 - INFO - Pipeline has 4 steps
+2025-07-08 18:13:17,053 - INFO - Pipeline expects 72 input features
+2025-07-08 18:13:17,053 - INFO - PyCaret pipeline loaded successfully
+2025-07-08 18:13:17,053 - INFO - Pipeline expects 72 input features
+2025-07-08 18:13:17,061 - WARNING - PyCaret pipeline failed: "['external_eef_organisation_type_amusement_game_center', 'external_eef_organisation_type_banking', 'external_eef_organisation_type_banking_insurance_stock', 'external_eef_organisation_type_credit_card_processor', 'external_eef_organisation_type_financial', 'external_eef_organisation_type_financial_property_and_business_services', 'external_eef_organisation_type_insurance', 'external_eef_organisation_type_revenue', 'external_eef_organisation_type_revenue_collection'] not in index"
+2025-07-08 18:13:17,061 - INFO - Using custom pipeline output as fallback...
+2025-07-08 18:13:17,065 - INFO - Fallback pipeline complete:
+2025-07-08 18:13:17,065 - INFO -    - Final shape: (1, 26)
+2025-07-08 18:13:17,065 - INFO -    - Features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used']...
+2025-07-08 18:13:17,084 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:13:17,085 - INFO - Aligning 26 features to 81 model features
+2025-07-08 18:13:17,376 - INFO - Prediction successful: 1219.5455303227827
+2025-07-08 18:13:17,416 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:13:20,995 - INFO - Model top_model_1_LGBMRegressor loaded successfully using PyCaret
+2025-07-08 18:13:23,532 - INFO - Starting prediction with model: top_model_2_GradientBoostingRegressor
+2025-07-08 18:13:23,532 - INFO - Starting sequential feature preparation for 25 input features
+2025-07-08 18:13:23,532 - INFO - Cleaned features: 22 features after removing UI keys
+2025-07-08 18:13:23,535 - INFO - STEP 1: Applying custom pipeline transformation...
+2025-07-08 18:13:23,588 - INFO - Created dynamic pipeline for prediction
+2025-07-08 18:13:23,632 - INFO - Converted feature dict to DataFrame with shape (1, 26) and columns: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:23,632 - INFO - DataFrameValidator.fit() CALLED
+2025-07-08 18:13:23,636 - INFO - Processing DataFrame with shape: (1, 26)
+2025-07-08 18:13:23,656 - INFO - ColumnNameStandardizer.fit() CALLED
+2025-07-08 18:13:23,657 - INFO - Standardized 0 column names
+2025-07-08 18:13:23,659 - INFO - MissingValueAnalyzer.fit() CALLED
+2025-07-08 18:13:23,662 - INFO - Missing value analysis: >50%: 0, >70%: 0
+2025-07-08 18:13:23,674 - INFO - Data shape after missing value handling: (1, 26)
+2025-07-08 18:13:23,674 - INFO - CategoricalValueCleaner.fit() CALLED
+2025-07-08 18:13:23,697 - INFO - SemicolonProcessor.fit() CALLED
+2025-07-08 18:13:23,711 - INFO - Found 0 columns with semicolons: []
+2025-07-08 18:13:23,711 - INFO - CategoricalValueStandardizer.fit() CALLED
+2025-07-08 18:13:23,725 - INFO - Single-value categorical columns selected for mapping: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:23,759 - INFO - Encoding 0 multi-value columns: []
+2025-07-08 18:13:23,760 - INFO - CategoricalEncoder.fit() CALLED
+2025-07-08 18:13:23,778 - INFO - One-hot encoding 18 categorical columns: ['external_eef_industry_sector', 'external_eef_organisation_type', 'project_prf_application_type', 'tech_tf_client_roles', 'tech_tf_server_roles', 'project_prf_development_type', 'tech_tf_development_platform', 'tech_tf_language_type', 'tech_tf_primary_programming_language', 'project_prf_relative_size', 'tech_tf_architecture', 'tech_tf_web_development', 'tech_tf_dbms_used', 'project_prf_team_size_group', 'project_prf_application_group', 'tech_tf_client_server', 'project_prfcost_currency', 'process_pmf_development_methodologies']
+2025-07-08 18:13:23,802 - INFO - ColumnNameFixer.fit() CALLED
+2025-07-08 18:13:23,803 - INFO - Fixed 1 column names for compatibility
+2025-07-08 18:13:23,803 - INFO - === Final Data Validation ===
+2025-07-08 18:13:23,803 - INFO - Final shape: (1, 26)
+2025-07-08 18:13:23,803 - INFO - Target column: None
+2025-07-08 18:13:23,803 - INFO - Total missing values: 0
+2025-07-08 18:13:23,803 - INFO - Total infinite values: 0
+2025-07-08 18:13:23,803 - INFO - Numeric columns: 6
+2025-07-08 18:13:23,803 - INFO - Categorical columns: 0
+2025-07-08 18:13:23,809 - ERROR - SchemaAligner: Could not load schema file config\full_model_features.json: [Errno 2] No such file or directory: 'config\\full_model_features.json'
+2025-07-08 18:13:23,809 - WARNING - SchemaAligner: No expected features loaded, returning original data
+2025-07-08 18:13:23,810 - INFO - Successfully processed features: shape (1, 26)
+2025-07-08 18:13:23,810 - INFO - Custom pipeline successful: (1, 26)
+2025-07-08 18:13:23,810 - INFO - Custom pipeline features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used', 'people_prf_project_user_involvement', 'process_pmf_prototyping_used', 'project_prf_case_tool_used', 'external_eef_industry_sector_missing', 'external_eef_organisation_type_missing']...
+2025-07-08 18:13:23,810 - INFO - STEP 2: Attempting PyCaret pipeline transformation...
+2025-07-08 18:13:23,811 - INFO - Attempting to load pipeline from: config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:13:23,813 - INFO - Pipeline loaded successfully from config\synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl
+2025-07-08 18:13:23,813 - INFO - Pipeline type: Pipeline
+2025-07-08 18:13:23,813 - INFO - Pipeline has 4 steps
+2025-07-08 18:13:23,813 - INFO - Pipeline expects 72 input features
+2025-07-08 18:13:23,813 - INFO - PyCaret pipeline loaded successfully
+2025-07-08 18:13:23,813 - INFO - Pipeline expects 72 input features
+2025-07-08 18:13:23,813 - WARNING - PyCaret pipeline failed: "['external_eef_organisation_type_amusement_game_center', 'external_eef_organisation_type_banking', 'external_eef_organisation_type_banking_insurance_stock', 'external_eef_organisation_type_credit_card_processor', 'external_eef_organisation_type_financial', 'external_eef_organisation_type_financial_property_and_business_services', 'external_eef_organisation_type_insurance', 'external_eef_organisation_type_revenue', 'external_eef_organisation_type_revenue_collection'] not in index"
+2025-07-08 18:13:23,813 - INFO - Using custom pipeline output as fallback...
+2025-07-08 18:13:23,825 - INFO - Fallback pipeline complete:
+2025-07-08 18:13:23,825 - INFO -    - Final shape: (1, 26)
+2025-07-08 18:13:23,826 - INFO -    - Features: ['project_prf_year_of_project', 'project_prf_functional_size', 'project_prf_max_team_size', 'process_pmf_docs', 'tech_tf_tools_used']...
+2025-07-08 18:13:23,850 - INFO - Model top_model_2_GradientBoostingRegressor loaded successfully using PyCaret
+2025-07-08 18:13:23,850 - INFO - Aligning 26 features to 81 model features
+2025-07-08 18:13:24,090 - INFO - Prediction successful: 1061.5861038279766
+2025-07-08 18:13:24,132 - INFO - Model top_model_2_GradientBoostingRegressor loaded successfully using PyCaret
