@@ -1,0 +1,52 @@
+# tests/requirements-test.txt
+# Test dependencies for UI simplification tests
+
+# Core testing framework
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+pytest-xdist>=3.0.0
+pytest-html>=3.1.0
+
+# Streamlit testing utilities
+streamlit>=1.28.0
+
+# Data manipulation and analysis (for test data)
+pandas>=1.5.0
+numpy>=1.24.0
+
+# Mocking and test utilities
+mock>=4.0.0
+factory-boy>=3.2.0
+faker>=18.0.0
+
+# Code quality and linting (optional for tests)
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Coverage reporting
+coverage[toml]>=7.0.0
+pytest-cov>=4.0.0
+
+# Performance testing (optional)
+pytest-benchmark>=4.0.0
+
+# Parallel test execution
+pytest-xdist>=3.0.0
+
+# Test reporting
+pytest-html>=3.1.0
+pytest-json-report>=1.5.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Additional testing utilities
+hypothesis>=6.0.0  # Property-based testing
+freezegun>=1.2.0   # Time mocking
+responses>=0.23.0  # HTTP mocking
+
+# Development dependencies (if running tests in development)
+ipython>=8.0.0
+jupyter>=1.0.0
