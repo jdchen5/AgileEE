@@ -2,51 +2,53 @@
 
 ---
 
-## Model 1: Bayesian Ridge Regression
+## Model 1: Light Gradient Boosting Machine Regressor
 
-![Bayesian Ridge SHAP Summary](../plots/shap_summary_BayesianRidge.png)
+![Light Gradient Boosting Machine Regressor SHAP Summary](../plots/shap_summary_LGBMRegressor.png)
 
 ### What this shows  
-This summary plot ranks features by their overall impact on the model’s predictions. Each dot represents a data point colored by feature value (red = high, blue = low). The position along the x-axis shows the effect magnitude and direction of the feature on the prediction.
+This SHAP summary plot ranks features by their overall importance in the LightGBM Regressor model’s predictions. Each dot represents a project instance, colored by feature value (red = high, blue = low). The x-axis (SHAP value) shows the impact and direction of the feature on the model’s output.
 
 ### Why these features matter  
-- **`project_prf_functional_size`** is the top feature, meaning that projects with larger functional sizes strongly influence the predicted effort.  
-- Technology-related features such as **`tech_tf_primary_programming_language`** and **`tech_tf_tools_used`** also significantly impact predictions, reflecting their influence on project complexity.
+- **`project_prf_functional_size`** has the highest impact, indicating that larger functional size strongly increases predicted effort.  
+- Technology-related features such as **`tech_tf_language_type_3gl`** and team size features , **`project_prf_max_team_size`** are also influential, reflecting the role of technical complexity and staffing.
 
 ### Interpretation  
-Higher values of important features tend to increase the predicted effort (indicated by red dots on the right). This helps explain why certain projects are estimated as more demanding.
+High values of important features (shown by red dots on the right) typically lead to higher predicted project effort, while low values (blue) are associated with lower effort predictions. This helps users understand the main drivers behind the LightGBM model’s estimates.
 
 ---
 
-## Model 2: Lasso Regression
+## Model 2: Gradient Boosting Regressor
 
-![Lasso SHAP Summary](../plots/shap_summary_Lasso.png)
+![Gradient Boosting Regressor SHAP Summary](../plots/shap_summary_GradientBoostingRegressor.png)
 
 ### What this shows  
-Lasso regression performs feature selection by driving some coefficients to zero, so the summary plot highlights a smaller subset of important features.
+This SHAP summary plot visualizes which features most influence the predictions of the Gradient Boosting Regressor model. Each dot represents a project example, colored by feature value (red = high, blue = low). The x-axis position (SHAP value) indicates the magnitude and direction of the feature’s impact on predicted project effort.
 
 ### Why these features matter  
-- The model focuses on fewer features, reinforcing that **`project_prf_functional_size`** and a few tech variables dominate the prediction.  
-- This sparsity improves interpretability without sacrificing performance.
+- **`project_prf_functional_size`** is the top feature, so the overall size of the project has the greatest influence on estimated effort.  
+- **Team and technology factors** like project_prf_max_team_size, tech_tf_language_type_3gl, and tech_tf_tools_used are also highly impactful, showing that both people and technical stack contribute significantly to predictions.
+- **Contextual features** such as external_eef_industry_sector_banking and external_eef_organisation_type_transport_and_storage suggest that the type of industry or organization can shift the expected project effort.
 
 ### Interpretation  
-The selected features are the primary drivers of predicted effort. Their SHAP values indicate how feature values push predictions higher or lower.
+Projects with higher values in key features—like larger functional size, bigger teams, and advanced technology types—tend to have higher predicted effort (red dots on the right). Conversely, lower values (blue) are linked with lower effort. This plot helps identify what project characteristics drive the Gradient Boosting model’s predictions, making the model’s reasoning more transparent for stakeholders.
 
 ---
 
-## Model 3: LassoLars Regression
+## Model 3: LassoLars Regressor
 
-![LassoLars SHAP Summary](../plots/shap_summary_LassoLars.png)
+![LassoLars SHAP Summary](../plots/shap_summary_LassoLars)
 
 ### What this shows  
-LassoLars also uses sparsity to identify relevant features, but with a different algorithmic approach. The summary plot reveals the main influential features.
+This SHAP summary plot displays the most influential features in the predictions made by the Lasso Least Angle Regression (LassoLars) Regressor. Each point is a project example, with color representing the value of the feature (red = high, blue = low). The x-axis shows how much each feature pushes the prediction higher or lower (the SHAP value).
 
 ### Why these features matter  
-- **`project_prf_functional_size`** remains the most important feature.  
-- Some variation in secondary features compared to Lasso is observed, reflecting subtle differences in model behavior.
+- project_prf_functional_size is the dominant driver, indicating that projects with greater functional size have much higher estimated effort.
+- Team size and technical features like project_prf_max_team_size, tech_tf_language_type_3gl, and tech_tf_tools_used remain strong predictors, highlighting the impact of team structure and technology choices.
+- Organizational and contextual variables such as external_eef_industry_sector_banking and external_eef_organisation_type_transport_and_storage show that business environment and sector can meaningfully affect the model’s output.
 
 ### Interpretation  
-This analysis helps users understand the main factors influencing predictions, increasing trust and transparency.
+Larger functional size, bigger teams, and advanced technologies (high feature values, red dots on the right) lead to higher predicted project effort. Conversely, projects with smaller scope, smaller teams, or simpler tech stacks (blue dots) are linked to lower effort estimates. This visualization makes it clear which project characteristics are most influential in the LassoLars model’s decision-making.
 
 ---
 

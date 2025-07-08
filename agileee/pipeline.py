@@ -21,8 +21,8 @@ from typing import Dict, List, Optional, Union, Tuple, Any
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MultiLabelBinarizer
-from constants import FileConstants, PipelineConstants, DataConstants
-from config_loader import ConfigLoader
+from agileee.constants import FileConstants, PipelineConstants, DataConstants
+from agileee.config_loader import ConfigLoader
 
 # Logging setup
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

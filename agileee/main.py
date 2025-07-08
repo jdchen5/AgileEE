@@ -11,7 +11,7 @@ st.set_page_config(
 import logging
 import sys
 import traceback
-from constants import LoggingConstants
+from agileee.constants import LoggingConstants
 
 # Logging setup
 logging.basicConfig(

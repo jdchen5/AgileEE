@@ -11,13 +11,14 @@ import pandas as pd
 import numpy as np
 import sys
 import os
+import agileee.ui as ui
 
 # Add the project root to the path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import the simplified UI module
-import ui
-from constants import UIConstants, FileConstants
+import agileee.ui
+from agileee.constants import UIConstants, FileConstants
 
 class TestStaticShapTabCore:
     """Test core static SHAP analysis functionality"""

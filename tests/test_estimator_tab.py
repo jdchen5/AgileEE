@@ -17,8 +17,8 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import the simplified UI module
-import ui
-from constants import UIConstants, FileConstants
+import agileee.ui as ui
+from agileee.constants import UIConstants, FileConstants
 
 class TestEstimatorTabCore:
     """Test core estimator tab functionality"""

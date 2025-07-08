@@ -21,7 +21,8 @@ from typing import Dict, List, Optional, Union, Callable, Any
 import logging
 import yaml
 import os
-from constants import PipelineConstants, ModelConstants, UIConstants
+import streamlit as st
+from agileee.constants import PipelineConstants, ModelConstants, UIConstants, FileConstants
 
 # Suppress SHAP warnings for cleaner output
 warnings.filterwarnings('ignore', category=UserWarning, module='shap')
@@ -29,7 +30,7 @@ logging.getLogger('shap').setLevel(logging.WARNING)
 
 # Import from your models.py
 try:
-    from models import (
+    from agileee.models import (
         prepare_isbsg_sample_data,
         prepare_features_for_model,
         get_trained_model,
@@ -64,6 +65,40 @@ def clear_explainer_cache():
     global _explainer_cache
     _explainer_cache.clear()
     print("SHAP explainer cache cleared")
+
+def display_optimized_shap_analysis(user_inputs, model_name, get_trained_model_func):
+    """Minimal SHAP analysis display"""
+    st.info("🔍 SHAP Analysis")
+    
+    try:
+        # Show static analysis from markdown file using constants
+        with open(FileConstants.SHAP_ANALYSIS_FILE, "r", encoding="utf-8") as f:
+            shap_report_md = f.read()
+        st.markdown(shap_report_md, unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.warning("SHAP analysis file not found. Showing placeholder analysis.")
+        st.markdown("""
+        ### SHAP Analysis Placeholder
+        
+        **Top Contributing Features:**
+        - Project Functional Size: High impact on effort estimation
+        - Team Size: Moderate impact
+        - Technology Complexity: Moderate impact
+        
+        *Note: This is a simplified view. Full SHAP analysis requires trained models.*
+        """)
+
+def get_shap_explainer_optimized(*args, **kwargs):
+    """Placeholder explainer function"""
+    return None
+
+def clear_explainer_cache():
+    """Clear cache placeholder"""
+    st.success("Cache cleared!")
+
+def get_cache_info():
+    """Get cache info placeholder"""
+    return {'hits': 0, 'misses': 0, 'created': 0}
 
 def get_cache_info() -> Dict[str, Any]:
     """Get information about the current explainer cache."""

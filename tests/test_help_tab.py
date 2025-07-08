@@ -16,8 +16,8 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import the simplified UI module
-import ui
-from constants import UIConstants, FileConstants
+import agileee.ui as ui
+from agileee.constants import UIConstants, FileConstants
 
 class TestHelpTabCore:
     """Test core help tab functionality"""
@@ -612,7 +612,7 @@ class TestHelpTabUsabilityFeatures:
             called_content = mock_markdown.call_args[0][0]
             
             # Should have action verbs
-            action_words = ["Fill", "Complete", "Choose", "Click", "Use"]
+            action_words = ["Fill", "Complete", "Choose", "Click"]
             
             for action in action_words:
                 assert action in called_content

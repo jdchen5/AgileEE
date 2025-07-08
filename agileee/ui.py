@@ -18,10 +18,10 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 import traceback
-from constants import FileConstants, UIConstants, PipelineConstants
-from config_loader import ConfigLoader
+from agileee.constants import FileConstants, UIConstants, PipelineConstants
+from agileee.config_loader import ConfigLoader
 
-from shap_analysis import (
+from agileee.shap_analysis import (
     display_optimized_shap_analysis,
     get_shap_explainer_optimized,
     clear_explainer_cache,
@@ -31,7 +31,7 @@ from shap_analysis import (
 # -------------- MODEL IMPORTS AND FALLBACKS ----------------
 
 try:
-    from models import (
+    from agileee.models import (
         predict_man_hours,
         list_available_models,
         check_required_models,

@@ -7,6 +7,7 @@ This file provides common test setup, mock data, and utilities.
 import pytest
 import streamlit as st
 from unittest.mock import Mock, patch, MagicMock
+from contextlib import ExitStack
 import pandas as pd
 import numpy as np
 import sys
@@ -18,8 +19,8 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 # Import the modules under test
-import ui
-from constants import UIConstants, FileConstants
+from agileee import ui
+from agileee.constants import UIConstants, FileConstants
 
 # ==================== PYTEST CONFIGURATION ====================
 
@@ -60,73 +61,51 @@ def clean_session_state():
 @pytest.fixture
 def mock_streamlit_components():
     """Mock all Streamlit UI components to prevent actual rendering during tests."""
-    with patch('streamlit.title') as mock_title, \
-         patch('streamlit.header') as mock_header, \
-         patch('streamlit.subheader') as mock_subheader, \
-         patch('streamlit.markdown') as mock_markdown, \
-         patch('streamlit.info') as mock_info, \
-         patch('streamlit.warning') as mock_warning, \
-         patch('streamlit.error') as mock_error, \
-         patch('streamlit.success') as mock_success, \
-         patch('streamlit.tabs') as mock_tabs, \
-         patch('streamlit.columns') as mock_columns, \
-         patch('streamlit.expander') as mock_expander, \
-         patch('streamlit.sidebar') as mock_sidebar, \
-         patch('streamlit.button') as mock_button, \
-         patch('streamlit.selectbox') as mock_selectbox, \
-         patch('streamlit.number_input') as mock_number, \
-         patch('streamlit.text_input') as mock_text, \
-         patch('streamlit.checkbox') as mock_checkbox, \
-         patch('streamlit.divider') as mock_divider, \
-         patch('streamlit.metric') as mock_metric, \
-         patch('streamlit.dataframe') as mock_dataframe, \
-         patch('streamlit.bar_chart') as mock_bar_chart, \
-         patch('streamlit.plotly_chart') as mock_plotly, \
-         patch('streamlit.spinner') as mock_spinner, \
-         patch('streamlit.file_uploader') as mock_file_uploader, \
-         patch('streamlit.download_button') as mock_download:
+    with ExitStack() as stack:
+        # Define all patches to apply
+        patches = {
+            'title': stack.enter_context(patch('streamlit.title')),
+            'header': stack.enter_context(patch('streamlit.header')),
+            'subheader': stack.enter_context(patch('streamlit.subheader')),
+            'markdown': stack.enter_context(patch('streamlit.markdown')),
+            'info': stack.enter_context(patch('streamlit.info')),
+            'warning': stack.enter_context(patch('streamlit.warning')),
+            'error': stack.enter_context(patch('streamlit.error')),
+            'success': stack.enter_context(patch('streamlit.success')),
+            'tabs': stack.enter_context(patch('streamlit.tabs')),
+            'columns': stack.enter_context(patch('streamlit.columns')),
+            'expander': stack.enter_context(patch('streamlit.expander')),
+            'sidebar': stack.enter_context(patch('streamlit.sidebar')),
+            'button': stack.enter_context(patch('streamlit.button')),
+            'selectbox': stack.enter_context(patch('streamlit.selectbox')),
+            'number_input': stack.enter_context(patch('streamlit.number_input')),
+            'text_input': stack.enter_context(patch('streamlit.text_input')),
+            'checkbox': stack.enter_context(patch('streamlit.checkbox')),
+            'divider': stack.enter_context(patch('streamlit.divider')),
+            'metric': stack.enter_context(patch('streamlit.metric')),
+            'dataframe': stack.enter_context(patch('streamlit.dataframe')),
+            'bar_chart': stack.enter_context(patch('streamlit.bar_chart')),
+            'plotly_chart': stack.enter_context(patch('streamlit.plotly_chart')),
+            'spinner': stack.enter_context(patch('streamlit.spinner')),
+            'file_uploader': stack.enter_context(patch('streamlit.file_uploader')),
+            'download_button': stack.enter_context(patch('streamlit.download_button'))
+        }
         
         # Configure default behaviors
-        mock_tabs.return_value = [MagicMock() for _ in range(5)]
-        mock_columns.return_value = [MagicMock(), MagicMock()]
-        mock_button.return_value = False
-        mock_selectbox.return_value = "default_value"
-        mock_number.return_value = 100
-        mock_text.return_value = "test_value"
-        mock_checkbox.return_value = True
+        patches['tabs'].return_value = [MagicMock() for _ in range(5)]
+        patches['columns'].return_value = [MagicMock(), MagicMock()]
+        patches['button'].return_value = False
+        patches['selectbox'].return_value = "default_value"
+        patches['number_input'].return_value = 100
+        patches['text_input'].return_value = "test_value"
+        patches['checkbox'].return_value = True
         
         # Configure context managers
-        for mock_context in [mock_expander, mock_sidebar, mock_spinner]:
-            mock_context.return_value.__enter__ = Mock(return_value=MagicMock())
-            mock_context.return_value.__exit__ = Mock(return_value=None)
+        for context_name in ['expander', 'sidebar', 'spinner']:
+            patches[context_name].return_value.__enter__ = Mock(return_value=MagicMock())
+            patches[context_name].return_value.__exit__ = Mock(return_value=None)
         
-        yield {
-            'title': mock_title,
-            'header': mock_header,
-            'subheader': mock_subheader,
-            'markdown': mock_markdown,
-            'info': mock_info,
-            'warning': mock_warning,
-            'error': mock_error,
-            'success': mock_success,
-            'tabs': mock_tabs,
-            'columns': mock_columns,
-            'expander': mock_expander,
-            'sidebar': mock_sidebar,
-            'button': mock_button,
-            'selectbox': mock_selectbox,
-            'number_input': mock_number,
-            'text_input': mock_text,
-            'checkbox': mock_checkbox,
-            'divider': mock_divider,
-            'metric': mock_metric,
-            'dataframe': mock_dataframe,
-            'bar_chart': mock_bar_chart,
-            'plotly_chart': mock_plotly,
-            'spinner': mock_spinner,
-            'file_uploader': mock_file_uploader,
-            'download_button': mock_download
-        }
+        yield patches
 
 @pytest.fixture
 def sample_user_inputs():
@@ -245,47 +224,43 @@ def mock_ui_fields():
 @pytest.fixture
 def mock_models_module():
     """Mock the models module functions."""
-    with patch.object(ui, 'MODELS_AVAILABLE', True), \
-         patch.object(ui, 'predict_man_hours') as mock_predict, \
-         patch.object(ui, 'list_available_models') as mock_list, \
-         patch.object(ui, 'check_required_models') as mock_check, \
-         patch.object(ui, 'get_feature_importance') as mock_importance, \
-         patch.object(ui, 'get_model_display_name') as mock_display_name, \
-         patch.object(ui, 'get_trained_model') as mock_get_model:
+    with ExitStack() as stack:
+        patches = {
+            'models_available': stack.enter_context(patch.object(ui, 'MODELS_AVAILABLE', True)),
+            'predict_man_hours': stack.enter_context(patch.object(ui, 'predict_man_hours')),
+            'list_available_models': stack.enter_context(patch.object(ui, 'list_available_models')),
+            'check_required_models': stack.enter_context(patch.object(ui, 'check_required_models')),
+            'get_feature_importance': stack.enter_context(patch.object(ui, 'get_feature_importance')),
+            'get_model_display_name': stack.enter_context(patch.object(ui, 'get_model_display_name')),
+            'get_trained_model': stack.enter_context(patch.object(ui, 'get_trained_model'))
+        }
         
         # Configure default behaviors
-        mock_predict.return_value = 480.0
-        mock_list.return_value = [
+        patches['predict_man_hours'].return_value = 480.0
+        patches['list_available_models'].return_value = [
             {'technical_name': 'rf_model', 'display_name': 'Random Forest'},
             {'technical_name': 'xgb_model', 'display_name': 'XGBoost'}
         ]
-        mock_check.return_value = {'models_available': True}
-        mock_importance.return_value = np.array([0.3, 0.2, 0.15, 0.1, 0.05])
-        mock_display_name.side_effect = lambda x: x.replace('_', ' ').title()
-        mock_get_model.return_value = MagicMock()
+        patches['check_required_models'].return_value = {'models_available': True}
+        patches['get_feature_importance'].return_value = np.array([0.3, 0.2, 0.15, 0.1, 0.05])
+        patches['get_model_display_name'].side_effect = lambda x: x.replace('_', ' ').title()
+        patches['get_trained_model'].return_value = MagicMock()
         
-        yield {
-            'predict_man_hours': mock_predict,
-            'list_available_models': mock_list,
-            'check_required_models': mock_check,
-            'get_feature_importance': mock_importance,
-            'get_model_display_name': mock_display_name,
-            'get_trained_model': mock_get_model
-        }
+        yield patches
 
 @pytest.fixture
 def mock_shap_module():
     """Mock the SHAP analysis module."""
-    with patch.object(ui, 'display_instance_specific_shap') as mock_display_shap, \
-         patch.object(ui, 'display_static_shap_analysis') as mock_static_shap:
-        
-        mock_display_shap.return_value = None
-        mock_static_shap.return_value = None
-        
-        yield {
-            'display_instance_specific_shap': mock_display_shap,
-            'display_static_shap_analysis': mock_static_shap
+    with ExitStack() as stack:
+        patches = {
+            'display_instance_specific_shap': stack.enter_context(patch.object(ui, 'display_instance_specific_shap')),
+            'display_static_shap_analysis': stack.enter_context(patch.object(ui, 'display_static_shap_analysis'))
         }
+        
+        patches['display_instance_specific_shap'].return_value = None
+        patches['display_static_shap_analysis'].return_value = None
+        
+        yield patches
 
 # ==================== UTILITY FUNCTIONS ====================
 

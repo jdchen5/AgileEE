@@ -22,13 +22,13 @@ import logging
 import re
 import yaml
 from typing import Dict, List, Optional, Union, Any
-from constants import FileConstants, ModelConstants, DataConstants, PipelineConstants
-from config_loader import ConfigLoader
-from model_display_names import ModelDisplayNameManager
+from agileee.constants import FileConstants, ModelConstants, DataConstants, PipelineConstants
+from agileee.config_loader import ConfigLoader
+from agileee.model_display_names import ModelDisplayNameManager
 
 # Import existing pipeline functions
 try:
-    from pipeline import convert_feature_dict_to_dataframe, create_preprocessing_pipeline
+    from agileee.pipeline import convert_feature_dict_to_dataframe, create_preprocessing_pipeline
     PIPELINE_AVAILABLE = True
     logging.info("Pipeline module loaded successfully")
 except ImportError as e:
@@ -36,7 +36,7 @@ except ImportError as e:
     logging.warning(f"Pipeline module not available: {e}")
 
 try:
-    from feature_engineering import (
+    from agileee.feature_engineering import (
         estimate_target_value,
         calculate_derived_features,
         validate_features,

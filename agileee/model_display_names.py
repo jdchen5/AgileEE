@@ -10,7 +10,7 @@ import logging
 from typing import Dict, Optional
 import json
 import os
-from constants import FileConstants, ModelConstants
+from agileee.constants import FileConstants, ModelConstants
 
 class ModelDisplayNameManager:
     """Manages model display name mappings and transformations"""
