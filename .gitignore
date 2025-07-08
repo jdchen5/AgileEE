@@ -1,0 +1,20 @@
+# Ignore Python bytecode files
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+
+# Ignore all pickle files in any folder
+*.pkl
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore Streamlit temporary files
+.streamlit/
+

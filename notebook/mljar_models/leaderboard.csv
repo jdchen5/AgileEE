@@ -1,0 +1,11 @@
+name,model_type,metric_type,metric_value,train_time
+1_Linear,Linear,rmse,50148620.23788065,76.65
+2_Default_LightGBM,LightGBM,rmse,4686.486576180866,109.07
+12_LightGBM,LightGBM,rmse,5415.51669639682,85.17
+3_Xgboost,Xgboost,rmse,5493.7875167936445,40.9
+21_RandomForest,Random Forest,rmse,7415.6850220566075,98.38
+22_LightGBM,LightGBM,rmse,4686.486576180866,111.53
+Ensemble,Ensemble,rmse,4686.486576180866,0.31
+2_Default_LightGBM_Stacked,LightGBM,rmse,5118.172484364,40.69
+3_Xgboost_Stacked,Xgboost,rmse,5400.846534225361,33.39
+Ensemble_Stacked,Ensemble,rmse,4686.486576180866,0.39
