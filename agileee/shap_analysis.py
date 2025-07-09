@@ -25,6 +25,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from typing import Dict, List, Optional, Union, Callable, Any
 import logging
+from agileee.constants import PipelineConstants, UIConstants
 
 
 # Suppress SHAP warnings
@@ -136,7 +137,7 @@ def extract_model_estimator(model):
         # Assume it's already unwrapped
         return model
 
-def get_simple_background_data(user_inputs, n_samples=50):
+def get_simple_background_data(user_inputs, n_samples=PipelineConstants.KERNEL_EXPLAINER_SAMPLE_SIZE):
     """
     FIXED: Simple background data generation when ISBSG not available
     """
@@ -217,7 +218,7 @@ def create_appropriate_explainer(model, background_data):
             if background_data is not None:
                 return shap.LinearExplainer(model, background_data)
             else:
-                return shap.LinearExplainer(model, np.zeros((1, 50)))
+                return shap.LinearExplainer(model, np.zeros((1, PipelineConstants.KERNEL_EXPLAINER_SAMPLE_SIZE)))
         except Exception as e:
             logging.warning(f"LinearExplainer failed: {e}")
     
@@ -225,11 +226,11 @@ def create_appropriate_explainer(model, background_data):
     try:
         if background_data is not None:
             # Use smaller sample for general explainer
-            sample_size = min(20, len(background_data))
+            sample_size = min(PipelineConstants.MAX_ANALYSIS_POINTS, len(background_data))
             return shap.Explainer(model, background_data[:sample_size])
         else:
             # Create minimal background data
-            dummy_data = np.zeros((1, 50))  # Assume 50 features
+            dummy_data = np.zeros((1, PipelineConstants.KERNEL_EXPLAINER_SAMPLE_SIZE))  # Assume 50 features
             return shap.Explainer(model, dummy_data)
     except Exception as e:
         logging.error(f"All explainer types failed: {e}")
@@ -335,7 +336,7 @@ def create_shap_summary_display(shap_values, feature_names, user_inputs):
     
     # Calculate importance metrics
     abs_shap = np.abs(shap_values)
-    top_indices = np.argsort(abs_shap)[::-1][:10]  # Top 10 features
+    top_indices = np.argsort(abs_shap)[::-1][:PipelineConstants.TOP_N_FEATURES]  # Top 10 features
     
     # Create summary table
     summary_data = []
@@ -372,7 +373,7 @@ def create_shap_bar_chart(shap_values, feature_names):
         
         # Get top features for display
         abs_shap = np.abs(shap_values)
-        top_indices = np.argsort(abs_shap)[::-1][:15]  # Top 15 for visibility
+        top_indices = np.argsort(abs_shap)[::-1][:PipelineConstants.MAX_FEATURES_SHOWN]  # Top 15 for visibility
         
         top_features = [feature_names[i] if i < len(feature_names) else f"feature_{i}" 
                        for i in top_indices]

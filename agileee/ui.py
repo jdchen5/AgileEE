@@ -397,7 +397,7 @@ def show_prediction(prediction, model_name, user_inputs=None):
         st.metric("📆 Working Weeks", f"{weeks:.1f} weeks")
 
     with col4:
-        months = weeks / 4.33
+        months = weeks / UIConstants.WEEKS_PER_MONTH
         st.metric("🗓️ Months", f"{months:.1f} months")
 
     # Dynamic thresholds based on selected relative size
@@ -507,7 +507,7 @@ def display_shap_results_ui(shap_values, user_inputs, model_name):
     
     # Get top features using proper display names
     abs_shap = np.abs(shap_values)
-    top_indices = np.argsort(abs_shap)[::-1][:10]
+    top_indices = np.argsort(abs_shap)[::-1][:PipelineConstants.TOP_N_FEATURES]
     
     col1, col2 = st.columns(2)
     

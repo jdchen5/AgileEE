@@ -217,7 +217,7 @@ def get_pipeline_background_data(n_samples: int = 100) -> np.ndarray:
             return prepare_isbsg_sample_data(n_samples)
         
         # Load raw ISBSG data
-        isbsg_df = pd.read_csv(FileConstants.ISBSG_PREPROCESSED_FILE)
+        isbsg_df = pd.read_csv(os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.ISBSG_PREPROCESSED_FILE))
         
         # Sample if needed
         if len(isbsg_df) > n_samples:
@@ -688,7 +688,7 @@ def prepare_features_for_model(ui_features: Dict[str, Any]) -> pd.DataFrame:
             
             if custom_processed_features is not None and not custom_processed_features.empty:
                 logging.info(f"Custom pipeline successful: {custom_processed_features.shape}")
-                logging.info(f"Custom pipeline features: {list(custom_processed_features.columns)[:10]}...")  # Show first 10
+                logging.info(f"Custom pipeline features: {list(custom_processed_features.columns)[:PipelineConstants.TOP_N_FEATURES]}...")  # Show first 10
             else:
                 raise Exception("Custom pipeline returned None or empty DataFrame")
                 
@@ -1300,9 +1300,7 @@ def prepare_sample_data_from_training_csv(n_samples: int = 100) -> Optional[np.n
     """
     try:
         # Define possible training data file locations (including your specific file)
-        possible_paths = [
-            'data/synthetic_isbsg2016r1_1_finance_sdv_generated.csv',  # training data file
-        ]
+        possible_paths = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.ISBSG_PREPROCESSED_FILE)
         
         training_data_path = None
         
@@ -1447,9 +1445,7 @@ def get_training_data_info() -> Dict[str, Any]:
     Get information about available training data for SHAP analysis.
     """
     try:
-        possible_paths = [
-            'data/synthetic_isbsg2016r1_1_finance_sdv_generated.csv',  # Training dataset specific file
-        ]
+        possible_paths = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.ISBSG_PREPROCESSED_FILE)
         
         info = {
             'training_data_available': False,
@@ -1491,7 +1487,7 @@ def prepare_isbsg_sample_data(n_samples: int = 100) -> Optional[np.ndarray]:
     """Fixed ISBSG sample data preparation"""
     try:
         # FIXED: Use the correct file path from discovery
-        file_path = 'data/synthetic_isbsg2016r1_1_finance_sdv_generated.csv'
+        file_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.ISBSG_PREPROCESSED_FILE)
         
         if not os.path.exists(file_path):
             logging.error(f"ISBSG dataset not found at: {file_path}")
@@ -1694,7 +1690,7 @@ def get_isbsg_dataset_info() -> Dict[str, Any]:
     Get detailed information about your ISBSG dataset.
     """
     try:
-        file_path = 'data/synthetic_isbsg2016r1_1_finance_sdv_generated.csv'
+        file_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.ISBSG_PREPROCESSED_FILE)
         
         if not os.path.exists(file_path):
             return {'available': False, 'error': 'ISBSG dataset not found'}
@@ -1908,7 +1904,7 @@ def test_sequential_pipeline(ui_features: Dict[str, Any]) -> Dict[str, Any]:
         if final_result is not None:
             test_result['success'] = True
             test_result['final_result']['shape'] = final_result.shape
-            test_result['final_result']['features'] = list(final_result.columns)[:10]  # First 10 features
+            test_result['final_result']['features'] = list(final_result.columns)[:PipelineConstants.TOP_N_FEATURES]  # First 10 features
     
     except Exception as e:
         test_result['error'] = str(e)

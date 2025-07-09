@@ -19,10 +19,10 @@ class FileConstants:
     
     # Pipeline files
     PIPELINE_FILE = 'preprocessing_pipeline.pkl'
-    PIPELINE_MODEL_FILE = 'synthetic_isbsg2016r1_1_finance_sdv_generated_pipeline.pkl'
+    PIPELINE_MODEL_FILE = 'finance_pycaret_preprocessing_pipeline.pkl'
     
     # Data files
-    ISBSG_PREPROCESSED_FILE = 'synthetic_isbsg2016r1_1_finance_sdv_generated_fixed_columns_data.csv'
+    ISBSG_PREPROCESSED_FILE = 'finance_baseline_training_data_shap_analysis.csv'
 
 
 class PipelineConstants:
@@ -150,3 +150,8 @@ class ValidationConstants:
     MAX_MISSING_RATIO = 0.95
     MAX_INFINITE_VALUES = 0
     MEMORY_WARNING_MB = 100
+
+    REASONABLE_PREDICTION_MIN = 10
+    REASONABLE_PREDICTION_MAX = 5000
+    EXPECTED_FEATURE_COUNT_MIN = 50
+    EXPECTED_FEATURE_COUNT_MAX = 70
