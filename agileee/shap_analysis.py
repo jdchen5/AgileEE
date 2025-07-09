@@ -26,6 +26,7 @@ import plotly.express as px
 from typing import Dict, List, Optional, Union, Callable, Any
 import logging
 
+
 # Suppress SHAP warnings
 warnings.filterwarnings('ignore', category=UserWarning, module='shap')
 
@@ -45,44 +46,37 @@ def get_cache_info() -> Dict[str, Any]:
         'cache_size': len(_explainer_cache)
     }
 
-def display_optimized_shap_analysis(user_inputs, model_name, get_trained_model_func):
+def get_shap_analysis_results(user_inputs, model_name, get_trained_model_func):
     """
-    FIXED: Main SHAP analysis function with proper error handling and fallbacks
+    Calculate SHAP analysis and return results (no display)
     """
     try:
-        st.subheader("🔍 SHAP Analysis - Feature Contributions")
-        
         # Validation
         if not user_inputs or not model_name:
-            st.error("❌ Missing inputs or model for SHAP analysis")
-            return
+            return {'error': 'Missing inputs or model'}
         
-        # Try to get explainer and show analysis
-        with st.spinner("Calculating SHAP values..."):
-            
-            # 1. Try to load model and create explainer
-            explainer = get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func)
-            
-            if explainer is None:
-                st.warning("⚠️ Could not create SHAP explainer for this model")
-                show_fallback_analysis(user_inputs, model_name)
-                return
-            
-            # 2. Calculate SHAP values
-            shap_values = get_shap_values_safe(explainer, user_inputs, model_name)
-            
-            if shap_values is None:
-                st.warning("⚠️ Could not calculate SHAP values")
-                show_fallback_analysis(user_inputs, model_name)
-                return
-            
-            # 3. Display results
-            display_shap_results(shap_values, user_inputs, model_name)
-            
+        # Try to load model and create explainer
+        explainer = get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func)
+        
+        if explainer is None:
+            return {'error': 'Could not create SHAP explainer'}
+        
+        # Calculate SHAP values
+        shap_values = get_shap_values_safe(explainer, user_inputs, model_name)
+        
+        if shap_values is None:
+            return {'error': 'Could not calculate SHAP values'}
+        
+        # Return raw results
+        return {
+            'success': True,
+            'shap_values': shap_values,
+            'model_name': model_name,
+            'user_inputs': user_inputs
+        }
+        
     except Exception as e:
-        st.error(f"❌ SHAP analysis failed: {str(e)}")
-        logging.error(f"SHAP analysis error: {e}")
-        show_fallback_analysis(user_inputs, model_name)
+        return {'error': str(e)}
 
 def get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func):
     """
@@ -210,7 +204,7 @@ def create_appropriate_explainer(model, background_data):
     if any(keyword in model_type for keyword in tree_keywords):
         try:
             if background_data is not None:
-                return shap.TreeExplainer(model, background_data)
+                return shap.TreeExplainer(model, background_data, check_additivity=False)
             else:
                 return shap.TreeExplainer(model)
         except Exception as e:
@@ -223,7 +217,7 @@ def create_appropriate_explainer(model, background_data):
             if background_data is not None:
                 return shap.LinearExplainer(model, background_data)
             else:
-                return shap.LinearExplainer(model, np.zeros((1, background_data.shape[1])))
+                return shap.LinearExplainer(model, np.zeros((1, 50)))
         except Exception as e:
             logging.warning(f"LinearExplainer failed: {e}")
     
@@ -262,8 +256,9 @@ def get_shap_values_safe(explainer, user_inputs, model_name):
         input_safe = np.nan_to_num(input_data.astype(np.float64), nan=0.0, posinf=0.0, neginf=0.0)
         try:
             shap_values = explainer.shap_values(input_safe)
-        except:
-            shap_values = explainer(input_safe)
+        except Exception as shap_error:
+            logging.error(f"SHAP calculation failed: {shap_error}")
+            return None
 
         print(f"DEBUG: shap_values type: {type(shap_values)}, value: {shap_values}")
         

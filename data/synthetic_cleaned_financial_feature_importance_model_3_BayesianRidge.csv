@@ -1,0 +1,93 @@
+feature,importance,model,importance_type,rank
+project_prf_functional_size,3053.7979916029076,BayesianRidge,coef_ (absolute values),1
+project_prf_max_team_size,1680.881398222408,BayesianRidge,coef_ (absolute values),2
+tech_tf_language_type_3gl,669.1497410333625,BayesianRidge,coef_ (absolute values),3
+external_eef_industry_sector_banking,432.7595086624783,BayesianRidge,coef_ (absolute values),4
+project_prf_relative_size_m2,307.5838530343174,BayesianRidge,coef_ (absolute values),5
+tech_tf_tools_used,291.9839783350181,BayesianRidge,coef_ (absolute values),6
+external_eef_industry_sector_financial,247.41529617910612,BayesianRidge,coef_ (absolute values),7
+project_prf_application_type_financial transaction process/accounting,243.29077866018082,BayesianRidge,coef_ (absolute values),8
+external_eef_organisation_type_banking,241.28032954276955,BayesianRidge,coef_ (absolute values),9
+project_prf_team_size_group_missing,221.96160001673968,BayesianRidge,coef_ (absolute values),10
+tech_tf_dbms_used_missing,205.18518176304497,BayesianRidge,coef_ (absolute values),11
+external_eef_organisation_type_financial_property_and_business_services,204.51434653029526,BayesianRidge,coef_ (absolute values),12
+tech_tf_development_platform_mf,188.7907689582072,BayesianRidge,coef_ (absolute values),13
+project_prf_application_group_missing,187.17867530180436,BayesianRidge,coef_ (absolute values),14
+external_eef_organisation_type_transport_and_storage,185.24879554887445,BayesianRidge,coef_ (absolute values),15
+project_prf_case_tool_used_missing,170.26231508720082,BayesianRidge,coef_ (absolute values),16
+tech_tf_client_server_don_t_know,159.73903205178277,BayesianRidge,coef_ (absolute values),17
+process_pmf_docs,157.33276046421648,BayesianRidge,coef_ (absolute values),18
+tech_tf_dbms_used_yes,152.1904487025621,BayesianRidge,coef_ (absolute values),19
+tech_tf_language_type_missing,140.88802861425557,BayesianRidge,coef_ (absolute values),20
+external_eef_organisation_type_government,129.11682022015745,BayesianRidge,coef_ (absolute values),21
+tech_tf_development_platform_proprietary,124.91026269404878,BayesianRidge,coef_ (absolute values),22
+tech_tf_architecture_multi_tier,121.05483796604568,BayesianRidge,coef_ (absolute values),23
+tech_tf_development_platform_pc,119.36187991322089,BayesianRidge,coef_ (absolute values),24
+project_prf_development_type_new_development,116.1519393010949,BayesianRidge,coef_ (absolute values),25
+tech_tf_development_platform_multi,114.79672170634024,BayesianRidge,coef_ (absolute values),26
+process_pmf_development_methodologies_missing,113.84712709496648,BayesianRidge,coef_ (absolute values),27
+project_prf_application_type_cards and payments,111.98104084547026,BayesianRidge,coef_ (absolute values),28
+project_prf_relative_size_s,111.5320740508264,BayesianRidge,coef_ (absolute values),29
+tech_tf_architecture_client_server,110.85541631201735,BayesianRidge,coef_ (absolute values),30
+project_prf_application_type_financial transaction process/accounting; workflow support & management,109.88711900058773,BayesianRidge,coef_ (absolute values),31
+project_prf_application_type_management or performance reporting; online analysis and reporting,103.57158895075356,BayesianRidge,coef_ (absolute values),32
+project_prf_relative_size_xl,96.30592652723354,BayesianRidge,coef_ (absolute values),33
+functional_size_group_m_100_999,90.44708879525788,BayesianRidge,coef_ (absolute values),34
+process_pmf_development_methodologies_waterfall_incl_linear_processing_and_ssadm,90.06418127774612,BayesianRidge,coef_ (absolute values),35
+project_prf_team_size_group_3_4,89.471241749798,BayesianRidge,coef_ (absolute values),36
+project_prf_application_type_missing,88.41927387211405,BayesianRidge,coef_ (absolute values),37
+functional_size_group_l_1000_2999,83.78150752735695,BayesianRidge,coef_ (absolute values),38
+project_prf_case_tool_used_no,83.58679195281849,BayesianRidge,coef_ (absolute values),39
+project_prf_case_tool_used_yes,82.72287527865481,BayesianRidge,coef_ (absolute values),40
+tech_tf_primary_programming_language,81.50308401819757,BayesianRidge,coef_ (absolute values),41
+project_prf_application_type_customer billing/relationship management,80.26778330831351,BayesianRidge,coef_ (absolute values),42
+functional_size_group_xl_3000_8999,77.01736982909952,BayesianRidge,coef_ (absolute values),43
+external_eef_organisation_type_banking_insurance_stock,76.40409858847477,BayesianRidge,coef_ (absolute values),44
+process_pmf_development_methodologies_lean,75.63641201488664,BayesianRidge,coef_ (absolute values),45
+tech_tf_architecture_missing,75.38660560980742,BayesianRidge,coef_ (absolute values),46
+tech_tf_development_platform_mr,72.73018829484833,BayesianRidge,coef_ (absolute values),47
+tech_tf_client_server_missing,72.61617156366607,BayesianRidge,coef_ (absolute values),48
+project_prf_team_size_group_15_20,71.54926098201723,BayesianRidge,coef_ (absolute values),49
+project_prf_application_type_operating system or software utility,71.1949605870617,BayesianRidge,coef_ (absolute values),50
+external_eef_organisation_type_medical_and_health_care,70.94274402660719,BayesianRidge,coef_ (absolute values),51
+tech_tf_language_type_5gl,69.5313325452705,BayesianRidge,coef_ (absolute values),52
+functional_size_group_s_100,68.23122908172564,BayesianRidge,coef_ (absolute values),53
+project_prf_relative_size_missing,67.36175391473111,BayesianRidge,coef_ (absolute values),54
+project_prf_relative_size_xxl,66.59342307265189,BayesianRidge,coef_ (absolute values),55
+project_prf_team_size_group_1,61.53385261026821,BayesianRidge,coef_ (absolute values),56
+project_prf_application_type_electronic data interchange,59.88994620469519,BayesianRidge,coef_ (absolute values),57
+project_prf_relative_size_xs,59.769875068577704,BayesianRidge,coef_ (absolute values),58
+project_prf_application_type_management or performance reporting,58.026589621150876,BayesianRidge,coef_ (absolute values),59
+project_prf_development_type_re_development,53.72826595795249,BayesianRidge,coef_ (absolute values),60
+project_prf_team_size_group_5_8,50.61862220019722,BayesianRidge,coef_ (absolute values),61
+project_prf_team_size_group_9_14,43.234495635506605,BayesianRidge,coef_ (absolute values),62
+project_prf_team_size_group_31_40,40.98634611563007,BayesianRidge,coef_ (absolute values),63
+tech_tf_architecture_multi_tier_client_server,40.566064892624496,BayesianRidge,coef_ (absolute values),64
+external_eef_organisation_type_education_institution,40.28423305688318,BayesianRidge,coef_ (absolute values),65
+external_eef_organisation_type_communications,39.26300337627271,BayesianRidge,coef_ (absolute values),66
+project_prf_application_type_auditing management,39.23434644768321,BayesianRidge,coef_ (absolute values),67
+project_prf_application_group_real_time_application,38.977551240469616,BayesianRidge,coef_ (absolute values),68
+tech_tf_architecture_multi_tier_with_web_public_interface,37.48624766821402,BayesianRidge,coef_ (absolute values),69
+project_prf_application_type_business application,36.58829791579507,BayesianRidge,coef_ (absolute values),70
+project_prf_application_group_infrastructure_software,35.65818710818894,BayesianRidge,coef_ (absolute values),71
+project_prf_relative_size_m1,33.24924068936684,BayesianRidge,coef_ (absolute values),72
+process_pmf_development_methodologies_agile_development,30.453501247724404,BayesianRidge,coef_ (absolute values),73
+project_prf_application_type_workflow support & management,30.393795647939356,BayesianRidge,coef_ (absolute values),74
+tech_tf_client_server_yes,28.897149053636824,BayesianRidge,coef_ (absolute values),75
+project_prf_team_size_group_2,25.958384053146524,BayesianRidge,coef_ (absolute values),76
+project_prf_application_type_online analysis and reporting,25.48491226465567,BayesianRidge,coef_ (absolute values),77
+project_prf_application_group_business_application,25.1944468797397,BayesianRidge,coef_ (absolute values),78
+tech_tf_language_type_4gl,24.576305932895878,BayesianRidge,coef_ (absolute values),79
+project_prf_application_type_surveillance and security,22.579991624391297,BayesianRidge,coef_ (absolute values),80
+project_prf_relative_size_l,21.939974787801418,BayesianRidge,coef_ (absolute values),81
+project_prf_application_type_mobile application,17.615540208508605,BayesianRidge,coef_ (absolute values),82
+project_prf_team_size_group_21_30,16.716242391585823,BayesianRidge,coef_ (absolute values),83
+tech_tf_development_platform_missing,16.563259450622063,BayesianRidge,coef_ (absolute values),84
+tech_tf_architecture_stand_alone,16.04065718504029,BayesianRidge,coef_ (absolute values),85
+external_eef_organisation_type_financial_banking_insurance_stock,10.905702262601153,BayesianRidge,coef_ (absolute values),86
+external_eef_organisation_type_wholesale_and_retail_trade,9.190680700121618,BayesianRidge,coef_ (absolute values),87
+project_prf_relative_size_xxs,8.562692504961404,BayesianRidge,coef_ (absolute values),88
+process_pmf_development_methodologies_unified_process,6.4330676031933365,BayesianRidge,coef_ (absolute values),89
+project_prf_development_type_enhancement,2.3115338205539047,BayesianRidge,coef_ (absolute values),90
+functional_size_group_xxl_9000_17999,1.893653352396342,BayesianRidge,coef_ (absolute values),91
+project_prf_year_of_project,1.0333343199697379e-12,BayesianRidge,coef_ (absolute values),92

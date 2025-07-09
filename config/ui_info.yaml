@@ -2,9 +2,9 @@ fields:
   project_prf_year_of_project:
     label: "Year of Project"
     title: "Year of Project"
-    help: "The year when the project was initiated or planned to start. This helps account for technological and methodological changes over time."
+    help: "The year the project started. Valid range: 2006-2030. This helps account for technological and methodological changes over time."
     type: numeric
-    min: 2015
+    min: 2006
     max: 2030
     default: 2024
     input_type: number_input
@@ -14,7 +14,7 @@ fields:
   external_eef_industry_sector:
     label: "Industry Sector"
     title: "Industry Sector"
-    help: "A derived field that summarizes the Organisation Type of the project into a single value of a defined set."
+    help: "Select a single value that best describes the organisation's industry sector."
     type: categorical
     # options: see feature_mapping.yaml
     default: ""
@@ -24,7 +24,7 @@ fields:
   tech_tf_primary_programming_language:
     label: "Primary Programming Language"
     title: "Primary Programming Language"
-    help: "Primary programming language(s) used in the project. Select the main language or framework that will be used for development."
+    help: "Select the primary language or framework for development."
     type: categorical
     # options: see feature_mapping.yaml
     default: ""
@@ -34,7 +34,7 @@ fields:
   tech_tf_tools_used:
     label: "Number of Tools Used"
     title: "Number of Tools Used"
-    help: "Any software engineering, database, testing, or other tools used during project development or maintenance."
+    help: "Any software engineering tools, database, testing, or other tools used during project development or maintenance."
     type: numeric
     min: 0
     max: 50
@@ -46,7 +46,7 @@ fields:
   project_prf_relative_size:
     label: "Relative Functional Size"
     title: "Relative Functional Size"
-    help: "Categorizes the Functional Size (or Adjusted Function Points) by relative sizes: XXS (0–<10), XS (10–<30), S (30–<100), M1 (100–<300), M2 (300–<1000), L (1,000–<3,000), XL (3,000–<9,000), XXL (9,000–<18,000), XXXL (≥18,000). See ISBSG for details."
+    help: "ISBSG relative sizes: XXS (0–<10), XS (10–<30), S (30–<100), M1 (100–<300), M2 (300–<1000), L (1,000–<3,000), XL (3,000–<9,000), XXL (9,000–<18,000), XXXL (≥18,000). See ISBSG for details."
     type: categorical
     # options: see feature_mapping.yaml
     default: ""
@@ -56,7 +56,7 @@ fields:
   project_prf_functional_size:
     label: "Functional Size"
     title: "Functional Size"
-    help: "The estimated functional size of the project measured in function points, use cases, or similar metrics. This represents the scope of functionality to be delivered."
+    help: "The estimated functional size (in function points). This represents the scope of functionality to be delivered."
     type: numeric
     min: 1
     max: 10000
@@ -118,7 +118,7 @@ fields:
   tech_tf_development_platform:
     label: "Development Platform"
     title: "Development Platform"
-    help: "Defines the primary development platform (as determined by the operating system used): PC, Mid Range, Main Frame, or Multi platform. This affects complexity and development approach."
+    help: "Select the main development environment (e.g., PC, Mainframe, Multi-platform).This affects complexity and development approach."
     type: categorical
     # options: see feature_mapping.yaml
     default: ""
@@ -139,7 +139,7 @@ fields:
   project_prf_max_team_size:
     label: "Max Team Size"
     title: "Max Team Size"
-    help: "The maximum number of team members that will work on this project simultaneously. Include developers, testers, analysts, and other active contributors."
+    help: "The maximum number of concurrent contributors, including developers, testers, analysts, and other active contributors."
     type: numeric
     min: 1
     max: 200
@@ -148,10 +148,29 @@ fields:
     tab: "Important Features"
     mandatory: false
 
+  people_prf_personnel_changes:
+    label: "Personnel Changes"  
+    title: "Personnel Changes"
+    help: "Indicates whether there were any personnel changes during the project. This includes changes in team members, roles, or responsibilities."
+    type: boolean
+    default: ""
+    tab: "Nice Features"
+    mandatory: false
+
+  process_pmf_development_methodologies:
+    label: "Development Methodologies"
+    title: "Development Methodologies"
+    help: "The development methodologies used in the project, such as Agile, Waterfall, or Hybrid approaches."
+    type: categorical
+    # options: see feature_mapping.yaml
+    default: ""
+    tab: "Nice Features"
+    mandatory: false
+
   process_pmf_docs:
     label: "Number of Documents Produced"
     title: "Number of Documents Produced"
-    help: "Documents or work products produced during various project activities, including planning, specification, design, build, testing, and implementation."
+    help: "Key documents and work products created during the project, including planning, specification, design, build, testing, and implementation."
     type: numeric
     min: 0
     max: 100
@@ -180,10 +199,19 @@ fields:
     tab: "Nice Features"
     mandatory: false
 
+  tech_tf_client_server:
+    label: "Client-Server Architecture"
+    title: "Client-Server Architecture"
+    help: "Indicates whether the project is based on a client-server architecture, where client computers interact with server computers."
+    type: boolean
+    default: ""
+    tab: "Nice Features"
+    mandatory: false
+
   tech_tf_web_development:
     label: "Web Development"
     title: "Web Development"
-    help: "A derived indicator of whether the project data includes any comment that it is a web-development project."
+    help: "Indicates whether it is a web-development project."
     type: boolean
     default: ""
     tab: "Nice Features"
@@ -201,7 +229,7 @@ fields:
   project_prf_case_tool_used:
     label: "CASE Tool Used"
     title: "CASE Tool Used"
-    help: "Whether the project used any Computer-Aided Software Engineering (CASE) tool, such as Upper CASE tool, Lower CASE tool, or Integrated CASE tool."
+    help: "Indicates if the project used any Computer-Aided Software Engineering (CASE) tools, such as Upper, Lower, or Integrated tools."
     type: boolean
     default: ""
     tab: "Nice Features"
@@ -210,7 +238,7 @@ fields:
   process_pmf_prototyping_used:
     label: "Prototyping Used"
     title: "Prototyping Used"
-    help: "Whether the project used any prototyping techniques during development."
+    help: "Indicated whether the project used any prototyping techniques during development."
     type: boolean
     default: ""
     tab: "Nice Features"

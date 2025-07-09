@@ -22,7 +22,7 @@ from agileee.constants import FileConstants, UIConstants, PipelineConstants
 from agileee.config_loader import ConfigLoader
 
 from agileee.shap_analysis import (
-    display_optimized_shap_analysis,
+    get_shap_analysis_results,
     get_shap_explainer_optimized,
     clear_explainer_cache,
     get_cache_info   
@@ -467,9 +467,70 @@ def show_feature_importance(model_name, features_dict):
         st.info(f"Feature importance analysis not available: {e}")
 
 def display_instance_specific_shap(user_inputs, model_name):
-    """Display instance-specific SHAP analysis"""
-    # Route to new system
-    display_optimized_shap_analysis(user_inputs, model_name, get_trained_model)
+    """Display SHAP analysis using UI configuration for proper field names"""
+    st.subheader("Feature Analysis")
+    
+    # Always show fallback analysis first
+    display_fallback_analysis(user_inputs, model_name)
+    
+    # Make SHAP optional with button
+    if st.button("Calculate Advanced SHAP", key="calc_shap"):
+        with st.spinner("Calculating SHAP values..."):
+            from agileee.shap_analysis import get_shap_analysis_results
+            
+            results = get_shap_analysis_results(user_inputs, model_name, get_trained_model)
+            
+            if results.get('error'):
+                st.warning(f"SHAP analysis failed: {results['error']}")
+            elif results.get('success'):
+                display_shap_results_ui(results['shap_values'], user_inputs, model_name)
+
+def display_fallback_analysis(user_inputs, model_name):
+    """Show fallback analysis using proper UI field names"""
+    st.markdown("### Your Project Configuration")
+    for key, value in user_inputs.items():
+        if key not in {'selected_model', 'submit'}:
+            clean_key = get_field_label(key)  # Uses FIELDS config
+            st.write(f"**{clean_key}:** {value}")
+    
+    st.markdown("### General Feature Importance")
+    st.markdown("""
+    - **Project Size**: Usually the strongest predictor of effort
+    - **Team Size**: Moderate to strong impact on total effort  
+    - **Technology Complexity**: Can significantly affect development time
+    - **Industry/Domain**: Influences requirements complexity
+    """)
+
+def display_shap_results_ui(shap_values, user_inputs, model_name):
+    """Display SHAP results using UI configuration"""
+    st.subheader("SHAP Feature Contributions")
+    
+    # Get top features using proper display names
+    abs_shap = np.abs(shap_values)
+    top_indices = np.argsort(abs_shap)[::-1][:10]
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("**Top Effort Increasers**")
+        for idx in top_indices:
+            if shap_values[idx] > 0:
+                # Get proper field name from FIELDS config
+                field_names = list(user_inputs.keys())
+                if idx < len(field_names):
+                    field_key = field_names[idx]
+                    display_name = get_field_label(field_key)
+                    st.write(f"• **{display_name}**: +{shap_values[idx]:.4f}")
+    
+    with col2:
+        st.markdown("**Top Effort Reducers**")  
+        for idx in top_indices:
+            if shap_values[idx] < 0:
+                field_names = list(user_inputs.keys())
+                if idx < len(field_names):
+                    field_key = field_names[idx]
+                    display_name = get_field_label(field_key)
+                    st.write(f"• **{display_name}**: {shap_values[idx]:.4f}")
 
 def show_prediction_history():
     """Display prediction history"""
