@@ -22,7 +22,7 @@ import logging
 import re
 import yaml
 from typing import Dict, List, Optional, Union, Any
-from agileee.constants import FileConstants, ModelConstants, DataConstants, PipelineConstants
+from agileee.constants import FileConstants, ModelConstants, DataConstants, PipelineConstants, UIConstants
 from agileee.config_loader import ConfigLoader
 from agileee.model_display_names import ModelDisplayNameManager
 
@@ -688,7 +688,7 @@ def prepare_features_for_model(ui_features: Dict[str, Any]) -> pd.DataFrame:
             
             if custom_processed_features is not None and not custom_processed_features.empty:
                 logging.info(f"Custom pipeline successful: {custom_processed_features.shape}")
-                logging.info(f"Custom pipeline features: {list(custom_processed_features.columns)[:PipelineConstants.TOP_N_FEATURES]}...")  # Show first 10
+                logging.info(f"Custom pipeline features: {list(custom_processed_features.columns)[:UIConstants.SHAP_FEATURE_PREVIEW_COUNT]}...")  # Show first 10
             else:
                 raise Exception("Custom pipeline returned None or empty DataFrame")
                 
@@ -1668,7 +1668,7 @@ def validate_shap_sample_data(sample_data: np.ndarray) -> Dict[str, Any]:
             validation['warnings'].append(f"Unexpected data shape: {sample_data.shape}")
         
         # Check feature count
-        if len(sample_data.shape) == 2 and sample_data.shape[1] != 67:  # Adjust expected count
+        if len(sample_data.shape) == 2 and sample_data.shape[1] != PipelineConstants.EXPECTED_FEATURE_COUNT_PIPELINE:  # Adjust expected count
             validation['warnings'].append(f"Feature count {sample_data.shape[1]} may not match model expectations")
         
         # Data quality checks

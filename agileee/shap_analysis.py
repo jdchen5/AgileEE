@@ -397,7 +397,7 @@ def create_shap_bar_chart(shap_values, feature_names):
             title="SHAP Feature Contributions",
             xaxis_title="SHAP Value (Impact on Prediction)",
             yaxis_title="Features",
-            height=500
+            height=UIConstants.SHAP_CHART_DEFAULT_HEIGHT
         )
         
         st.plotly_chart(fig, use_container_width=True)

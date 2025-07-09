@@ -349,7 +349,7 @@ def display_inputs(user_inputs, selected_model):
         if items:
             # Group items for better display
             col1, col2 = st.columns(2)
-            mid = len(items) // 2
+            mid = len(items) // UIConstants.COLUMN_SPLIT_RATIO
             
             with col1:
                 for param, value in items[:mid]:
@@ -386,19 +386,19 @@ def show_prediction(prediction, model_name, user_inputs=None):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric("📊 Total Effort", f"{prediction:.0f} hours")
+        st.metric(UIConstants.EFFORT_METRIC_TEMPLATE, f"{prediction:.UIConstants.PREDICTION_DECIMAL_PLACESf} hours")
 
     with col2:
         days = prediction / UIConstants.HOURS_PER_DAY
-        st.metric("📅 Working Days", f"{days:.1f} days")
+        st.metric(UIConstants.DAYS_METRIC_TEMPLATE, f"{days:.1f} days")
 
     with col3:
         weeks = days / UIConstants.DAYS_PER_WEEK
-        st.metric("📆 Working Weeks", f"{weeks:.1f} weeks")
+        st.metric(UIConstants.WEEKS_METRIC_TEMPLATE, f"{weeks:.1f} weeks")
 
     with col4:
         months = weeks / UIConstants.WEEKS_PER_MONTH
-        st.metric("🗓️ Months", f"{months:.1f} months")
+        st.metric(UIConstants.MONTHS_METRIC_TEMPLATE, f"{months:.1f} months")
 
     # Dynamic thresholds based on selected relative size
     if user_inputs is not None and "project_prf_relative_size" in user_inputs:

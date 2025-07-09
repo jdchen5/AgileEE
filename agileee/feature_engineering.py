@@ -14,14 +14,15 @@ import yaml
 from typing import Dict, Any, Optional, Tuple, List
 import pandas as pd
 import numpy as np
+from agileee.constants import FileConstants, ModelConstants, FolderConstants, PipelineConstants, DataConstants
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration paths
-CONFIG_FOLDER = 'config'
-FEATURE_MAPPING_FILE = os.path.join(CONFIG_FOLDER, 'feature_mapping.yaml')
+CONFIG_FOLDER = FolderConstants.CONFIG_FOLDER
+FEATURE_MAPPING_FILE = os.path.join(FolderConstants.CONFIG_FOLDER, FileConstants.FEATURE_MAPPING_FILE)
 
 # Check if PyCaret is available
 try:
@@ -130,15 +131,15 @@ def estimate_target_value(input_features: Dict[str, Any]) -> float:
     # Size factor
     size_str = str(input_features.get('project_prf_relative_size', 'Medium')).upper()
     if 'XS' in size_str or 'EXTRA SMALL' in size_str:
-        size_factor = 0.5
+        size_factor = DataConstants.SIZE_FACTOR_EXTRA_SMALL
     elif 'SMALL' in size_str and 'XS' not in size_str:
-        size_factor = 0.8
+        size_factor = DataConstants.SIZE_FACTOR_SMALL
     elif 'LARGE' in size_str and 'XL' not in size_str:
-        size_factor = 1.5
+        size_factor = DataConstants.SIZE_FACTOR_LARGE
     elif 'XL' in size_str or 'EXTRA LARGE' in size_str:
-        size_factor = 2.0
+        size_factor = DataConstants.SIZE_FACTOR_EXTRA_LARGE
     else:  # Medium or unknown
-        size_factor = 1.0
+        size_factor = DataConstants.SIZE_FACTOR_MEDIUM
     
     # Application complexity factor
     app_type = str(input_features.get('project_prf_application_type', '')).upper()
@@ -165,12 +166,12 @@ def estimate_target_value(input_features: Dict[str, Any]) -> float:
         dev_factor = 1.0
     
     # Calculate estimated effort
-    base_hours_per_person = 200
+    base_hours_per_person = DataConstants.BASE_HOURS_PER_PERSON
     total_effort = base_hours_per_person * team_size * size_factor * app_factor * dev_factor
     
     # Normalize to training data scale (you may need to adjust this!)
     # Check your training data to see what range project_prf_normalised_work_effort has
-    normalized = total_effort / 1000  # Assuming 0-10 range, adjust as needed
+    normalized = total_effort / DataConstants.EFFORT_NORMALIZATION_FACTOR  # Assuming 0-10 range, adjust as needed
     
     logger.info(f"Estimated target: {normalized:.3f} (from {total_effort:.0f} raw hours)")
     return normalized
@@ -193,13 +194,13 @@ def calculate_derived_features(input_features: Dict[str, Any], features: Dict[st
     
     # Team size grouping
     team_size = features['project_prf_max_team_size']
-    if team_size <= 1:
+    if team_size <= PipelineConstants.TEAM_SIZE_SINGLE_THRESHOLD:
         derived['project_prf_team_size_group'] = "1"
-    elif team_size <= 3:
+    elif team_size <= PipelineConstants.TEAM_SIZE_SMALL_THRESHOLD:
         derived['project_prf_team_size_group'] = "2-3"
-    elif team_size <= 5:
+    elif team_size <= PipelineConstants.TEAM_SIZE_MEDIUM_THRESHOLD:
         derived['project_prf_team_size_group'] = "4-5"
-    elif team_size <= 10:
+    elif team_size <= PipelineConstants.TEAM_SIZE_LARGE_THRESHOLD:
         derived['project_prf_team_size_group'] = "6-10"
     else:
         derived['project_prf_team_size_group'] = "11+"
@@ -304,7 +305,7 @@ def optimize_target_value(input_features: Dict[str, Any], model_name: str, load_
     """
     
     # Try different target values
-    target_candidates = [0.1, 0.2, 0.5, 1.0, 1.5, 2.0, 3.0, 5.0]
+    target_candidates = ModelConstants.TARGET_OPTIMIZATION_CANDIDATES
     
     results = []
     
@@ -340,7 +341,7 @@ def optimize_target_value(input_features: Dict[str, Any], model_name: str, load_
                     if result is None:
                         result = float(predictions.iloc[0, -1])
                     
-                    if result and 10 <= result <= 5000:  # Reasonable range
+                    if result and ModelConstants.REASONABLE_PREDICTION_MIN_OPTIMIZED <= result <= ModelConstants.REASONABLE_PREDICTION_MAX_OPTIMIZED:  # Reasonable range
                         results.append((target_val, result))
                         logger.info(f"Target {target_val:.1f} -> Prediction {result:.1f} hours")
                 

@@ -264,7 +264,7 @@ class MissingValueAnalyzer(BaseEstimator, TransformerMixin):
         missing_pct = df.isnull().mean()
         self.missing_stats = missing_pct.sort_values(ascending=False)
         
-        logging.info(f"Missing value analysis: >50%: {sum(missing_pct > 0.5)}, >70%: {sum(missing_pct > self.high_missing_threshold)}")
+        logging.info(f"Missing value analysis: >50%: {sum(missing_pct > PipelineConstants.MISSING_VALUE_WARNING_THRESHOLD)}, >70%: {sum(missing_pct > self.high_missing_threshold)}")
         
         # Identify high missing columns
         self.high_missing_cols = missing_pct[missing_pct > self.high_missing_threshold].index.tolist()
@@ -349,7 +349,7 @@ class MultiValueEncoder(BaseEstimator, TransformerMixin):
     - Creates binary columns for each unique value
     """
     
-    def __init__(self, max_cardinality: int = 10):
+    def __init__(self, max_cardinality: int = PipelineConstants.TEAM_SIZE_LARGE_THRESHOLD):
         self.max_cardinality = max_cardinality
         self.multi_value_cols = []
         self.mlb_transformers = {}

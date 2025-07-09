@@ -38,6 +38,25 @@ class PipelineConstants:
     TOP_N_FEATURES = 10
     MAX_ANALYSIS_POINTS = 20
 
+    # Team size grouping thresholds
+    TEAM_SIZE_SINGLE_THRESHOLD = 1
+    TEAM_SIZE_SMALL_THRESHOLD = 3
+    TEAM_SIZE_MEDIUM_THRESHOLD = 5
+    TEAM_SIZE_LARGE_THRESHOLD = 10
+    
+    # Team size group labels
+    TEAM_SIZE_SINGLE_LABEL = "1"
+    TEAM_SIZE_SMALL_LABEL = "2-3"
+    TEAM_SIZE_MEDIUM_LABEL = "4-5"
+    TEAM_SIZE_LARGE_LABEL = "6-10"
+    TEAM_SIZE_XLARGE_LABEL = "11+"
+    
+    # Cardinality and threshold constants
+    DEFAULT_MAX_CARDINALITY = 10
+    MISSING_VALUE_WARNING_THRESHOLD = 0.5
+    PREDICTION_MAX_CARDINALITY = 50
+    PREDICTION_MISSING_THRESHOLD = 0.95
+
 class UIConstants:
     # UI markers and symbols
     REQUIRED_FIELD_MARKER = "⭐"
@@ -60,11 +79,38 @@ class UIConstants:
     WHAT_IF_MAX_POINTS = 20
     WHAT_IF_DEFAULT_POINTS = 10
 
+    # SHAP display constants
+    SHAP_FEATURE_PREVIEW_COUNT = 10
+    SHAP_CHART_DEFAULT_HEIGHT = 500
+    SHAP_FEATURE_DISPLAY_LIMIT = 5
+
+    # Display formatting
+    COLUMN_SPLIT_RATIO = 2  # For mid = len(items) // COLUMN_SPLIT_RATIO
+    PREDICTION_DECIMAL_PLACES = 0
+    IMPORTANCE_DISPLAY_PRECISION = 3
+    
+    # Metric display templates
+    EFFORT_METRIC_TEMPLATE = "📊 Total Effort"
+    DAYS_METRIC_TEMPLATE = "📅 Working Days"
+    WEEKS_METRIC_TEMPLATE = "📆 Working Weeks"
+    MONTHS_METRIC_TEMPLATE = "🗓️ Months"
+
 class ModelConstants:
     # Model file extensions
     MODEL_EXTENSION = '.pkl'
     JOBLIB_EXTENSION = '.joblib'
+    # Target optimization candidates
+    TARGET_OPTIMIZATION_CANDIDATES = [0.1, 0.2, 0.5, 1.0, 1.5, 2.0, 3.0, 5.0]
+
+
     
+    # Prediction validation ranges
+    REASONABLE_PREDICTION_MIN_OPTIMIZED = 10
+    REASONABLE_PREDICTION_MAX_OPTIMIZED = 5000
+    
+    # Expected feature counts
+    EXPECTED_FEATURE_COUNT_PIPELINE = 67
+
     # Model types for SHAP compatibility
     TREE_MODEL_KEYWORDS = [
         'forest', 'tree', 'xgb', 'lgb', 'catboost', 'gradient',
@@ -93,6 +139,30 @@ class ModelConstants:
 class DataConstants:
     # Column names and keywords
     TARGET_COLUMN = 'project_prf_normalised_work_effort'
+
+        # Size factor mappings
+    SIZE_FACTOR_EXTRA_SMALL = 0.5
+    SIZE_FACTOR_SMALL = 0.8
+    SIZE_FACTOR_MEDIUM = 1.0
+    SIZE_FACTOR_LARGE = 1.5
+    SIZE_FACTOR_EXTRA_LARGE = 2.0
+    
+    # Application type factors
+    APP_FACTOR_WEB = 1.2
+    APP_FACTOR_MOBILE = 1.0
+    APP_FACTOR_DESKTOP = 1.3
+    APP_FACTOR_API = 0.8
+    APP_FACTOR_DEFAULT = 1.0
+    
+    # Development type factors
+    DEV_FACTOR_NEW = 1.0
+    DEV_FACTOR_ENHANCEMENT = 0.7
+    DEV_FACTOR_MAINTENANCE = 0.5
+    DEV_FACTOR_DEFAULT = 1.0
+    
+    # Estimation constants
+    BASE_HOURS_PER_PERSON = 200
+    EFFORT_NORMALIZATION_FACTOR = 1000
     
     # Target-related keywords for removal
     TARGET_KEYWORDS = ['target', 'effort', 'label', 'prediction', 'actual', 'ground_truth']
