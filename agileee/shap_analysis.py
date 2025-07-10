@@ -81,9 +81,9 @@ def get_shap_analysis_results(user_inputs, model_name, get_trained_model_func):
         return {'error': str(e)}
 
 def get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func):
-    """Create appropriate SHAP explainer based on model type"""
+    """Create SHAP explainer using ISBSG background data"""
     try:
-        cache_key = f"{model_name}_smart"
+        cache_key = f"{model_name}_isbsg"
         if cache_key in _explainer_cache:
             return _explainer_cache[cache_key]
         
@@ -93,20 +93,18 @@ def get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func
             return None
         
         actual_model = extract_model_estimator(model)
-        model_type = type(actual_model).__name__.lower()
         
-        logging.info(f"Model type detected: {model_type}")
+        # Get ISBSG background data (92 features)
+        background_data = get_simple_background_data(user_inputs, n_samples=50)
         
-        # Get background data (optional for some explainers)
-        background_data = get_simple_background_data(user_inputs, n_samples=20)
+        if background_data is None:
+            logging.warning("No background data, using explainer without background")
+            explainer = shap.TreeExplainer(actual_model, check_additivity=False)
+        else:
+            explainer = shap.TreeExplainer(actual_model, background_data, check_additivity=False)
         
-        # Choose explainer based on model type
-        explainer = create_smart_explainer(actual_model, model_type, background_data)
-        
-        if explainer is not None:
-            _explainer_cache[cache_key] = explainer
-            logging.info(f"SHAP explainer created successfully for {model_type}")
-        
+        _explainer_cache[cache_key] = explainer
+        logging.info(f"SHAP explainer created successfully")
         return explainer
         
     except Exception as e:
@@ -199,6 +197,7 @@ def create_sample_variation(base_inputs):
     
     return variation
 
+
 def create_appropriate_explainer(model, background_data):
     """
     FIXED: Create explainer with robust fallback logic
@@ -282,7 +281,7 @@ def create_smart_explainer(model, model_type, background_data):
         return explainer
     except Exception as e:
         logging.error(f"All explainer types failed for {model_type}: {e}")
-        return None# Fix 1: In models.py - Keep existing sequential approach but ensure consistent output# Fix 1: In models.py - Keep existing sequential approach but ensure consistent output
+        return None# Fix 1: In models.py - Replace prepare_features_for_model with notebook's approach# Fix 1: In models.py - Keep existing sequential approach but ensure consistent output# Fix 1: In models.py - Keep existing sequential approach but ensure consistent output
 
 def get_shap_values_safe(explainer, user_inputs, model_name):
     """

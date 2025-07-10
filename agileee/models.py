@@ -158,12 +158,38 @@ def get_model_expected_features(model) -> List[str]:
         logging.warning(f"Could not extract feature names from model: {e}")
     return []
 
-def get_expected_feature_names_from_model(model) -> List[str]:
-    """
-    Get expected feature names from a trained model.
-    This is an alias for consistency with UI imports.
-    """
-    return get_model_expected_features(model)
+def get_expected_feature_names_from_model(model=None) -> list:
+    """Gets the expected feature names from a loaded model (copied from notebook)"""
+    # 1. Try to extract from model directly (best, ensures proper order)
+    if model is not None:
+        if hasattr(model, 'feature_names_in_'):
+            return list(model.feature_names_in_)
+        elif hasattr(model, 'X') and hasattr(model.X, 'columns'):
+            return list(model.X.columns)
+        elif hasattr(model, 'named_steps'):
+            for step in model.named_steps.values():
+                if hasattr(step, 'feature_names_in_'):
+                    return list(step.feature_names_in_)
+
+    # 2. Fall back to CSV file (as in PyCaret export)
+    feature_cols_path = os.path.join(FileConstants.CONFIG_FOLDER, 'pycaret_processed_features_before_model_training.csv')
+    if os.path.exists(feature_cols_path):
+        try:
+            cols = pd.read_csv(feature_cols_path, header=None)[0].tolist()
+            if isinstance(cols[0], str):
+                return cols
+        except Exception:
+            pass
+
+    # 3. Fallback: basic list
+    return [
+        'project_prf_year_of_project',
+        'project_prf_functional_size', 
+        'project_prf_max_team_size',
+        'process_pmf_docs',
+        'tech_tf_tools_used',
+        'people_prf_personnel_changes'
+    ]
 
 def get_expected_feature_names_from_config() -> List[str]:
     """
@@ -313,9 +339,20 @@ def create_feature_vector_from_dict(feature_dict: Dict, expected_features: Optio
     return np.array(feature_vector)
 
 
-def align_features_to_model(feature_dict: Dict[str, Any], model_features: List[str]) -> Dict[str, Any]:
-    """Align feature dictionary to model columns. Missing columns = 0, extras dropped."""
-    return {f: feature_dict.get(f, 0) for f in model_features}
+def align_features_to_model(features_df: pd.DataFrame, expected_columns: list) -> pd.DataFrame:
+    """Ensures the features_df has all columns (in correct order) that the model expects"""
+    for col in expected_columns:
+        if col not in features_df.columns:
+            features_df[col] = 0
+    return features_df[expected_columns]
+
+def align_features_to_model(features_df: pd.DataFrame, expected_columns: list) -> pd.DataFrame:
+    """Ensures the features_df has all columns (in correct order) that the model expects"""
+    for col in expected_columns:
+        if col not in features_df.columns:
+            features_df[col] = 0
+    return features_df[expected_columns]
+
 
 def align_df_to_model(df: pd.DataFrame, model_features: List[str]) -> pd.DataFrame:
     """Align DataFrame to model expected features"""
@@ -863,6 +900,18 @@ def validate_prepared_features(features_df: pd.DataFrame) -> Dict[str, Any]:
     
     return features_transformed
 
+def prepare_features_for_pycaret(features_dict: dict, model=None) -> pd.DataFrame:
+    """
+    Prepare prediction DataFrame with exact columns expected by model pipeline.
+    (Copied from notebook for consistency)
+    """
+    feature_names = get_expected_feature_names_from_model(model)
+    # Make sure the input dict has all required keys
+    row = {col: features_dict.get(col, 0) for col in feature_names}
+    features_df = pd.DataFrame([row])
+    # Ensure order and add any missing cols
+    features_df = align_features_to_model(features_df, feature_names)
+    return features_df
 
 def predict_man_hours(
     features: Union[np.ndarray, Dict, List], 
@@ -870,90 +919,51 @@ def predict_man_hours(
     use_scaler: bool = False,
     use_preprocessing_pipeline: bool = True
 ) -> Optional[float]:
-    """
-    Updated main prediction function that uses the sequential approach for dict input.
-    Maintains backward compatibility for array/list inputs.
-    """
+    """Updated prediction function using notebook's feature preparation"""
     
     try:
-        # Use sequential approach for dictionary input (from UI)
         if isinstance(features, dict):
             logging.info(f"Starting prediction with model: {model_name}")
             
-            # Step 1: Transform and engineer features
-            features_df = prepare_features_for_model(features)
-            if features_df is None:
-                logging.error("Feature preparation failed")
-                return None
-            
-            print(f"DEBUG: Prepared features shape: {features_df.shape}")
-            print(f"DEBUG: Feature sample values: {features_df.iloc[0].head(5).to_dict()}")
-            
-            # Step 2: Load model
+            # Load model
             model = load_model(model_name)
             if not model:
                 logging.error(f"Failed to load model: {model_name}")
                 return None
             
-            # Step 3: Align features to model expectations
-            model_expected_features = get_model_expected_features(model)
-            if model_expected_features:
-                logging.info(f"Aligning {len(features_df.columns)} features to {len(model_expected_features)} model features")
-                features_aligned = align_df_to_model(features_df, model_expected_features)
-            else:
-                logging.warning("Could not determine model expected features, using all prepared features")
-                features_aligned = features_df
+            # Use notebook's feature preparation approach
+            features_df = prepare_features_for_pycaret(features, model=model)
             
-            print(f"DEBUG: Aligned features shape: {features_aligned.shape}")
-            print(f"DEBUG: Aligned feature sample: {features_aligned.iloc[0].head(5).to_dict()}")
+            if features_df is None or features_df.empty:
+                logging.error("Feature preparation failed")
+                return None
             
-            # Step 4: Make prediction
+            logging.info(f"Prepared features shape: {features_df.shape}")
+            
+            # Make prediction using PyCaret
             try:
-                # Try PyCaret prediction first
                 from pycaret.regression import predict_model
-                preds = predict_model(model, data=features_aligned)
+                preds = predict_model(model, data=features_df)
                 
-                print(f"DEBUG: Raw PyCaret preds shape: {preds.shape}")
-                print(f"DEBUG: Raw PyCaret preds columns: {list(preds.columns)}")
-                
-                # Look for prediction column with common names
+                # Look for prediction column
                 for col in ['prediction_label', 'Label', 'pred', 'prediction']:
                     if col in preds.columns:
-                        raw_result = preds[col].iloc[0]
-                        result = float(raw_result)
-                        print(f"DEBUG: Found prediction in column '{col}': raw={raw_result}, float={result}")
+                        result = float(preds[col].iloc[0])
                         logging.info(f"Prediction successful: {result}")
                         return result
                 
                 # Fallback to last column
-                raw_result = preds.iloc[0, -1]
-                result = float(raw_result)
-                print(f"DEBUG: Using last column: raw={raw_result}, float={result}")
+                result = float(preds.iloc[0, -1])
                 logging.info(f"Prediction successful (last column): {result}")
                 return result
                 
             except Exception as e:
-                logging.warning(f"PyCaret prediction failed, trying direct model prediction: {e}")
-                
-                # Fallback to direct model prediction
-                if hasattr(model, 'predict'):
-                    pred = model.predict(features_aligned)
-                    print(f"DEBUG: Direct model predict output: {pred}")
-                    result = float(pred[0]) if hasattr(pred, '__len__') else float(pred)
-                    print(f"DEBUG: Direct prediction result: {result}")
-                    logging.info(f"Direct prediction successful: {result}")
-                    return result
-                
-        else:
-            # Handle array/list input (backward compatibility)
-            logging.warning("Array/list input not fully supported in sequential approach")
-            return None
+                logging.error(f"PyCaret prediction failed: {e}")
+                return None
             
     except Exception as e:
         logging.error(f"Prediction failed: {e}")
-        print(f"DEBUG: Exception in prediction: {e}")
-
-    return None
+        return None
 
 def get_feature_importance(model_name: str) -> Optional[np.ndarray]:
     """
