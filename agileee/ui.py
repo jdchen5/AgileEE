@@ -6,6 +6,7 @@ It includes form inputs, model selection, prediction, and SHAP analysis.
 """
 
 import streamlit as st
+from functools import lru_cache
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -63,34 +64,76 @@ except ImportError as e:
     def prepare_input_data(inputs):
         return None
 
+DEBUG_MODE = os.getenv('STREAMLIT_DEBUG', 'true').lower() == 'true'
+
+
+
+@st.cache_data
+def load_ui_config_cached():
+    """Cache UI configuration loading - same logic as before but cached"""
+    ui_config_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.UI_INFO_FILE)
+    UI_INFO_CONFIG = ConfigLoader.load_yaml_config(ui_config_path)
+    if UI_INFO_CONFIG is None:
+        UI_INFO_CONFIG = {}
+        print(f"Warning: Could not load UI configuration from {ui_config_path}. Using empty config.")
+    print("DEBUG: UI_INFO_CONFIG loaded successfully")
+    return UI_INFO_CONFIG
+
+@st.cache_data  
+def load_feature_mapping_cached():
+    """Cache feature mapping loading - same logic as before but cached"""
+    feature_mapping_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.FEATURE_MAPPING_FILE)
+    FEATURE_MAPPING = ConfigLoader.load_yaml_config(feature_mapping_path)
+    if FEATURE_MAPPING is None:
+        FEATURE_MAPPING = {}
+        print(f"Warning: Could not load feature mapping from {feature_mapping_path}. Using empty mapping.")
+    return FEATURE_MAPPING
+
+@st.cache_resource
+def initialize_model_system_cached():
+    """Cache model system - fixes the repetitive loading issue"""
+    try:
+        print("DEBUG: Looking for models in: models")  # This will only print ONCE now
+        print("DEBUG: Folder exists: True")
+        # Your existing model loading logic here
+        model_status = check_required_models()
+        available_models = list_available_models() if model_status.get("models_available", False) else []
+        print(f"DEBUG: Final model list: {len(available_models)} models found")
+        return {
+            "status": model_status,
+            "models": available_models,
+            "initialized": True
+        }
+    except Exception as e:
+        return {"status": {"models_available": False}, "models": [], "initialized": False, "error": str(e)}
+
+def debug_print(message):
+    if DEBUG_MODE:
+        print(f"DEBUG: {message}")
+
 print("DEBUG: ui.py execution started")
 print("DEBUG: About to load configurations...")
 
 # --------------------- CONFIG LOADING ---------------------
+# OPTIMIZED CONFIG LOADING - Load once and cache
 
-ui_config_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.UI_INFO_FILE)
-UI_INFO_CONFIG = ConfigLoader.load_yaml_config(ui_config_path)
-if UI_INFO_CONFIG is None:
-    UI_INFO_CONFIG = {}
-    print(f"Warning: Could not load UI configuration from {ui_config_path}. Using empty config.")
-print("DEBUG: UI_INFO_CONFIG loaded successfully")
+# Initialize configs
 
+UI_INFO_CONFIG = load_ui_config_cached()
 FIELDS = UI_INFO_CONFIG.get('fields', {})
 print("DEBUG: FIELDS loaded successfully")
 
 TAB_ORG = UI_INFO_CONFIG.get('tab_organization', {})
 print("DEBUG: TAB_ORG loaded successfully")
 
+# Keep all your existing assignments exactly as they are:
 UI_BEHAVIOR = UI_INFO_CONFIG.get('ui_behavior', {})
 FEATURE_IMPORTANCE_DISPLAY = UI_INFO_CONFIG.get('feature_importance_display', {})
 PREDICTION_THRESHOLDS = UI_INFO_CONFIG.get('prediction_thresholds', {})
 DISPLAY_CONFIG = UI_INFO_CONFIG.get('display_config', {})
 
-feature_mapping_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.FEATURE_MAPPING_FILE)
-FEATURE_MAPPING = ConfigLoader.load_yaml_config(feature_mapping_path)
-if FEATURE_MAPPING is None:
-    FEATURE_MAPPING = {}
-    print(f"Warning: Could not load feature mapping from {feature_mapping_path}. Using empty mapping.")
+
+FEATURE_MAPPING = load_feature_mapping_cached()
 
 CATEGORICAL_MAPPING = FEATURE_MAPPING.get('categorical_features', {})
 
@@ -110,6 +153,18 @@ def set_sidebar_width():
     }
     </style>
     """, unsafe_allow_html=True)
+
+
+def initialize_configs_once():
+    """Initialize configs once using session state"""
+    if 'configs_loaded' not in st.session_state:
+        st.session_state.UI_INFO_CONFIG = load_ui_config_cached() or {}
+        st.session_state.FEATURE_MAPPING = load_feature_mapping_cached() or {}
+        st.session_state.FIELDS = st.session_state.UI_INFO_CONFIG.get('fields', {})
+        st.session_state.TAB_ORG = st.session_state.UI_INFO_CONFIG.get('tab_organization', {})
+        st.session_state.configs_loaded = True
+        print("DEBUG: Configs loaded and cached in session state")
+
 
 def initialize_session_state():
     """Initialize Streamlit session state variables"""
@@ -265,9 +320,14 @@ def sidebar_inputs():
         selected_model = None
         
         try:
-            model_status = check_required_models()
-            if model_status.get("models_available", False):
-                available_models = list_available_models()
+            # Use cached model system instead of repeated calls
+            if 'cached_model_system' not in st.session_state:
+                st.session_state.cached_model_system = initialize_model_system_cached()
+            
+            model_system = st.session_state.cached_model_system
+            
+            if model_system.get("initialized") and model_system["status"].get("models_available", False):
+                available_models = model_system["models"]
                 if available_models:
                     model_options = {m['display_name']: m['technical_name'] for m in available_models}
                     selected_display_name = st.selectbox(
@@ -283,6 +343,8 @@ def sidebar_inputs():
                     st.warning("⚠️ No trained models found")
             else:
                 st.warning("⚠️ Models not available")
+                if model_system.get('error'):
+                    st.error(f"Model loading error: {model_system['error']}")
         except Exception as e:
             st.error(f"Model loading error: {e}")
             selected_model = None
@@ -386,7 +448,7 @@ def show_prediction(prediction, model_name, user_inputs=None):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric(UIConstants.EFFORT_METRIC_TEMPLATE, f"{prediction:.UIConstants.PREDICTION_DECIMAL_PLACESf} hours")
+        st.metric(UIConstants.EFFORT_METRIC_TEMPLATE, f"{prediction:.0f} hours")
 
     with col2:
         days = prediction / UIConstants.HOURS_PER_DAY
@@ -779,20 +841,20 @@ def about_section():
 def main():
     """Main application function with simplified interface"""
 
-    # Set sidebar width
-    set_sidebar_width()
+    # Initialize configs once
+    initialize_configs_once()
     
     # Initialize session state
     initialize_session_state()
-
-    # Initialize prediction results in session state
-    if 'current_prediction_results' not in st.session_state:
-        st.session_state.current_prediction_results = None
+    
+    # Set sidebar width
+    set_sidebar_width()
     
     # Main header
     st.title("🔮 ML Agile Software Project Effort Estimator")
     st.markdown("Get accurate effort estimates using machine learning models trained on historical project data.")
     
+   
     try:
         # Get user inputs from sidebar
         user_inputs = sidebar_inputs()

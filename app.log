@@ -492,3 +492,14 @@
 2025-07-09 15:40:17,596 - ERROR - SHAP calculation failed: Additivity check failed in TreeExplainer! Please ensure the data matrix you passed to the explainer is the same shape that the model was trained on. If your data shape is correct then please report this on GitHub. This check failed because for one of the samples the sum of the SHAP values was 249.343290, while the model output was 574.350331. If this difference is acceptable you can set check_additivity=False to disable this check.
 2025-07-09 15:40:59,132 - ERROR - SHAP calculation failed: Additivity check failed in TreeExplainer! Please ensure the data matrix you passed to the explainer is the same shape that the model was trained on. If your data shape is correct then please report this on GitHub. This check failed because for one of the samples the sum of the SHAP values was 249.343290, while the model output was 524.753905. If this difference is acceptable you can set check_additivity=False to disable this check.
 2025-07-09 16:07:04,228 - ERROR - SHAP calculation failed: Additivity check failed in TreeExplainer! Please ensure the data matrix you passed to the explainer is the same shape that the model was trained on. If your data shape is correct then please report this on GitHub. This check failed because for one of the samples the sum of the SHAP values was 647.566393, while the model output was 791.793756. If this difference is acceptable you can set check_additivity=False to disable this check.
+2025-07-10 12:40:16,986 - ERROR - Unexpected error in main application
+Traceback (most recent call last):
+  File "C:\Users\jdche\Documents\GitHub\AgileEE\agileee\main.py", line 39, in main
+    from ui import main as ui_main
+  File "C:\Users\jdche\Documents\GitHub\AgileEE\agileee\ui.py", line 35, in <module>
+    from agileee.models import (
+  File "c:\users\jdche\documents\github\agileee\agileee\models.py", line 67, in <module>
+    @st.cache_resource
+     ^^
+NameError: name 'st' is not defined
+2025-07-10 13:00:09,038 - ERROR - All explainer types failed: shapes (92,) and (71,) not aligned: 92 (dim 0) != 71 (dim 0)

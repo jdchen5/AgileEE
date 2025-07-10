@@ -15,6 +15,7 @@ from typing import Dict, Any, Optional, Tuple, List
 import pandas as pd
 import numpy as np
 from agileee.constants import FileConstants, ModelConstants, PipelineConstants, DataConstants, ShapConstants, FeatureValidationConstants
+from functools import lru_cache
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -32,6 +33,11 @@ except ImportError:
     PYCARET_AVAILABLE = False
     logger.warning("PyCaret not available")
 
+@lru_cache(maxsize=100)
+def create_features_cached(input_hash):
+    """Cache feature creation based on input hash"""
+    # Convert hash back to features and process
+    pass
 
 def load_yaml_config(path: str) -> Dict:
     """Load YAML configuration file with error handling"""

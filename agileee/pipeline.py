@@ -11,6 +11,7 @@ designed specifically for processing project effort estimation data with a targe
 
 import os
 import re
+import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
@@ -27,6 +28,15 @@ from agileee.config_loader import ConfigLoader
 # Logging setup
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+@st.cache_resource
+def create_pipeline_cached(**kwargs):
+    """Cache pipeline creation"""
+    return create_preprocessing_pipeline(**kwargs)
+
+@st.cache_data
+def process_features_cached(feature_dict: Dict):
+    """Cache feature processing for identical inputs"""
+    return process_features_for_prediction(feature_dict)
 
 # === 1. DataFrameValidator: Validate input DataFrame and check target column ===
 class DataFrameValidator(BaseEstimator, TransformerMixin):

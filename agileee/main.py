@@ -1,4 +1,8 @@
 import streamlit as st
+import os
+
+os.environ['DEBUG'] = 'false'  # Disable debug prints
+os.environ['STREAMLIT_PRODUCTION'] = 'true'  # Enable production mode
 
 # THIS MUST BE FIRST, before any other Streamlit call!
 st.set_page_config(

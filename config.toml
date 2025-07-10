@@ -1,0 +1,15 @@
+"""
+[server]
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 200
+
+[browser]
+gatherUsageStats = false
+
+[logger]
+level = "error"
+
+[client]
+caching = true
+"""

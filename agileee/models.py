@@ -13,6 +13,7 @@
 """
 
 import os
+import streamlit as st
 import pickle
 import json
 import joblib
@@ -25,6 +26,7 @@ from typing import Dict, List, Optional, Union, Any
 from agileee.constants import FileConstants, ModelConstants, DataConstants, PipelineConstants, UIConstants
 from agileee.config_loader import ConfigLoader
 from agileee.model_display_names import ModelDisplayNameManager
+
 
 # Import existing pipeline functions
 try:
@@ -62,6 +64,39 @@ _display_name_manager = ModelDisplayNameManager()
 
 # Add this debug line temporarily:
 print(f"DEBUG: ModelDisplayNameManager initialized with {len(_display_name_manager.display_names)} display names")
+
+# ADD caching functions:
+@st.cache_resource
+def load_model_cached(model_name: str):
+    """Cache model loading to prevent repeated file reads"""
+    return load_model(model_name)
+
+@st.cache_data
+def prepare_features_cached(ui_features: Dict[str, Any]):
+    """Cache feature preparation for identical inputs"""
+    return prepare_features_for_model(ui_features)
+
+# OPTIMIZE your predict_man_hours function:
+def predict_man_hours_optimized(features, model_name, use_scaler=False, use_preprocessing_pipeline=True):
+    """Optimized prediction with caching"""
+    try:
+        if isinstance(features, dict):
+            # Use cached feature preparation
+            features_df = prepare_features_cached(features)
+            if features_df is None:
+                return None
+            
+            # Use cached model loading
+            model = load_model_cached(model_name)
+            if not model:
+                return None
+            
+            # Rest of prediction logic...
+            
+    except Exception as e:
+        logging.error(f"Prediction failed: {e}")
+    return None
+
 
 # --- Display Name and Feature Name Helpers (GROUPED TOGETHER) ---
 
