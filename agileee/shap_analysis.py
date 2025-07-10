@@ -16,6 +16,7 @@ Architecture:
 # shap_analysis.py - Minimal fixes for working SHAP analysis
 
 import numpy as np
+import os
 import pandas as pd
 import shap
 import warnings
@@ -25,7 +26,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from typing import Dict, List, Optional, Union, Callable, Any
 import logging
-from agileee.constants import PipelineConstants, UIConstants, ShapConstants
+from agileee.constants import PipelineConstants, UIConstants, ShapConstants, FileConstants
 
 
 # Suppress SHAP warnings
@@ -80,42 +81,35 @@ def get_shap_analysis_results(user_inputs, model_name, get_trained_model_func):
         return {'error': str(e)}
 
 def get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func):
-    """
-    FIXED: Simplified explainer creation with better error handling
-    """
+    """Create appropriate SHAP explainer based on model type"""
     try:
-        # Check cache first
-        cache_key = f"{model_name}_simplified"
+        cache_key = f"{model_name}_smart"
         if cache_key in _explainer_cache:
             return _explainer_cache[cache_key]
         
         # Load model
         model = get_trained_model_func(model_name)
         if model is None:
-            st.error(f"Could not load model: {model_name}")
             return None
         
-        # Extract actual estimator from PyCaret wrapper
         actual_model = extract_model_estimator(model)
+        model_type = type(actual_model).__name__.lower()
         
-        # Get background data (simplified approach)
-        background_data = get_simple_background_data(user_inputs)
+        logging.info(f"Model type detected: {model_type}")
         
-        if background_data is None:
-            st.warning("Using model without background data")
-            background_data = None
+        # Get background data (optional for some explainers)
+        background_data = get_simple_background_data(user_inputs, n_samples=20)
         
-        # Create explainer based on model type
-        explainer = create_appropriate_explainer(actual_model, background_data)
+        # Choose explainer based on model type
+        explainer = create_smart_explainer(actual_model, model_type, background_data)
         
         if explainer is not None:
             _explainer_cache[cache_key] = explainer
-            st.success(f"✅ SHAP explainer created for {model_name}")
+            logging.info(f"SHAP explainer created successfully for {model_type}")
         
         return explainer
         
     except Exception as e:
-        st.error(f"Error creating SHAP explainer: {e}")
         logging.error(f"Explainer creation failed: {e}")
         return None
 
@@ -137,59 +131,70 @@ def extract_model_estimator(model):
         # Assume it's already unwrapped
         return model
 
-def get_simple_background_data(user_inputs, n_samples=PipelineConstants.KERNEL_EXPLAINER_SAMPLE_SIZE):
-    """
-    FIXED: Simple background data generation when ISBSG not available
-    """
+def get_simple_background_data(user_inputs, n_samples=20):
+    """Generate background data using IDENTICAL processing as user input"""
     try:
-        # Try to import models for background data
         from agileee.models import prepare_features_for_model
         
-        # Generate synthetic samples based on user inputs
+        logging.info(f"Generating {n_samples} background samples with identical processing")
+        
+        # Generate variations of user input
         samples = []
         for i in range(n_samples):
-            # Create variations of user inputs
+            # Create variation of user inputs
             sample_input = create_sample_variation(user_inputs)
             
-            # Process through same pipeline
+            # CRITICAL: Use EXACT same processing as user input
             processed = prepare_features_for_model(sample_input)
             if processed is not None and not processed.empty:
                 samples.append(processed.values.flatten())
+            
+            # Break early if we have enough samples
+            if len(samples) >= n_samples:
+                break
         
         if samples:
-            return np.array(samples, dtype=np.float32)
+            background_array = np.array(samples, dtype=np.float32)
+            logging.info(f"Background data created: {background_array.shape}")
+            return background_array
         else:
+            logging.warning("No valid background samples generated")
             return None
-            
+        
     except Exception as e:
-        logging.warning(f"Background data generation failed: {e}")
+        logging.error(f"Background data generation failed: {e}")
         return None
 
+
+
 def create_sample_variation(base_inputs):
-    """
-    FIXED: Create realistic variations of user inputs for background data
-    """
+    """Create realistic variations with limited randomness"""
     variation = base_inputs.copy()
     
-    # Add some realistic variations
-    if 'project_prf_functional_size' in variation:
-        base_size = variation['project_prf_functional_size']
-        variation['project_prf_functional_size'] = max(1, int(base_size * np.random.uniform(0.5, 2.0)))
+    # Only vary numeric fields slightly to maintain realism
+    numeric_fields = {
+        'project_prf_functional_size': (0.7, 1.5),  # 70% to 150% of original
+        'project_prf_max_team_size': (0.8, 1.3),   # 80% to 130% of original
+        'project_prf_year_of_project': (0, 0)      # Keep year unchanged
+    }
     
-    if 'project_prf_max_team_size' in variation:
-        base_team = variation['project_prf_max_team_size']
-        variation['project_prf_max_team_size'] = max(1, int(base_team * np.random.uniform(0.7, 1.5)))
+    for field, (min_factor, max_factor) in numeric_fields.items():
+        if field in variation and min_factor > 0:
+            original_value = variation[field]
+            if original_value > 0:
+                factor = np.random.uniform(min_factor, max_factor)
+                variation[field] = max(1, int(original_value * factor))
     
-    # Vary categorical fields occasionally
+    # Keep categorical fields mostly unchanged (90% chance)
     categorical_fields = [
         'external_eef_industry_sector',
-        'tech_tf_primary_programming_language',
+        'tech_tf_primary_programming_language', 
         'project_prf_relative_size'
     ]
     
     for field in categorical_fields:
-        if field in variation and np.random.random() < 0.3:  # 30% chance to vary
-            # Keep original value most of the time for stability
+        if field in variation and np.random.random() > 0.9:  # 10% chance to change
+            # For now, keep original to maintain stability
             pass
     
     return variation
@@ -204,7 +209,7 @@ def create_appropriate_explainer(model, background_data):
     if any(keyword in model_type for keyword in ShapConstants.TREE_MODEL_KEYWORDS):
         try:
             if background_data is not None:
-                return shap.TreeExplainer(model, background_data, check_additivity=False)
+                return shap.TreeExplainer(model, background_data)
             else:
                 return shap.TreeExplainer(model)
         except Exception as e:
@@ -233,6 +238,51 @@ def create_appropriate_explainer(model, background_data):
     except Exception as e:
         logging.error(f"All explainer types failed: {e}")
         return None
+
+def create_smart_explainer(model, model_type, background_data):
+    """Create the most appropriate explainer for the model type"""
+    
+    # Tree-based models: Use TreeExplainer
+    tree_keywords = ['tree', 'forest', 'boost', 'lgbm', 'xgb', 'gradient', 'random']
+    if any(keyword in model_type for keyword in tree_keywords):
+        try:
+            if background_data is not None:
+                explainer = shap.TreeExplainer(model, background_data)
+            else:
+                explainer = shap.TreeExplainer(model)
+            logging.info(f"Using TreeExplainer for {model_type}")
+            return explainer
+        except Exception as e:
+            logging.warning(f"TreeExplainer failed for {model_type}: {e}")
+    
+    # Linear models: Use LinearExplainer
+    linear_keywords = ['linear', 'ridge', 'lasso', 'bayesian', 'elastic']
+    if any(keyword in model_type for keyword in linear_keywords):
+        try:
+            if background_data is not None:
+                explainer = shap.LinearExplainer(model, background_data)
+            else:
+                # Create dummy background for LinearExplainer
+                dummy_background = np.zeros((1, 50))  # Adjust size as needed
+                explainer = shap.LinearExplainer(model, dummy_background)
+            logging.info(f"Using LinearExplainer for {model_type}")
+            return explainer
+        except Exception as e:
+            logging.warning(f"LinearExplainer failed for {model_type}: {e}")
+    
+    # Fallback: Use general Explainer (works with any model but slower)
+    try:
+        if background_data is not None:
+            # Use smaller background for general explainer (performance)
+            sample_size = min(10, len(background_data))
+            explainer = shap.Explainer(model, background_data[:sample_size])
+        else:
+            explainer = shap.Explainer(model)
+        logging.info(f"Using general Explainer for {model_type}")
+        return explainer
+    except Exception as e:
+        logging.error(f"All explainer types failed for {model_type}: {e}")
+        return None# Fix 1: In models.py - Keep existing sequential approach but ensure consistent output# Fix 1: In models.py - Keep existing sequential approach but ensure consistent output
 
 def get_shap_values_safe(explainer, user_inputs, model_name):
     """

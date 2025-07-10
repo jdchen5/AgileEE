@@ -24457,3 +24457,547 @@ This will raise in a future version.
 2025-07-10 12:59:58,655:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
 2025-07-10 12:59:58,695:INFO:Initializing load_model()
 2025-07-10 12:59:58,695:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:47:53,707:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:47:53,707:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:47:53,707:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:47:53,707:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:50:18,539:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 13:50:18,878:INFO:Initializing load_model()
+2025-07-10 13:50:18,878:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:53:48,761:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:53:48,761:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:53:48,761:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:53:48,761:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:54:12,238:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 13:54:12,522:INFO:Initializing load_model()
+2025-07-10 13:54:12,522:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:12,564:INFO:Initializing predict_model()
+2025-07-10 13:54:12,564:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x00000217827C8410>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000021780B94AE0>)
+2025-07-10 13:54:12,564:INFO:Checking exceptions
+2025-07-10 13:54:12,564:INFO:Preloading libraries
+2025-07-10 13:54:12,564:INFO:Set up data.
+2025-07-10 13:54:12,565:INFO:Set up index.
+2025-07-10 13:54:12,785:INFO:Initializing load_model()
+2025-07-10 13:54:12,785:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:16,911:INFO:Initializing load_model()
+2025-07-10 13:54:16,911:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:20,145:INFO:Initializing load_model()
+2025-07-10 13:54:20,145:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:20,214:INFO:Initializing predict_model()
+2025-07-10 13:54:20,215:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x0000021783410410>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model',
+                 LGBMRegressor(bagging_fraction=0.6, bagging_freq=4,
+                               feature_fraction=0.9, learning_rate=0.05,
+                               min_child_samples=96, min_split_gain=0.7,
+                               n_estimators=180, n_jobs=-1, num_leaves=10,
+                               random_state=123, reg_alpha=0.0001,
+                               reg_lambda=0.1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000021782E9E520>)
+2025-07-10 13:54:20,215:INFO:Checking exceptions
+2025-07-10 13:54:20,215:INFO:Preloading libraries
+2025-07-10 13:54:20,216:INFO:Set up data.
+2025-07-10 13:54:20,246:INFO:Set up index.
+2025-07-10 13:54:20,469:INFO:Initializing load_model()
+2025-07-10 13:54:20,470:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:25,414:INFO:Initializing load_model()
+2025-07-10 13:54:25,414:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:27,301:INFO:Initializing load_model()
+2025-07-10 13:54:27,301:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:27,342:INFO:Initializing predict_model()
+2025-07-10 13:54:27,342:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x00000217837C8410>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=OneHotEncoder(cols=['project_prf_application_type'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', BayesianRidge())]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x00000217836442C0>)
+2025-07-10 13:54:27,342:INFO:Checking exceptions
+2025-07-10 13:54:27,342:INFO:Preloading libraries
+2025-07-10 13:54:27,342:INFO:Set up data.
+2025-07-10 13:54:27,358:INFO:Set up index.
+2025-07-10 13:54:27,537:INFO:Initializing load_model()
+2025-07-10 13:54:27,537:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:39,408:INFO:Initializing load_model()
+2025-07-10 13:54:39,408:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:54:39,446:INFO:Initializing load_model()
+2025-07-10 13:54:39,446:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:57:45,381:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:57:45,381:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:57:45,381:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:57:45,381:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 13:58:06,161:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 13:58:06,460:INFO:Initializing load_model()
+2025-07-10 13:58:06,460:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:06,500:INFO:Initializing predict_model()
+2025-07-10 13:58:06,500:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000002098F40F390>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000002098F71CB80>)
+2025-07-10 13:58:06,500:INFO:Checking exceptions
+2025-07-10 13:58:06,501:INFO:Preloading libraries
+2025-07-10 13:58:06,501:INFO:Set up data.
+2025-07-10 13:58:06,503:INFO:Set up index.
+2025-07-10 13:58:06,719:INFO:Initializing load_model()
+2025-07-10 13:58:06,719:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:10,854:INFO:Initializing load_model()
+2025-07-10 13:58:10,855:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:12,488:INFO:Initializing load_model()
+2025-07-10 13:58:12,488:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:12,573:INFO:Initializing predict_model()
+2025-07-10 13:58:12,573:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x0000020991EE0B10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model',
+                 LGBMRegressor(bagging_fraction=0.6, bagging_freq=4,
+                               feature_fraction=0.9, learning_rate=0.05,
+                               min_child_samples=96, min_split_gain=0.7,
+                               n_estimators=180, n_jobs=-1, num_leaves=10,
+                               random_state=123, reg_alpha=0.0001,
+                               reg_lambda=0.1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000020991E8F7E0>)
+2025-07-10 13:58:12,573:INFO:Checking exceptions
+2025-07-10 13:58:12,573:INFO:Preloading libraries
+2025-07-10 13:58:12,574:INFO:Set up data.
+2025-07-10 13:58:12,604:INFO:Set up index.
+2025-07-10 13:58:12,839:INFO:Initializing load_model()
+2025-07-10 13:58:12,839:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:15,653:INFO:Initializing load_model()
+2025-07-10 13:58:15,653:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:17,926:INFO:Initializing load_model()
+2025-07-10 13:58:17,926:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:17,968:INFO:Initializing predict_model()
+2025-07-10 13:58:17,968:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x00000209922E7190>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=OneHotEncoder(cols=['project_prf_application_type'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', BayesianRidge())]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000020992421A80>)
+2025-07-10 13:58:17,968:INFO:Checking exceptions
+2025-07-10 13:58:17,968:INFO:Preloading libraries
+2025-07-10 13:58:17,969:INFO:Set up data.
+2025-07-10 13:58:17,993:INFO:Set up index.
+2025-07-10 13:58:18,184:INFO:Initializing load_model()
+2025-07-10 13:58:18,185:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:48,539:INFO:Initializing load_model()
+2025-07-10 13:58:48,539:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 13:58:48,578:INFO:Initializing load_model()
+2025-07-10 13:58:48,579:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 14:02:47,518:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:02:47,518:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:02:47,518:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:02:47,518:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:03:08,661:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 14:03:08,971:INFO:Initializing load_model()
+2025-07-10 14:03:08,971:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:09,002:INFO:Initializing predict_model()
+2025-07-10 14:03:09,002:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB0DCEEAD0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB0DA7A980>)
+2025-07-10 14:03:09,002:INFO:Checking exceptions
+2025-07-10 14:03:09,002:INFO:Preloading libraries
+2025-07-10 14:03:09,002:INFO:Set up data.
+2025-07-10 14:03:09,027:INFO:Set up index.
+2025-07-10 14:03:09,230:INFO:Initializing load_model()
+2025-07-10 14:03:09,230:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:12,602:INFO:Initializing load_model()
+2025-07-10 14:03:12,602:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:14,157:INFO:Initializing load_model()
+2025-07-10 14:03:14,157:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:14,225:INFO:Initializing predict_model()
+2025-07-10 14:03:14,225:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB10779110>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model',
+                 LGBMRegressor(bagging_fraction=0.6, bagging_freq=4,
+                               feature_fraction=0.9, learning_rate=0.05,
+                               min_child_samples=96, min_split_gain=0.7,
+                               n_estimators=180, n_jobs=-1, num_leaves=10,
+                               random_state=123, reg_alpha=0.0001,
+                               reg_lambda=0.1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB10798AE0>)
+2025-07-10 14:03:14,225:INFO:Checking exceptions
+2025-07-10 14:03:14,225:INFO:Preloading libraries
+2025-07-10 14:03:14,227:INFO:Set up data.
+2025-07-10 14:03:14,261:INFO:Set up index.
+2025-07-10 14:03:14,480:INFO:Initializing load_model()
+2025-07-10 14:03:14,481:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:18,143:INFO:Initializing load_model()
+2025-07-10 14:03:18,144:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:19,841:INFO:Initializing load_model()
+2025-07-10 14:03:19,841:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:19,882:INFO:Initializing predict_model()
+2025-07-10 14:03:19,882:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB1078C090>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=OneHotEncoder(cols=['project_prf_application_type'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', BayesianRidge())]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB10A94CC0>)
+2025-07-10 14:03:19,882:INFO:Checking exceptions
+2025-07-10 14:03:19,882:INFO:Preloading libraries
+2025-07-10 14:03:19,884:INFO:Set up data.
+2025-07-10 14:03:19,907:INFO:Set up index.
+2025-07-10 14:03:20,071:INFO:Initializing load_model()
+2025-07-10 14:03:20,071:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:32,622:INFO:Initializing load_model()
+2025-07-10 14:03:32,622:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 14:03:32,669:INFO:Initializing load_model()
+2025-07-10 14:03:32,669:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 14:10:30,914:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:10:30,914:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:10:30,914:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:10:30,914:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:10:52,804:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 14:10:53,085:INFO:Initializing load_model()
+2025-07-10 14:10:53,085:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:10:53,132:INFO:Initializing predict_model()
+2025-07-10 14:10:53,132:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x0000021B30CA2350>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000021B30FC0B80>)
+2025-07-10 14:10:53,132:INFO:Checking exceptions
+2025-07-10 14:10:53,132:INFO:Preloading libraries
+2025-07-10 14:10:53,132:INFO:Set up data.
+2025-07-10 14:10:53,156:INFO:Set up index.
+2025-07-10 14:10:53,347:INFO:Initializing load_model()
+2025-07-10 14:10:53,347:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:11:04,484:INFO:Initializing load_model()
+2025-07-10 14:11:04,484:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:11:04,547:INFO:Initializing load_model()
+2025-07-10 14:11:04,547:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:12:42,546:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:12:42,546:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:12:42,548:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:12:42,548:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:13:02,397:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 14:13:02,738:INFO:Initializing load_model()
+2025-07-10 14:13:02,738:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:13:02,785:INFO:Initializing predict_model()
+2025-07-10 14:13:02,785:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000002DE1DFEAA90>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000002DE1C368FE0>)
+2025-07-10 14:13:02,785:INFO:Checking exceptions
+2025-07-10 14:13:02,785:INFO:Preloading libraries
+2025-07-10 14:13:02,785:INFO:Set up data.
+2025-07-10 14:13:02,811:INFO:Set up index.
+2025-07-10 14:13:03,042:INFO:Initializing load_model()
+2025-07-10 14:13:03,042:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:13:11,225:INFO:Initializing load_model()
+2025-07-10 14:13:11,225:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:13:11,307:INFO:Initializing load_model()
+2025-07-10 14:13:11,307:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:29:00,260:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:29:00,261:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:29:00,261:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:29:00,261:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-07-10 14:29:22,352:WARNING:C:\Users\jdche\.conda\envs\pycaret311\Lib\site-packages\dask\dataframe\__init__.py:49: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+
+2025-07-10 14:29:22,680:INFO:Initializing load_model()
+2025-07-10 14:29:22,680:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:29:22,718:INFO:Initializing predict_model()
+2025-07-10 14:29:22,719:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AEDF184C10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AEDEE71EE0>)
+2025-07-10 14:29:22,719:INFO:Checking exceptions
+2025-07-10 14:29:22,719:INFO:Preloading libraries
+2025-07-10 14:29:22,719:INFO:Set up data.
+2025-07-10 14:29:22,724:INFO:Set up index.
+2025-07-10 14:29:22,941:INFO:Initializing load_model()
+2025-07-10 14:29:22,941:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:29:27,218:INFO:Initializing load_model()
+2025-07-10 14:29:27,218:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:29:27,283:INFO:Initializing load_model()
+2025-07-10 14:29:27,283:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:32:07,115:INFO:Initializing load_model()
+2025-07-10 14:32:07,115:INFO:load_model(model_name=models\top_model_1_GradientBoostingRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:32:08,495:INFO:Initializing load_model()
+2025-07-10 14:32:08,495:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:32:08,560:INFO:Initializing predict_model()
+2025-07-10 14:32:08,560:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AEE1CECC10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model',
+                 LGBMRegressor(bagging_fraction=0.6, bagging_freq=4,
+                               feature_fraction=0.9, learning_rate=0.05,
+                               min_child_samples=96, min_split_gain=0.7,
+                               n_estimators=180, n_jobs=-1, num_leaves=10,
+                               random_state=123, reg_alpha=0.0001,
+                               reg_lambda=0.1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AEE1C38FE0>)
+2025-07-10 14:32:08,560:INFO:Checking exceptions
+2025-07-10 14:32:08,561:INFO:Preloading libraries
+2025-07-10 14:32:08,561:INFO:Set up data.
+2025-07-10 14:32:08,599:INFO:Set up index.
+2025-07-10 14:32:08,824:INFO:Initializing load_model()
+2025-07-10 14:32:08,825:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:32:12,860:INFO:Initializing load_model()
+2025-07-10 14:32:12,860:INFO:load_model(model_name=models\top_model_2_LGBMRegressor, platform=None, authentication=None, verbose=True)
+2025-07-10 14:32:14,064:INFO:Initializing load_model()
+2025-07-10 14:32:14,064:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)
+2025-07-10 14:32:14,113:INFO:Initializing predict_model()
+2025-07-10 14:32:14,113:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AEE2184C10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['project_prf_year_of_project',
+                                             'project_prf_functional_size',
+                                             'project_prf_max_team_size',
+                                             'process_pmf_docs',
+                                             'tech_tf_tools_used',
+                                             'external_eef_organisation_type_banking_insurance_stock',
+                                             'external_eef_organisation_type_banking',
+                                             'external_eef_organisation_typ...
+                                    transformer=OneHotEncoder(cols=['project_prf_application_type'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['tech_tf_primary_programming_language'],
+                                    transformer=TargetEncoder(cols=['tech_tf_primary_programming_language'],
+                                                              handle_missing='return_nan'))),
+                ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                ('trained_model', BayesianRidge())]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AEE20C1300>)
+2025-07-10 14:32:14,114:INFO:Checking exceptions
+2025-07-10 14:32:14,114:INFO:Preloading libraries
+2025-07-10 14:32:14,114:INFO:Set up data.
+2025-07-10 14:32:14,136:INFO:Set up index.
+2025-07-10 14:32:14,303:INFO:Initializing load_model()
+2025-07-10 14:32:14,303:INFO:load_model(model_name=models\top_model_3_BayesianRidge, platform=None, authentication=None, verbose=True)

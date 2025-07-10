@@ -124,7 +124,7 @@ class FileConstants:
     PIPELINE_MODEL_FILE = 'finance_pycaret_preprocessing_pipeline.pkl'
     
     # Data files
-    ISBSG_PREPROCESSED_FILE = 'finance_baseline_training_data_shap_analysis.csv'
+    ISBSG_PREPROCESSED_FILE = 'finance_shap_background_random200.csv'
 
 
 class LoggingConstants:

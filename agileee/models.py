@@ -683,173 +683,39 @@ def apply_feature_engineering(features_df: pd.DataFrame) -> pd.DataFrame:
 
 def prepare_features_for_model(ui_features: Dict[str, Any]) -> pd.DataFrame:
     """
-    Enhanced feature preparation using sequential pipeline approach:
-    1. UI features (22) → Custom pipeline.py → Processed features
-    2. Processed features → PyCaret pipeline → Model-ready features (54-67)
-    
-    Fallback: If PyCaret pipeline fails, use only custom pipeline output
-    Args:
-        ui_features: Dictionary of user input features from the UI
-        
-    Returns:
-        pd.DataFrame: Prepared features ready for model prediction
-        
-    Raises:
-        Exception: If all feature preparation methods fail
+    Keep existing sequential approach but ensure output matches ISBSG background data dimensions
     """
-    
     try:
         logging.info(f"Starting sequential feature preparation for {len(ui_features)} input features")
         
-        # Validate input
-        if not ui_features:
-            raise ValueError("No input features provided")
+        # Use existing sequential pipeline approach (works well)
+        from pipeline import process_features_for_prediction
         
-        # Remove UI-specific keys that shouldn't be used for prediction
-        ui_keys_to_remove = {
-            'selected_model', 'selected_models', 'submit', 'clear_results', 
-            'show_history', 'save_config', 'config_name', 'comparison_mode'
-        }
-        clean_features = {k: v for k, v in ui_features.items() if k not in ui_keys_to_remove}
+        logging.info("Applying custom pipeline transformation...")
+        custom_processed_features = process_features_for_prediction(ui_features)
         
-        logging.info(f"Cleaned features: {len(clean_features)} features after removing UI keys")
+        if custom_processed_features is None or custom_processed_features.empty:
+            logging.error("Custom pipeline returned None or empty DataFrame")
+            return None
         
-        # === STEP 1: CUSTOM PIPELINE TRANSFORMATION ===
+        # Try PyCaret pipeline as enhancement step
         try:
-            from pipeline import process_features_for_prediction
-            
-            logging.info("STEP 1: Applying custom pipeline transformation...")
-            custom_processed_features = process_features_for_prediction(clean_features)
-            
-            if custom_processed_features is not None and not custom_processed_features.empty:
-                logging.info(f"Custom pipeline successful: {custom_processed_features.shape}")
-                logging.info(f"Custom pipeline features: {list(custom_processed_features.columns)[:UIConstants.SHAP_FEATURE_PREVIEW_COUNT]}...")  # Show first 10
-            else:
-                raise Exception("Custom pipeline returned None or empty DataFrame")
-                
-        except Exception as e:
-            logging.error(f"Custom pipeline failed: {e}")
-            logging.info("Falling back to traditional feature preparation...")
-            
-            # Fallback to traditional method
-            return prepare_features_manually_from_config(clean_features)
-        
-        # === STEP 2: PYCARET PIPELINE TRANSFORMATION ===
-        try:
-            logging.info("STEP 2: Attempting PyCaret pipeline transformation...")
-            
-            # Load PyCaret pipeline
             pycaret_pipeline = load_preprocessing_pipeline()
-            
             if pycaret_pipeline is not None:
-                logging.info(f"PyCaret pipeline loaded successfully")
-                logging.info(f"Pipeline expects {len(pycaret_pipeline.feature_names_in_)} input features")
-                
-                # Apply PyCaret pipeline transformation
-                pycaret_processed_features = pycaret_pipeline.transform(custom_processed_features)
-                
-                # Convert to DataFrame if it's numpy array
-                if isinstance(pycaret_processed_features, np.ndarray):
-                    # Get feature names from pipeline if available
-                    feature_names = None
-                    if hasattr(pycaret_pipeline, 'get_feature_names_out'):
-                        try:
-                            feature_names = pycaret_pipeline.get_feature_names_out()
-                        except:
-                            pass
-                    elif hasattr(pycaret_pipeline, 'feature_names_'):
-                        feature_names = pycaret_pipeline.feature_names_
-                    
-                    if feature_names is None:
-                        # Use generic names
-                        feature_names = [f"feature_{i}" for i in range(pycaret_processed_features.shape[1])]
-                    
-                    pycaret_processed_features = pd.DataFrame(
-                        pycaret_processed_features, 
-                        columns=feature_names
-                    )
-                
-                logging.info(f"PyCaret pipeline successful: {pycaret_processed_features.shape}")
-                
-                # Final cleanup
-                final_features = pycaret_processed_features.copy()
-                
-                # Ensure all values are numeric
-                final_features = final_features.apply(pd.to_numeric, errors='coerce').fillna(0)
-                
-                # Remove any target/label columns
-                target_keywords = ['target', 'effort', 'label', 'prediction', 'actual', 'ground_truth']
-                cols_to_drop = [col for col in final_features.columns 
-                               if any(keyword in col.lower() for keyword in target_keywords)]
-                if cols_to_drop:
-                    final_features = final_features.drop(columns=cols_to_drop, errors='ignore')
-                    logging.info(f"Removed target columns: {cols_to_drop}")
-                
-                # Final validation
-                if final_features.empty or final_features.shape[1] == 0:
-                    raise ValueError("No features remaining after PyCaret pipeline processing")
-                
-                # Check for infinite or extremely large values
-                final_features = final_features.replace([np.inf, -np.inf], 0)
-                
-                logging.info(f"Sequential pipeline complete:")
-                logging.info(f"   - UI features: {len(clean_features)}")
-                logging.info(f"   - Custom pipeline: {custom_processed_features.shape}")
-                logging.info(f"   - PyCaret pipeline: {final_features.shape}")
-                logging.info(f"   - Final features: {list(final_features.columns)[:5]}...")  # Show first 5
-                
-                return final_features
-                
-            else:
-                logging.warning("PyCaret pipeline not available")
-                raise Exception("PyCaret pipeline could not be loaded")
-                
-        except Exception as e:
-            logging.warning(f"PyCaret pipeline failed: {e}")
-            logging.info("Using custom pipeline output as fallback...")
-            
-            # === FALLBACK: USE CUSTOM PIPELINE OUTPUT ===
-            fallback_features = custom_processed_features.copy()
-            
-            # Basic cleanup for fallback
-            fallback_features = fallback_features.apply(pd.to_numeric, errors='coerce').fillna(0)
-            fallback_features = fallback_features.replace([np.inf, -np.inf], 0)
-            
-            # Remove target columns if any
-            target_keywords = ['target', 'effort', 'label', 'prediction']
-            cols_to_drop = [col for col in fallback_features.columns 
-                           if any(keyword in col.lower() for keyword in target_keywords)]
-            if cols_to_drop:
-                fallback_features = fallback_features.drop(columns=cols_to_drop, errors='ignore')
-                logging.info(f"Removed target columns from fallback: {cols_to_drop}")
-            
-            logging.info(f"Fallback pipeline complete:")
-            logging.info(f"   - Final shape: {fallback_features.shape}")
-            logging.info(f"   - Features: {list(fallback_features.columns)[:5]}...")
-            
-            return fallback_features
-    
-    except Exception as e:
-        logging.error(f"Complete sequential pipeline failed: {e}")
+                # Apply PyCaret pipeline to get the full feature set
+                pycaret_processed = pycaret_pipeline.transform(custom_processed_features)
+                logging.info(f"PyCaret pipeline successful: {pycaret_processed.shape}")
+                return pycaret_processed
+        except Exception as pycaret_error:
+            logging.warning(f"PyCaret pipeline failed: {pycaret_error}")
         
-        # Last resort: manual feature preparation
-        try:
-            logging.warning("Attempting emergency feature preparation...")
-            ui_keys_to_remove = {
-                'selected_model', 'selected_models', 'submit', 'clear_results', 
-                'show_history', 'save_config', 'config_name', 'comparison_mode'
-            }
-            clean_features = {k: v for k, v in ui_features.items() if k not in ui_keys_to_remove}
-
-            expected_features = get_expected_feature_names_from_config()
-            feature_vector = create_feature_vector_from_dict(clean_features, expected_features)
-            emergency_df = pd.DataFrame([feature_vector], columns=expected_features)
-            logging.warning(f"Emergency preparation successful: {emergency_df.shape}")
-            return emergency_df
-        except Exception as emergency_e:
-            logging.error(f"Emergency feature preparation also failed: {emergency_e}")
-            raise Exception(f"All feature preparation methods failed. Sequential error: {e}, Emergency error: {emergency_e}")
-
+        # Fallback: use custom pipeline output
+        logging.info(f"Using custom pipeline output: {custom_processed_features.shape}")
+        return custom_processed_features
+        
+    except Exception as e:
+        logging.error(f"Feature preparation failed: {e}")
+        return None
 
 
 
