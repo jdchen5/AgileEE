@@ -25,7 +25,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from typing import Dict, List, Optional, Union, Callable, Any
 import logging
-from agileee.constants import PipelineConstants, UIConstants
+from agileee.constants import PipelineConstants, UIConstants, ShapConstants
 
 
 # Suppress SHAP warnings
@@ -201,8 +201,7 @@ def create_appropriate_explainer(model, background_data):
     model_type = type(model).__name__.lower()
     
     # Try TreeExplainer for tree-based models
-    tree_keywords = ['forest', 'tree', 'xgb', 'lgb', 'catboost', 'gradient']
-    if any(keyword in model_type for keyword in tree_keywords):
+    if any(keyword in model_type for keyword in ShapConstants.TREE_MODEL_KEYWORDS):
         try:
             if background_data is not None:
                 return shap.TreeExplainer(model, background_data, check_additivity=False)
@@ -212,8 +211,7 @@ def create_appropriate_explainer(model, background_data):
             logging.warning(f"TreeExplainer failed: {e}")
     
     # Try LinearExplainer for linear models  
-    linear_keywords = ['linear', 'lasso', 'ridge', 'elastic']
-    if any(keyword in model_type for keyword in linear_keywords):
+    if any(keyword in model_type for keyword in ShapConstants.LINEAR_MODEL_KEYWORDS):
         try:
             if background_data is not None:
                 return shap.LinearExplainer(model, background_data)

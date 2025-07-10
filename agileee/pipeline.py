@@ -21,7 +21,7 @@ from typing import Dict, List, Optional, Union, Tuple, Any
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MultiLabelBinarizer
-from agileee.constants import FileConstants, PipelineConstants, DataConstants
+from agileee.constants import FileConstants, PipelineConstants, DataConstants, FeatureValidationConstants
 from agileee.config_loader import ConfigLoader
 
 # Logging setup
@@ -593,13 +593,7 @@ def create_preprocessing_pipeline(
     """
     
     if cols_to_keep is None:
-        cols_to_keep = [
-            'project_prf_case_tool_used', 
-            'process_pmf_prototyping_used',
-            'tech_tf_client_roles', 
-            'tech_tf_type_of_server', 
-            'tech_tf_clientserver_description'
-        ]
+        cols_to_keep = FeatureValidationConstants.get_mandatory_fields()
     
     pipeline = Pipeline([
         ('validator', DataFrameValidator(target_col)),

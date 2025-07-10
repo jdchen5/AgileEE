@@ -14,15 +14,15 @@ import yaml
 from typing import Dict, Any, Optional, Tuple, List
 import pandas as pd
 import numpy as np
-from agileee.constants import FileConstants, ModelConstants, FolderConstants, PipelineConstants, DataConstants
+from agileee.constants import FileConstants, ModelConstants, PipelineConstants, DataConstants, ShapConstants, FeatureValidationConstants
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration paths
-CONFIG_FOLDER = FolderConstants.CONFIG_FOLDER
-FEATURE_MAPPING_FILE = os.path.join(FolderConstants.CONFIG_FOLDER, FileConstants.FEATURE_MAPPING_FILE)
+CONFIG_FOLDER = FileConstants.CONFIG_FOLDER
+FEATURE_MAPPING_FILE = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.FEATURE_MAPPING_FILE)
 
 # Check if PyCaret is available
 try:
@@ -64,7 +64,7 @@ def create_training_compatible_features(input_features: Dict[str, Any]) -> Dict[
     
     # === 1. CORE NUMERIC FEATURES ===
     features['project_prf_year_of_project'] = input_features.get('project_prf_year_of_project', 2024)
-    features['project_prf_max_team_size'] = input_features.get('project_prf_max_team_size', 8)
+    features['project_prf_max_team_size'] = input_features.get('project_prf_max_team_size', 10)
     features['project_prf_functional_size'] = input_features.get('project_prf_functional_size', 100)
     
     # === 2. THE CRITICAL MISSING PIECE: TARGET AS FEATURE ===
@@ -74,22 +74,17 @@ def create_training_compatible_features(input_features: Dict[str, Any]) -> Dict[
     # === 3. ESSENTIAL CATEGORICAL FEATURES ===
     # Industry
     industry = input_features.get('external_eef_industry_sector', 'Missing')
-    features['external_eef_industry_sector'] = industry if industry in [
-        'Technology', 'Banking', 'Healthcare', 'Manufacturing', 'Government'
-    ] else 'Missing'
+    features['external_eef_industry_sector'] = industry if industry in FeatureValidationConstants.get_valid_industries() else 'Missing'
     
     # Programming Language
     lang = input_features.get('tech_tf_primary_programming_language', 'Missing')
-    features['tech_tf_primary_programming_language'] = lang if lang in [
-        'Python', 'Java', 'JavaScript', 'C#', 'PHP', 'Ruby', 'C++', 'C'
-    ] else 'Missing'
+    features['tech_tf_primary_programming_language'] = lang if lang in FeatureValidationConstants.get_valid_languages() else 'Missing'
     
     # === 4. DERIVED FEATURES (calculated, not hardcoded) ===
     features.update(calculate_derived_features(input_features, features))
     
     # === 5. MINIMAL DEFAULTS (only what model absolutely expects) ===
     defaults = {
-        'external_eef_data_quality_rating': 'A',
         'process_pmf_development_methodologies': 'Missing',
         'tech_tf_client_roles': 'Missing',
         'tech_tf_server_roles': 'Missing',
