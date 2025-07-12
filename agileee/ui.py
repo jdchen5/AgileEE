@@ -797,15 +797,77 @@ def display_model_comparison():
         st.error(f"Error in model comparison: {str(e)}")
 
 def display_static_shap_analysis():
-    """Display static SHAP analysis from file"""
     st.header("📈 Static SHAP Analysis - Model Feature Importance")
 
-    try:
-        with open(FileConstants.SHAP_ANALYSIS_FILE, "r", encoding="utf-8") as f:
-            shap_report_md = f.read()
-        st.markdown(shap_report_md, unsafe_allow_html=True)
-    except Exception as e:
-        st.error(f"Failed to load static SHAP analysis report: {e}")
+    # Section 1: Gradient Boosting Regressor
+    st.subheader("Model 1: Gradient Boosting Regressor")
+    st.image("plots/shap_summary_GradientBoostingRegressor.png", caption="Gradient Boosting Regressor SHAP Summary")
+    st.markdown("""
+    ### What this shows  
+    This SHAP summary plot visualizes which features most influence the predictions of the Gradient Boosting Regressor model. Each dot represents a project example, colored by feature value (red = high, blue = low). The x-axis position (SHAP value) indicates the magnitude and direction of the feature’s impact on predicted project effort.
+
+    ### Why these features matter  
+    - **`project_prf_functional_size`** is the most important feature. High values (red) strongly increase effort estimation.  
+    - **Team and technology factors** like project_prf_max_team_size, tech_tf_language_type_3gl, project_prf_application_type_financial transaction process/accounting, and tech_tf_tools_user are also highly impactful, showing that both people and technical stack contribute significantly to predictions.
+    - **Contextual features** such as external_eef_industry_sector_banking suggest that the type of industry or organization can shift the expected project effort.
+
+    ### Interpretation  
+    Projects with higher values in key features—like larger functional size, bigger teams, and advanced technology types—tend to have higher predicted effort (red dots on the right). Conversely, lower values (blue) are linked with lower effort. This plot helps identify what project characteristics drive the Gradient Boosting model’s predictions, making the model’s reasoning more transparent for stakeholders.
+    """)
+
+    st.divider()
+
+    # Section 2: LightGBM
+    st.subheader("Model 2: Light Gradient Boosting Machine Regressor")
+    st.image("plots/shap_summary_LGBMRegressor.png", caption="LightGBM Regressor SHAP Summary")
+    st.markdown("""
+    ### What this shows  
+    This SHAP summary plot ranks features by their overall importance in the LightGBM Regressor model’s predictions. Each dot represents a project instance, colored by feature value (red = high, blue = low). The x-axis (SHAP value) shows the impact and direction of the feature on the model’s output.
+
+    ### Why these features matter  
+    - **`project_prf_functional_size`** has the highest impact, indicating that larger functional size strongly increases predicted effort.  
+    - Technology-related features such as **`tech_tf_language_type_3gl`** and team size features, **`project_prf_max_team_size`**, are also influential, reflecting the role of technical complexity and staffing.
+
+    ### Interpretation  
+    High values of important features (shown by red dots on the right) typically lead to higher predicted project effort, while low values (blue) are associated with lower effort predictions. This helps users understand the main drivers behind the LightGBM model’s estimates.
+    """)
+
+    st.divider()
+
+    # Section 3: Bayesian Ridge
+    st.subheader("Model 3: Bayesian Ridge Regressor")
+    st.image("plots/shap_summary_BayesianRidge.png", caption="Bayesian Ridge Regressor SHAP Summary")
+    st.markdown("""
+    ### What this shows  
+    This SHAP summary plot displays the most influential features in the predictions made by the Bayesian Ridge Regressor. Each point represents a project example, with color indicating the value of the feature (red = high, blue = low). The x-axis shows how much each feature pushes the prediction higher or lower (the SHAP value).
+
+    ### Why these features matter  
+    - project_prf_functional_size remains the dominant driver, indicating that projects with greater functional size have much higher estimated effort.
+    - Team size and technical features such as project_prf_max_team_size and tech_tf_language_type_3gl continue to play strong roles, highlighting the importance of team structure and technology choices in predicting effort.
+    - Organizational and contextual variables like external_eef_industry_sector_banking show that the business environment and sector can significantly affect the model’s output.
+
+    ### Interpretation  
+    Larger functional size, bigger teams, and more advanced technology choices (high feature values, shown as red dots to the right) lead to higher predicted project effort. Conversely, projects with smaller scope, smaller teams, or simpler technologies (blue dots) are associated with lower effort estimates. This visualization clarifies which project characteristics are most influential in the Bayesian Ridge Regressor’s decision-making process.
+    """)
+
+    st.divider()
+
+    st.markdown("""
+    ## Summary
+
+    - **SHAP values provide clear insights** into which features affect the model predictions and in what way.  
+    - **`project_prf_functional_size` is consistently the top driver** across models, confirming its critical role in effort estimation.  
+    - Technology and project characteristics also play significant roles.  
+    - This transparency helps users understand and trust the machine learning models.
+
+    ## How to Use This Report
+
+    - Review feature importance plots to see which factors most influence effort predictions.  
+    - Use the explanations to communicate to stakeholders why certain projects are predicted to require more or less effort.  
+    - Combine this understanding with domain knowledge to make better project planning decisions.
+
+    *End of SHAP Analysis Report*
+    """)
 
 def about_section():
     """Display about section with tool information"""
@@ -860,7 +922,7 @@ def main():
         user_inputs = sidebar_inputs()
         
         # --- Tab navigation for main content ---
-        main_tabs = st.tabs(["🔮 Estimator", "📊 Visualisations & Analysis", "🤖 Model Comparison", "📈 Static SHAP Analysis", "❓ Help"])
+        main_tabs = st.tabs(["🔮 Estimator", "🤖 Model Comparison", "📈 Static SHAP Analysis", "❓ Help"])
 
         with main_tabs[0]:  # Estimator tab
 
@@ -908,7 +970,8 @@ def main():
                 # Welcome screen
                 st.info("**Get Started:** Fill in the project parameters in the sidebar and click 'Predict Effort' to get your estimate.")
 
-        with main_tabs[1]:  # Instance-Specific SHAP tab
+        # with main_tabs[1]:  # Instance-Specific SHAP tab - DISABLED
+        if False:  # Hide SHAP tab
             st.header("Instance-Specific SHAP Analysis")
             
             # Check if we have a recent prediction to analyze
@@ -925,14 +988,14 @@ def main():
                 else:
                     st.info("Enhanced SHAP Analysis: Using optimized feature analysis for faster performance with high accuracy.")
                     display_instance_specific_shap(user_inputs, model_name)
-
-        with main_tabs[2]:  # Model Comparison tab
+        
+        with main_tabs[1]:  # Model Comparison tab
             display_model_comparison()
 
-        with main_tabs[3]:  # Static SHAP Analysis tab
+        with main_tabs[2]:  # Static SHAP Analysis tab
             display_static_shap_analysis()
 
-        with main_tabs[4]:  # Help tab            
+        with main_tabs[3]:  # Help tab            
             with st.expander("How to Use This Tool"):
                 st.markdown(f"""
                 ### Quick Start Guide

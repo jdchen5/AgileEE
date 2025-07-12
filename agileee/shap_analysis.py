@@ -99,9 +99,11 @@ def get_shap_explainer_optimized(user_inputs, model_name, get_trained_model_func
         
         if background_data is None:
             logging.warning("No background data, using explainer without background")
-            explainer = shap.TreeExplainer(actual_model, check_additivity=False)
-        else:
-            explainer = shap.TreeExplainer(actual_model, background_data, check_additivity=False)
+            # Create minimal background data
+            background_data = np.zeros((5, 67))  # Adjust 67 to your feature count
+        
+        # Use KernelExplainer with model's predict function
+        explainer = shap.KernelExplainer(actual_model.predict, background_data)
         
         _explainer_cache[cache_key] = explainer
         logging.info(f"SHAP explainer created successfully")
@@ -145,7 +147,16 @@ def get_simple_background_data(user_inputs, n_samples=20):
             # CRITICAL: Use EXACT same processing as user input
             processed = prepare_features_for_model(sample_input)
             if processed is not None and not processed.empty:
-                samples.append(processed.values.flatten())
+                # Ensure we have exactly 92 features to match the model
+                current_features = processed.shape[1]
+                if current_features < 92:
+                    # Add missing features as zeros
+                    missing_features = 92 - current_features
+                    padding = np.zeros((1, missing_features))
+                    processed_padded = np.hstack([processed.values, padding])
+                    samples.append(processed_padded.flatten())
+                else:
+                    samples.append(processed.values.flatten())
             
             # Break early if we have enough samples
             if len(samples) >= n_samples:
@@ -291,19 +302,32 @@ def get_shap_values_safe(explainer, user_inputs, model_name):
         from agileee.models import prepare_features_for_model
         
         # Prepare input data through same pipeline as model expects
-        input_df = prepare_features_for_model(user_inputs)
+        # Use PyCaret's preprocessing pipeline directly
+        from agileee.models import load_preprocessing_pipeline
+        pipeline = load_preprocessing_pipeline()
+        if pipeline:
+            # Convert user inputs to DataFrame first
+            temp_df = pd.DataFrame([user_inputs])
+            input_df = pipeline.transform(temp_df)
+        else:
+            input_df = prepare_features_for_model(user_inputs)
+
         if input_df is None or input_df.empty:
             logging.error("Could not prepare input features for SHAP")
             return None
         
         input_data = input_df.values
+        if input_data.shape[1] < 92:
+            padding = np.zeros((input_data.shape[0], 92 - input_data.shape[1]))
+            input_data = np.hstack([input_data, padding])
+
         if input_data.ndim == 1:
             input_data = input_data.reshape(1, -1)
         
         # Calculate SHAP values
         input_safe = np.nan_to_num(input_data.astype(np.float64), nan=0.0, posinf=0.0, neginf=0.0)
         try:
-            shap_values = explainer.shap_values(input_safe)
+            shap_values = explainer.shap_values(input_safe, nsamples=100)  # Limit samples for speed
         except Exception as shap_error:
             logging.error(f"SHAP calculation failed: {shap_error}")
             return None
@@ -500,8 +524,13 @@ def show_fallback_analysis(user_inputs, model_name):
         from agileee.constants import FileConstants
         import os
         
-        if os.path.exists(FileConstants.SHAP_ANALYSIS_FILE):
-            with open(FileConstants.SHAP_ANALYSIS_FILE, "r", encoding="utf-8") as f:
+        shap_path = FileConstants.CONFIG_FOLDER + FileConstants.SHAP_ANALYSIS_FILE
+        # Debug print
+        st.info(f"Debug: SHAP path being used: `{shap_path}`")
+        st.info(f"Debug: Current working directory is `{os.getcwd()}`")
+
+        if os.path.exists(shap_path):
+            with open(shap_path, "r", encoding="utf-8") as f:
                 shap_report_md = f.read()
             st.markdown(shap_report_md, unsafe_allow_html=True)
         else:
