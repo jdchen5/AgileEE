@@ -265,6 +265,7 @@ one_hot_features:
     mapping:
       "Banking": external_eef_industry_sector_banking
       "Financial": external_eef_industry_sector_financial
+      "Missing": external_eef_industry_sector_missing
   external_eef_organisation_type:
     input_key: external_eef_organisation_type
     mapping:
@@ -278,6 +279,7 @@ one_hot_features:
       "Missing": external_eef_organisation_type_missing
       "Revenue": external_eef_organisation_type_revenue
       "Revenue Collection": external_eef_organisation_type_revenue_collection
+      "Missing": external_eef_organisation_type_missing
   project_prf_application_group:
     input_key: project_prf_application_group
     mapping:
@@ -285,12 +287,14 @@ one_hot_features:
       "Infrastructure Software": project_prf_application_group_infrastructure_software
       "Mathematically Intensive Application": project_prf_application_group_mathematically_intensive_application
       "Real-time Application": project_prf_application_group_real_time_application
+      "Missing": project_prf_application_group_missing
   development_type:
     input_key: project_prf_development_type
     mapping:
       "Enhancement": project_prf_development_type_enhancement
       "New Development": project_prf_development_type_new_development
       "Re-development": project_prf_development_type_re_development
+      "Missing": project_prf_development_type_missing
   development_platform:
     input_key: tech_tf_development_platform
     mapping:
@@ -299,6 +303,7 @@ one_hot_features:
       "Multi-platform": tech_tf_development_platform_multi
       "PC": tech_tf_development_platform_pc
       "Proprietary": tech_tf_development_platform_proprietary
+      "Missing": tech_tf_development_platform_missing
   language_type:
     input_key: tech_tf_language_type
     mapping:
@@ -308,6 +313,7 @@ one_hot_features:
       "5GL (Fifth Generation)": tech_tf_language_type_5GL
       "Application Generator": tech_tf_language_type_application_generator
       "Other": tech_tf_language_type_other
+      "Missing": tech_tf_language_type_missing
   primary_language:
     input_key: tech_tf_primary_programming_language
     mapping:
@@ -341,6 +347,7 @@ one_hot_features:
       "Client-Server": tech_tf_architecture_client_server
       "Multi-tier with Web Interface": tech_tf_architecture_multi_tier_with_web_interface
       "Stand-alone": tech_tf_architecture_stand_alone
+      "Missing": tech_tf_architecture_missing
   tech_tf_client_server:
     input_key: tech_tf_client_server
     mapping:
@@ -371,6 +378,7 @@ one_hot_features:
       "Personal Software Process (psp)": process_pmf_development_methodologies_personal_software_process_psp
       "Scrum": process_pmf_development_methodologies_scrum
       "Unified Process": process_pmf_development_methodologies_unified_process
+      "Missing": process_pmf_development_methodologies_missing
 
 special_cases:
   team_size_group:

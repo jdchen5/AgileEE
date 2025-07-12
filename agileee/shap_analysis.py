@@ -524,7 +524,7 @@ def show_fallback_analysis(user_inputs, model_name):
         from agileee.constants import FileConstants
         import os
         
-        shap_path = FileConstants.CONFIG_FOLDER + FileConstants.SHAP_ANALYSIS_FILE
+        shap_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.SHAP_ANALYSIS_FILE)
         # Debug print
         st.info(f"Debug: SHAP path being used: `{shap_path}`")
         st.info(f"Debug: Current working directory is `{os.getcwd()}`")

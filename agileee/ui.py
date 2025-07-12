@@ -254,10 +254,28 @@ def render_field(field_name, config, is_required=False):
         options = get_field_options(field_name)
         default = config.get("default", options[0] if options else None)
         
-        try:
-            default_index = options.index(default)
-        except (ValueError, IndexError):
-            default_index = 0
+        # Handle empty options case
+        if not options:
+            # Fallback to text input when no options are configured
+            field_value = st.text_input(
+                label, 
+                value=default if default is not None else "", 
+                help=help_text, 
+                key=field_name
+            )
+        else:
+            # Normal selectbox logic
+            try:
+                default_index = options.index(default)
+            except (ValueError, IndexError):
+                default_index = 0
+
+            field_value = st.selectbox(
+                label, options,
+                index=default_index,
+                help=help_text,
+                key=field_name
+            )
 
         # For project_prf_relative_size, show label, store code in user_inputs
         if field_name == "project_prf_relative_size":

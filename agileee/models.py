@@ -826,6 +826,17 @@ def predict_man_hours(
     
     try:
         if isinstance(features, dict):
+
+            # ADD THIS DEBUG BLOCK AT THE VERY START
+            print("🔍 UI DEBUG - predict_man_hours called with:")
+            print(f"  Model: {model_name}")
+            print(f"  Input features ({len(features)} total):")
+            for key, value in features.items():
+                if key not in {'selected_model', 'submit', 'clear_results', 'show_history'}:
+                    print(f"    {key}: {value}")
+            print()
+            # END DEBUG BLOCK
+
             logging.info(f"Starting prediction with model: {model_name}")
             
             # Load model
@@ -836,7 +847,22 @@ def predict_man_hours(
             
             # Use notebook's feature preparation approach
             features_df = prepare_features_for_pycaret(features, model=model)
-            
+
+            # Add this AFTER the features_df = prepare_features_for_pycaret() line
+            if features_df is not None:
+                print(f"🔬 PREPARED FEATURES DEBUG:")
+                print(f"  Shape: {features_df.shape}")
+                
+                # Safe way to check numeric columns only
+                numeric_cols = features_df.select_dtypes(include=[np.number]).columns
+                if len(numeric_cols) > 0:
+                    print(f"  Sum of numeric values: {features_df[numeric_cols].sum().sum():.2f}")
+                
+                print(f"  First 5 feature values:")
+                for i, col in enumerate(features_df.columns[:5]):
+                    val = features_df[col].iloc[0] if not features_df.empty else 'N/A'
+                    print(f"    {col}: {val}")
+                print()            
             if features_df is None or features_df.empty:
                 logging.error("Feature preparation failed")
                 return None
