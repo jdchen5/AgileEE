@@ -816,18 +816,7 @@ class TestE2ERealWorldUsagePatterns:
         
         with patch('streamlit.sidebar'), \
              patch('streamlit.tabs'), \
-             patch('streamlit.title'), \
-             patch('streamlit.markdown'), \
-             patch('streamlit.header'), \
-             patch('streamlit.info'), \
-             patch('streamlit.warning'), \
-             patch('streamlit.subheader'), \
-             patch('streamlit.divider'), \
-             patch('streamlit.columns'), \
-             patch('streamlit.button'), \
-             patch('streamlit.selectbox'), \
-             patch('streamlit.number_input'), \
-             patch('streamlit.metric'):
+             patch('streamlit.title'): \
             
             with patch.object(ui, 'predict_man_hours') as mock_predict:
                 

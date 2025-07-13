@@ -349,5 +349,10 @@ class TestE2EBackwardCompatibility:
                             # No crashes with legacy format
                             assert len(st.session_state['prediction_history']) == 1
 
+def test_e2e_cached_model_system(self):
+    """Test cached model system integration"""
+    model_system = ui.initialize_model_system_cached()
+    assert model_system["initialized"] is True
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
