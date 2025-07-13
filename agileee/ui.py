@@ -225,6 +225,14 @@ def get_field_options(field_name):
             return raw_opts  # fallback
     else:
         return raw_opts
+#Based on the Functional Size Relative Size Code to derive max team size basded on industry standards
+def get_max_team_size_from_project_size(project_size_code):
+    """Get max team size from project size using YAML configuration"""
+    if not project_size_code or 'prf_size_code2full' not in st.session_state:
+        return None
+    
+    size_info = st.session_state.get('prf_size_code2full', {}).get(project_size_code, {})
+    return size_info.get('max_team_size')
 
 def get_tab_organization():
     """Get tab organization from configuration"""
@@ -250,13 +258,13 @@ def render_field(field_name, config, is_required=False):
         field_value = st.number_input(
             label, min_value=min_val, max_value=max_val, value=value, help=help_text, key=field_name
         )
+
     elif field_type == "categorical":
         options = get_field_options(field_name)
         default = config.get("default", options[0] if options else None)
         
         # Handle empty options case
         if not options:
-            # Fallback to text input when no options are configured
             field_value = st.text_input(
                 label, 
                 value=default if default is not None else "", 
@@ -264,42 +272,33 @@ def render_field(field_name, config, is_required=False):
                 key=field_name
             )
         else:
-            # Normal selectbox logic
+            # Find default index
             try:
                 default_index = options.index(default)
             except (ValueError, IndexError):
                 default_index = 0
 
-            field_value = st.selectbox(
-                label, options,
+            # Single selectbox for all categorical fields
+            selected_value = st.selectbox(
+                label, options, 
                 index=default_index,
-                help=help_text,
+                help=help_text, 
                 key=field_name
             )
-
-        # For project_prf_relative_size, show label, store code in user_inputs
-        if field_name == "project_prf_relative_size":
-            # Defensive: ensure mapping exists
-            if "prf_size_label2code" not in st.session_state:
-                get_field_options(field_name)
-            field_value_label = st.selectbox(
-                label, options,
-                index=default_index if options else None,
-                help=help_text,
-                key=field_name
-            )
-            # If user picks the empty or None, fallback to None or ""
-            field_value = st.session_state.prf_size_label2code.get(field_value_label, None)
-        else:
-            field_value = st.selectbox(
-                label, options,
-                index=default_index if options else None,
-                help=help_text,
-                key=field_name
-            )
+            
+            # Handle special case AFTER getting the value
+            if field_name == "project_prf_relative_size":
+                if "prf_size_label2code" not in st.session_state:
+                    get_field_options(field_name)
+                # Convert label to code
+                field_value = st.session_state.prf_size_label2code.get(selected_value, selected_value)
+            else:
+                field_value = selected_value
 
     elif field_type == "boolean":
-        field_value = st.checkbox(label, value=bool(value), help=help_text, key=field_name)
+        checkbox_value = st.checkbox(label, value=bool(value), help=help_text, key=field_name)
+        # Convert boolean to string for one-hot encoding compatibility
+        field_value = "Yes" if checkbox_value else "No"
     else:
         field_value = st.text_input(label, value=str(value) if value else "", help=help_text, key=field_name)
     return field_value
@@ -316,6 +315,7 @@ def sidebar_inputs():
         # Get tab organization dynamically
         tab_org = get_tab_organization()
         tabs = st.tabs(list(tab_org.keys()))
+
         for idx, (tab_name, field_list) in enumerate(tab_org.items()):
             with tabs[idx]:
                 for field_name in field_list:
@@ -324,15 +324,27 @@ def sidebar_inputs():
                         st.warning(f"Field '{field_name}' not configured.")
                         continue
                     is_required = config.get("mandatory", False)
+
                     if field_name == "project_prf_functional_size":
                         rel_code = user_inputs.get("project_prf_relative_size")
                         if rel_code and rel_code in st.session_state.prf_size_code2mid:
                             config["default"] = st.session_state.prf_size_code2mid[rel_code]
                         else:
                             config["default"] = config.get("default", 5)
+
+                    if field_name == "project_prf_max_team_size":
+                        rel_code = user_inputs.get("project_prf_relative_size")
+                        suggested_team_size = get_max_team_size_from_project_size(rel_code)
+                        if suggested_team_size:
+                            config["default"] = suggested_team_size
+                        elif not config.get("default") or config.get("default") == 0:
+                            config["default"] = 5  # Fallback minimum
+
+                    # Render the field based on its type
                     field_value = render_field(field_name, config, is_required)
                     user_inputs[field_name] = field_value
 
+        
         st.divider()
         st.subheader("🤖 Model Selection")
         selected_model = None

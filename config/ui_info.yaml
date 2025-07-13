@@ -125,7 +125,7 @@ fields:
     tab: "Important Features"
     mandatory: false
 
-  # Nice features
+ 
   project_prf_team_size_group:
     label: "Individual Team Size Group"
     title: "Individual Team Size Group"
@@ -139,13 +139,24 @@ fields:
   project_prf_max_team_size:
     label: "Max Team Size"
     title: "Max Team Size"
-    help: "The maximum number of concurrent contributors, including developers, testers, analysts, and other active contributors."
+    help: "Max concurrent contributors (devs, testers, analysts, etc). Industry standard (based on FPs): S = 4, M = 8, L+ = 12."
     type: numeric
-    min: 1
+    min: 0
     max: 200
-    default: 10
+    default: 0
     input_type: number_input
     tab: "Important Features"
+    mandatory: true
+
+ # Nice features
+  project_prf_application_group:
+    label: "Application Group"
+    title: "Application Group"
+    help: "The application group to which the project belongs, such as Business Application, Mathematically Intensive Application..."
+    type: categorical
+    # options: see feature_mapping.yaml
+    default: ""
+    tab: "Nice Features"
     mandatory: false
 
   people_prf_personnel_changes:
@@ -265,16 +276,17 @@ tab_organization:
     - tech_tf_tools_used
     - project_prf_relative_size
     - project_prf_functional_size
+    - project_prf_max_team_size
     - project_prf_development_type
     - tech_tf_language_type
     - project_prf_application_type
     - external_eef_organisation_type
     - tech_tf_architecture
     - tech_tf_development_platform
+    - project_prf_team_size_group
     
   "Nice Features":
-    - project_prf_team_size_group
-    - project_prf_max_team_size
+    - project_prf_application_group
     - people_prf_personnel_changes
     - process_pmf_development_methodologies
     - tech_tf_server_roles

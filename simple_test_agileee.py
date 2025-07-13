@@ -30,7 +30,7 @@ ui_exact_features = {
     'tech_tf_architecture': '',  # UI: Empty string
     'tech_tf_development_platform': 'Mainframe (MF)',  # UI: Full form not "MF"
     'project_prf_team_size_group': '',  # UI: Empty string
-    'project_prf_max_team_size': 8,
+    'project_prf_max_team_size': 4,
     'people_prf_personnel_changes': False,  # UI: Boolean not int
     'process_pmf_development_methodologies': 'Agile Development',
     'tech_tf_server_roles': None,  # UI: None

@@ -4,8 +4,15 @@ numeric_features:
   - project_prf_max_team_size
   - process_pmf_docs
   - tech_tf_tools_used
-  - people_prf_personnel_changes
   - people_prf_project_user_involvement
+
+boolean_features:
+  - people_prf_personnel_changes
+  - tech_tf_client_server
+  - tech_tf_web_development
+  - tech_tf_dbms_used
+  - project_prf_case_tool_used
+  - process_pmf_prototyping_used
 
 categorical_features:
   external_eef_industry_sector:
@@ -136,29 +143,34 @@ categorical_features:
   tech_tf_client_roles:
     options:
       - 
-      - business logic or rule processing
-      - data entry & validation
-      - data retrieval & presentation
-      - database server
-      - device/equipment interface
-      - run a computer-human interface
+      - Business logic or rule processing
+      - Data entry & validation
+      - Data retrieval & presentation
+      - Database server
+      - Device/equipment interface
+      - Mobile App
+      - Run a computer-human interface
       - security
-      - web/html browser
-      - web public interface
+      - Web/HTML browser
+      - Web public interface
+      - Terminal emulation
   tech_tf_server_roles:
     options:
       - 
-      - business logic + integration to 30 other systems
-      - data acquisation
-      - database server
-      - file &/or print server
+      - Back-end
+      - Business logic + integration to 30 other systems
+      - Data acquisation
+      - Database server
+      - File &/or print server
       - ftp server
-      - html/web server
+      - HTML/web server
       - multi-user legacy application
       - security/authentication
-      - mail server
+      - Mail server
       - messaging server
-      - object/component server
+      - Multi-user legacy application
+      - Object/component server
+      - Security/authentication
   project_prf_application_group:
     options: ["", "Business Application", "Infrastructure Software", "Mathematically Intensive Application", "Real-time Application"]
   project_prf_development_type: 
@@ -172,78 +184,98 @@ categorical_features:
       - 
       - ABAP
       - Agile platform
+      - AppBuilder
+      - ASP
+      - ASP.NET
+      - C#
+      - C++
+      - COBOL
+      - dotNet
+      - FOCUS
+      - HLL/WB
+      - iOS
+      - Jam
       - JAVA
       - Javascript
-      - C
-      - C++
-      - PL/i
+      - MAPPER
       - Natural
-      - Cobol
       - Oracle
+      - PL/i
+      - Pro*C
       - Proprietary Agile Platform
+      - SAPIENS
+      - Scripting Language
+      - SQL
+      - Unix
+      - Visual Basic
+      - Visual C++
+      - Visual FoxPro
+      - Visual Age
       - Other
   project_prf_relative_size:
     options:
       - code: ""
         label: ""
         midpoint: null
+        minimumhour: null
+        maximumhour: null
+        max_team_size: null
       - code: XXS
         label: "Extra Extra Small (0–<10)"
         midpoint: 5
         minimumhour: 0
         maximumhour: 200
+        max_team_size: 6
       - code: XS
         label: "Extra Small (10–<30)"
         midpoint: 20
         minimumhour: 200
         maximumhour: 600
+        max_team_size: 6
       - code: S
         label: "Small (30–<100)"
         midpoint: 65
         minimumhour: 600
         maximumhour: 2000
+        max_team_size: 6
       - code: M1
         label: "Medium 1 (100–<300)"
         midpoint: 200
         minimumhour: 2000
         maximumhour: 6000
+        max_team_size: 12
       - code: M2
         label: "Medium 2 (300–<1000)"
         midpoint: 650
         minimumhour: 6000
         maximumhour: 20000
+        max_team_size: 12
       - code: L
         label: "Large (1,000–<3,000)"
         midpoint: 2000
         minimumhour: 20000
         maximumhour: 60000
+        max_team_size: 12
       - code: XL
         label: "Extra Large (3,000–<9,000)"
         midpoint: 6000
         minimumhour: 60000
         maximumhour: 180000
+        max_team_size: 15
       - code: XXL
         label: "Extra Extra Large (9,000–<18,000)"
         midpoint: 13500
         minimumhour: 180000
         maximumhour: 360000
+        max_team_size: 15
       - code: XXXL
         label: "Extra Extra Extra Large (≥18,000)"
         midpoint: 18000
         minimumhour: 360000
         maximumhour: 960000 # 500 man-years is too big for any projects, need to be split into smaller projects
+        max_team_size: 15
   tech_tf_architecture:
     options: ["", "Client-Server", "Multi-tier with Web Interface", "Stand-alone"]
-  tech_tf_client_server:
-    options: ["", "No", "Yes"]
-  tech_tf_web_development:
-    options: ["", "No", "Yes"]
-  tech_tf_dbms_used:
-    options: ["", "No", "Yes"]
-  process_pmf_prototyping_used:
-    options: ["", "No", "Yes"]
-  project_prf_case_tool_used:
-    options: ["", "No", "Yes"]
   project_prfcost_currency:
     options: ["", "Canadian Dollar", "European Euro"]
   process_pmf_development_methodologies:
@@ -276,7 +308,6 @@ one_hot_features:
       "Financial": external_eef_organisation_type_financial
       "Financial/Property and Business Services": external_eef_organisation_type_financial_property_and_business_services
       "Insurance": external_eef_organisation_type_insurance
-      "Missing": external_eef_organisation_type_missing
       "Revenue": external_eef_organisation_type_revenue
       "Revenue Collection": external_eef_organisation_type_revenue_collection
       "Missing": external_eef_organisation_type_missing
@@ -402,24 +433,3 @@ special_cases:
       "101+": project_prf_team_size_group_101plus
       "Missing": project_prf_team_size_group_missing
 
-binary_features:
-  prototyping:
-    input_key: process_pmf_prototyping_used
-    mapping:
-      "Yes": process_pmf_prototyping_used_yes
-      "No": process_pmf_prototyping_used_no
-  case_tool:
-    input_key: project_prf_case_tool_used
-    mapping:
-      "Yes": project_prf_case_tool_used_yes
-      "No": project_prf_case_tool_used_no
-  web_development:
-    input_key: tech_tf_web_development
-    mapping:
-      "Yes": tech_tf_web_development_yes
-      "No": tech_tf_web_development_no
-  dbms_used:
-    input_key: tech_tf_dbms_used
-    mapping:
-      "Yes": tech_tf_dbms_used_yes
-      "No": tech_tf_dbms_used_no
