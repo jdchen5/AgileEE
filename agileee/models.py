@@ -1,15 +1,15 @@
 # models.py - PyCaret compatible module for managing trained models and predictions
 """
-- Train Your Models in Jupyter Notebook using PyCaret and Save the trained models 
+- Models were trained in Jupyter Notebook using PyCaret and the trained models saved
    to the models folder with its own names ad pkl as file extension. 
    Hence the model file names can be different.
 - Make Predictions: Input your project parameters, Select your 
   preferred model and Click "Predict Man-Hours"
 
     SEQUENTIAL APPROACH:
-    1. UI Input → Pipeline Transformation (pipeline.py)
-    2. Pipeline Output → Feature Engineering (fill missing features)  
-    3. Complete Features → Model Prediction (columns dynamically aligned to trained model)
+    1. UI Input → Pipeline Transformation used in Jupyter (pipeline.py)
+    2. Pipeline Output → Feature Engineering (fill missing features) -> PyCaret Pipeline Transformation
+    3. Complete Features based on the model → Model Prediction (columns dynamically aligned to trained model)
 """
 
 import os
@@ -296,11 +296,6 @@ def get_pipeline_background_data(n_samples: int = 100) -> np.ndarray:
 
 # ---- Display Name Helpers ----
 
-
-
-
-
-
 def validate_feature_dict_against_config(feature_dict: Dict) -> Dict[str, Any]:
     """
     Validate a feature dictionary against the configuration and return missing/extra features.
@@ -411,7 +406,7 @@ def list_available_models() -> list:
 def check_required_models() -> dict:
     """
     Checks for the presence of model files in the models folder.
-    Returns a dictionary summarizing their availability and listing the models.
+    Returns a dictionary summarising their availability and listing the models.
     """
     ensure_models_folder()
     existing_files = os.listdir(FileConstants.MODELS_FOLDER)
@@ -607,46 +602,7 @@ def apply_pipeline_transformation_with_custom_params(
     except Exception as e:
         logging.error(f"Custom pipeline transformation failed: {e}")
         return prepare_features_manually_from_config(ui_features)
-    """
-    Apply feature engineering transformations to the prepared features.
-    This function handles derived features, calculations, and feature validation.
-    """
-    try:
-        if not FEATURE_ENGINEERING_AVAILABLE:
-            logging.info("Feature engineering module not available, returning features as-is")
-            return features_df
-        
-        logging.info("Applying feature engineering transformations")
-        engineered_features = features_df.copy()
-        
-        # Apply feature engineering functions if available
-        try:
-            # Calculate derived features
-            engineered_features = calculate_derived_features(engineered_features)
-            logging.info("Derived features calculated successfully")
-        except Exception as e:
-            logging.warning(f"Derived features calculation failed: {e}")
-        
-        try:
-            # Validate features
-            validation_result = validate_features(engineered_features)
-            if not validation_result.get('valid', True):
-                logging.warning(f"Feature validation warnings: {validation_result.get('warnings', [])}")
-        except Exception as e:
-            logging.warning(f"Feature validation failed: {e}")
-        
-        try:
-            # Get feature summary for logging
-            summary = get_feature_summary(engineered_features)
-            logging.info(f"Feature engineering complete. Summary: {summary}")
-        except Exception as e:
-            logging.debug(f"Could not generate feature summary: {e}")
-        
-        return engineered_features
-        
-    except Exception as e:
-        logging.error(f"Feature engineering failed: {e}")
-        return features_df  # Return original features if engineering fails
+
 
 def estimate_missing_features(features_df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -670,6 +626,7 @@ def estimate_missing_features(features_df: pd.DataFrame) -> pd.DataFrame:
     except Exception as e:
         logging.error(f"Missing feature estimation failed: {e}")
         return features_df.fillna(0)
+
 def apply_feature_engineering(features_df: pd.DataFrame) -> pd.DataFrame:
     """
     Apply feature engineering transformations to the prepared features.
@@ -774,7 +731,7 @@ def get_feature_preparation_method() -> str:
     return 'traditional'
 
 
-# Optional: Add configuration to control pipeline usage
+# Add configuration to control pipeline usage
 def prepare_features_for_model_with_config(
     ui_features: Dict[str, Any],
     use_pipeline: bool = True,
@@ -828,7 +785,7 @@ def predict_man_hours(
         if isinstance(features, dict):
 
             # ADD THIS DEBUG BLOCK AT THE VERY START
-            print("🔍 UI DEBUG - predict_man_hours called with:")
+            print("UI DEBUG - predict_man_hours called with:")
             print(f"  Model: {model_name}")
             print(f"  Input features ({len(features)} total):")
             for key, value in features.items():
@@ -850,7 +807,7 @@ def predict_man_hours(
 
             # Add this AFTER the features_df = prepare_features_for_pycaret() line
             if features_df is not None:
-                print(f"🔬 PREPARED FEATURES DEBUG:")
+                print(f"PREPARED FEATURES DEBUG:")
                 print(f"  Shape: {features_df.shape}")
                 
                 # Safe way to check numeric columns only
@@ -1608,50 +1565,6 @@ def set_training_data_path(file_path: str) -> bool:
         return False
     
 
-# NEW FUNCTION for testing: Test the sequential pipeline
-def test_sequential_pipeline(ui_features: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Test function to validate the sequential pipeline approach
-    """
-    test_result = {
-        'success': False,
-        'custom_pipeline': {'success': False, 'shape': None, 'error': None},
-        'pycaret_pipeline': {'success': False, 'shape': None, 'error': None},
-        'final_result': {'shape': None, 'features': None}
-    }
-    
-    try:
-        # Test custom pipeline
-        try:
-            from pipeline import process_features_for_prediction
-            custom_result = process_features_for_prediction(ui_features)
-            test_result['custom_pipeline']['success'] = True
-            test_result['custom_pipeline']['shape'] = custom_result.shape
-        except Exception as e:
-            test_result['custom_pipeline']['error'] = str(e)
-        
-        # Test PyCaret pipeline
-        try:
-            if test_result['custom_pipeline']['success']:
-                pycaret_pipeline = load_preprocessing_pipeline()
-                if pycaret_pipeline:
-                    pycaret_result = pycaret_pipeline.transform(custom_result)
-                    test_result['pycaret_pipeline']['success'] = True
-                    test_result['pycaret_pipeline']['shape'] = pycaret_result.shape
-        except Exception as e:
-            test_result['pycaret_pipeline']['error'] = str(e)
-        
-        # Test full sequential pipeline
-        final_result = prepare_features_for_model(ui_features)
-        if final_result is not None:
-            test_result['success'] = True
-            test_result['final_result']['shape'] = final_result.shape
-            test_result['final_result']['features'] = list(final_result.columns)[:PipelineConstants.TOP_N_FEATURES]  # First 10 features
-    
-    except Exception as e:
-        test_result['error'] = str(e)
-    
-    return test_result
 
 # Exports for Streamlit UI
 __all__ = [

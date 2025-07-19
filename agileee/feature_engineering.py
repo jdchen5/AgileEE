@@ -5,7 +5,7 @@ Feature Engineering Module for ML Model Predictions
 This module handles the creation of training-compatible features for PyCaret models.
 Key insight: PyCaret treats the target column as an input feature during prediction.
 
-Separated from models.py to keep code organized and maintainable.
+Separated from models.py to keep code organised and maintainable.
 """
 
 import os
@@ -54,10 +54,10 @@ def load_yaml_config(path: str) -> Dict:
 
 def create_training_compatible_features(input_features: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Create features that match EXACTLY how the model was trained.
+    Create features to match EXACTLY how the model was trained.
     
     CRITICAL: PyCaret treats the target column 'project_prf_normalised_work_effort' 
-    as an INPUT FEATURE during prediction. This is why predictions fail!
+    as an INPUT FEATURE during prediction. This is why predictions fail previously!
     
     Args:
         input_features: Raw input features from UI
@@ -68,28 +68,28 @@ def create_training_compatible_features(input_features: Dict[str, Any]) -> Dict[
     
     features = {}
     
-    # === 1. CORE NUMERIC FEATURES ===
+    # ===  CORE NUMERIC FEATURES ===
     features['project_prf_year_of_project'] = input_features.get('project_prf_year_of_project', 2024)
     features['project_prf_max_team_size'] = input_features.get('project_prf_max_team_size', 10)
     features['project_prf_functional_size'] = input_features.get('project_prf_functional_size', 100)
     
-    # === 2. THE CRITICAL MISSING PIECE: TARGET AS FEATURE ===
+    # ===  THE CRITICAL MISSING PIECE: TARGET AS FEATURE ===
     # PyCaret expects this as an INPUT feature, not just the target!
     features['project_prf_normalised_work_effort'] = estimate_target_value(input_features)
     
-    # === 3. ESSENTIAL CATEGORICAL FEATURES ===
+    # ===  ESSENTIAL CATEGORICAL FEATURES ===
     # Industry
     industry = input_features.get('external_eef_industry_sector', 'Missing')
     features['external_eef_industry_sector'] = industry if industry in FeatureValidationConstants.get_valid_industries() else 'Missing'
     
-    # Programming Language
+    #  ===  Programming Language  ===  
     lang = input_features.get('tech_tf_primary_programming_language', 'Missing')
     features['tech_tf_primary_programming_language'] = lang if lang in FeatureValidationConstants.get_valid_languages() else 'Missing'
     
-    # === 4. DERIVED FEATURES (calculated, not hardcoded) ===
+    # ===  DERIVED FEATURES (calculated, not hardcoded) ===
     features.update(calculate_derived_features(input_features, features))
     
-    # === 5. MINIMAL DEFAULTS (only what model absolutely expects) ===
+    # ===  MINIMAL DEFAULTS (only what model absolutely expects) ===
     defaults = {
         'process_pmf_development_methodologies': 'Missing',
         'tech_tf_client_roles': 'Missing',
@@ -114,16 +114,13 @@ def estimate_target_value(input_features: Dict[str, Any]) -> float:
     """
     Estimate target value that PyCaret expects as an INPUT feature.
     
-    This is the most critical function - PyCaret models were trained with
-    the target column present, so they expect it during prediction!
-    
-    Uses simple heuristics based on project size and complexity.
-    
+    PyCaret models include target column as input features.
+        
     Args:
         input_features: Raw input features
         
     Returns:
-        Estimated normalized work effort value
+        Estimated normalised work effort value
     """
     
     # Base effort calculation

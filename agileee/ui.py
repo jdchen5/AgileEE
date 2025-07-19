@@ -117,7 +117,7 @@ print("DEBUG: About to load configurations...")
 # --------------------- CONFIG LOADING ---------------------
 # OPTIMIZED CONFIG LOADING - Load once and cache
 
-# Initialize configs
+# Initialise configs
 
 UI_INFO_CONFIG = load_ui_config_cached()
 FIELDS = UI_INFO_CONFIG.get('fields', {})
@@ -225,6 +225,7 @@ def get_field_options(field_name):
             return raw_opts  # fallback
     else:
         return raw_opts
+
 #Based on the Functional Size Relative Size Code to derive max team size basded on industry standards
 def get_max_team_size_from_project_size(project_size_code):
     """Get max team size from project size using YAML configuration"""
@@ -460,6 +461,7 @@ def display_inputs(user_inputs, selected_model):
         else:
             st.warning("No parameters to display")
 
+
 def show_prediction(prediction, model_name, user_inputs=None):
     """Show prediction results with team breakdown and dynamic size-band warnings."""
     if prediction is None:
@@ -510,6 +512,7 @@ def show_prediction(prediction, model_name, user_inputs=None):
                 "Consider breaking down the project or reviewing your parameters."
             )
 
+
 def show_feature_importance(model_name, features_dict):
     """Display feature importance analysis"""
     try:
@@ -558,6 +561,7 @@ def show_feature_importance(model_name, features_dict):
     except Exception as e:
         st.info(f"Feature importance analysis not available: {e}")
 
+
 def display_instance_specific_shap(user_inputs, model_name):
     """Display SHAP analysis using UI configuration for proper field names"""
     st.subheader("Feature Analysis")
@@ -577,6 +581,7 @@ def display_instance_specific_shap(user_inputs, model_name):
             elif results.get('success'):
                 display_shap_results_ui(results['shap_values'], user_inputs, model_name)
 
+
 def display_fallback_analysis(user_inputs, model_name):
     """Show fallback analysis using proper UI field names"""
     st.markdown("### Your Project Configuration")
@@ -592,6 +597,7 @@ def display_fallback_analysis(user_inputs, model_name):
     - **Technology Complexity**: Can significantly affect development time
     - **Industry/Domain**: Influences requirements complexity
     """)
+
 
 def display_shap_results_ui(shap_values, user_inputs, model_name):
     """Display SHAP results using UI configuration"""
@@ -623,6 +629,7 @@ def display_shap_results_ui(shap_values, user_inputs, model_name):
                     field_key = field_names[idx]
                     display_name = get_field_label(field_key)
                     st.write(f"• **{display_name}**: {shap_values[idx]:.4f}")
+
 
 def show_prediction_history():
     """Display prediction history"""
@@ -663,6 +670,8 @@ def show_prediction_history():
             
     except Exception as e:
         st.error(f"Error displaying prediction history: {str(e)}")
+
+
 def show_prediction_comparison_table():
     """Show comparison table if multiple predictions exist"""
     if len(st.session_state["prediction_history"]) <= 1:
@@ -720,6 +729,7 @@ def show_prediction_comparison_table():
     except Exception as e:
         st.error(f"Error creating comparison table: {str(e)}")
 
+
 def add_prediction_to_history(user_inputs, model_name, prediction):
     """Add prediction to session history"""
     if prediction is None:
@@ -745,6 +755,7 @@ def add_prediction_to_history(user_inputs, model_name, prediction):
         
     except Exception as e:
         st.error(f"Error adding prediction to history: {str(e)}")
+
 
 def display_model_comparison():
     """Display model comparison analysis"""
@@ -826,6 +837,7 @@ def display_model_comparison():
     except Exception as e:
         st.error(f"Error in model comparison: {str(e)}")
 
+
 def display_static_shap_analysis():
     st.header("📈 Static SHAP Analysis - Model Feature Importance")
 
@@ -899,6 +911,7 @@ def display_static_shap_analysis():
     *End of SHAP Analysis Report*
     """)
 
+
 def about_section():
     """Display about section with tool information"""
     st.markdown("""
@@ -933,10 +946,10 @@ def about_section():
 def main():
     """Main application function with simplified interface"""
 
-    # Initialize configs once
+    # Initialise configs once
     initialize_configs_once()
     
-    # Initialize session state
+    # Initialise session state
     initialize_session_state()
     
     # Set sidebar width
@@ -1000,7 +1013,7 @@ def main():
                 # Welcome screen
                 st.info("**Get Started:** Fill in the project parameters in the sidebar and click 'Predict Effort' to get your estimate.")
 
-        # with main_tabs[1]:  # Instance-Specific SHAP tab - DISABLED
+        # with main_tabs[1]:  # Instance-Specific SHAP tab - DISABLED due to library compatibility issues
         if False:  # Hide SHAP tab
             st.header("Instance-Specific SHAP Analysis")
             

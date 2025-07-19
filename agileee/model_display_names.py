@@ -1,6 +1,6 @@
 # model_display_names.py
 """
-Centralized model display name management
+Centralised model display name management
 Consolidates all display name logic with clear separation of concerns
 """
 
@@ -16,7 +16,7 @@ class ModelDisplayNameManager:
     """Manages model display name mappings and transformations"""
     
     def __init__(self, config_path: Optional[str] = None):
-        """Initialize with optional custom config path"""
+        """Initialise with optional custom config path"""
         if config_path is None:
             config_path = os.path.join(FileConstants.CONFIG_FOLDER, FileConstants.MODEL_DISPLAY_NAME_FILE)
         
@@ -43,7 +43,6 @@ class ModelDisplayNameManager:
     def get_display_name(self, technical_name: str) -> str:
         """
         Get display name for a technical model name
-        Primary entry point - no recursion risk
         """
         if not technical_name:
             return "Unknown Model"
@@ -52,7 +51,7 @@ class ModelDisplayNameManager:
         if technical_name in self.display_names:
             return self.display_names[technical_name]
         
-        # Step 2: Try normalized key matching
+        # Step 2: Try normalised key matching
         normalized_key = self._normalize_model_key(technical_name)
         for config_key, display_name in self.display_names.items():
             if self._normalize_model_key(config_key) == normalized_key:
@@ -123,7 +122,7 @@ class ModelDisplayNameManager:
         return f"{clean_name} Model"
     
     def _normalize_model_key(self, key: str) -> str:
-        """Normalize model key for consistent matching"""
+        """Normalise model key for consistent matching"""
         key = key.lower()
         key = re.sub(r'^top_model_\d+_', '', key)  # Remove "top_model_X_" prefix
         key = re.sub(r'[^a-z0-9]', '', key)        # Keep only alphanumeric

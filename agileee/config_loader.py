@@ -1,6 +1,6 @@
 # config_loader.py
 """
-Centralized configuration loading for ML Project Effort Estimator
+Centralised configuration loading for ML Project Effort Estimator
 Consolidates all YAML and JSON loading logic with consistent error handling
 """
 
@@ -12,7 +12,7 @@ from typing import Dict, Any, Optional
 from agileee.constants import LoggingConstants
 
 class ConfigLoader:
-    """Centralized configuration loader with consistent error handling"""
+    """Centralised configuration loader with consistent error handling"""
     
     @staticmethod
     def load_yaml_config(path: str) -> Optional[Dict[str, Any]]:

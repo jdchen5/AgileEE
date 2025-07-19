@@ -3,7 +3,7 @@
 Data preprocessing pipeline for machine learning using scikit-learn transformers: 
 designed specifically for processing project effort estimation data with a target column like 'project_prf_normalised_work_effort':
     - DataFrame validation
-    - Column standardization, missing value imputation, categorical encoding (including multi-value semicolon-separated columns)
+    - Column standardisation, missing value imputation, categorical encoding (including multi-value semicolon-separated columns)
     - Data cleaning in a systematic way
     - The main entry point is preprocess_dataframe() which applies all transformations and returns a clean, ML-ready dataset
     - The pipeline uses one-hot encoding for both regular categorical variables and multi-label columns (semicolon-separated values).
@@ -121,7 +121,7 @@ class DataFrameValidator(BaseEstimator, TransformerMixin):
             
         return df
 
-# === 2. ColumnNameStandardizer: Clean and standardize column names ===
+# === 2. ColumnNameStandardizer: Clean and standardise column names ===
 class ColumnNameStandardizer(BaseEstimator, TransformerMixin):
     """
     Standardize column names for consistency:
@@ -187,7 +187,7 @@ class ColumnNameStandardizer(BaseEstimator, TransformerMixin):
         
         return df
 
-# === 3. CategoricalValueStandardizer: Apply standardization mapping to categorical values ===
+# === 3. CategoricalValueStandardizer: Apply standardisation mapping to categorical values ===
 class CategoricalValueStandardizer(BaseEstimator, TransformerMixin):
     """Apply standardization mapping to categorical column values"""
     
@@ -243,7 +243,7 @@ class CategoricalValueCleaner(BaseEstimator, TransformerMixin):
             )
         return df
 
-# === 5. MissingValueAnalyzer: Analyze and handle missing values ===
+# === 5. MissingValueAnalyzer: Analyse and handle missing values ===
 class MissingValueAnalyzer(BaseEstimator, TransformerMixin):
     """
     Analyze and handle missing values:
