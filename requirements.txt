@@ -19,4 +19,4 @@ pycaret==3.3.2
 pyyaml>=6.0
 
 #Shap Analysis
-shap>=0.47.0
+#shap>=0.47.0

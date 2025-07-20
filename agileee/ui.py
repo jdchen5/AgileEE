@@ -14,7 +14,6 @@ import json
 import os
 import yaml
 from datetime import datetime
-import shap
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
@@ -22,12 +21,32 @@ import traceback
 from agileee.constants import FileConstants, UIConstants, PipelineConstants
 from agileee.config_loader import ConfigLoader
 
-from agileee.shap_analysis import (
-    get_shap_analysis_results,
-    get_shap_explainer_optimized,
-    clear_explainer_cache,
-    get_cache_info   
-)
+try:
+    import shap
+    SHAP_AVAILABLE = True
+except ImportError:
+    SHAP_AVAILABLE = False
+    shap = None
+
+try:
+    from agileee.shap_analysis import (
+        get_shap_analysis_results,
+        get_shap_explainer_optimized,
+        clear_explainer_cache,
+        get_cache_info   
+    )
+    SHAP_ANALYSIS_AVAILABLE = True
+except ImportError:
+    SHAP_ANALYSIS_AVAILABLE = False
+    # Create stub functions
+    def get_shap_analysis_results(*args, **kwargs):
+        return {'error': 'SHAP analysis not available'}
+    def get_shap_explainer_optimized(*args, **kwargs):
+        return None
+    def clear_explainer_cache():
+        pass
+    def get_cache_info():
+        return {}
 
 # -------------- MODEL IMPORTS AND FALLBACKS ----------------
 
